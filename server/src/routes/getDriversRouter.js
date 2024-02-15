@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const { getAllDriversHandler } = require('../handlers/getAllDriversHandler')
-const { getByIdHandler } = require('../handlers/getByIdHandler')
+const { getDriverByIdHandler } = require('../handlers/getDriverByIdHandler')
 
 const getDriversRouter = Router();
 
 
 getDriversRouter.get('/', getAllDriversHandler);
-getDriversRouter.get('/:id', getByIdHandler);
+getDriversRouter.get('/:id', getDriverByIdHandler);
 
 
 module.exports = getDriversRouter;

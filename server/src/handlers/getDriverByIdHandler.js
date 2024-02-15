@@ -1,4 +1,4 @@
-const getByIdHandler = (req, res) =>{
+const getDriverByIdHandler = (req, res) =>{
     const {id} = req.params;
 
 
@@ -8,7 +8,7 @@ const getByIdHandler = (req, res) =>{
 
 
 module.exports = {
-    getByIdHandler
+    getDriverByIdHandler
 };
 
 /*
