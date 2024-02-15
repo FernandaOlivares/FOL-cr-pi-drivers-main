@@ -1,4 +1,4 @@
-const getDriversHandler = (req, res) =>{
+const getAllDriversHandler = (req, res) =>{
     const { forname, surname } = req.query
 
     if(forname) res.status(200).send(`Aquí está el drivers ${forname} ${surname}!=)`);
@@ -7,7 +7,7 @@ const getDriversHandler = (req, res) =>{
 
 
 module.exports = {
-    getDriversHandler,
+    getAllDriversHandler,
 };
 
 /*
