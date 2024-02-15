@@ -4,7 +4,7 @@ const getDriversHandler = (req, res) =>{
 
 const getDetailHandler = (req, res) =>{
     res.status(200).send('Aquí está el detalle del driver!=)');
-    }
+};
 
 
 
