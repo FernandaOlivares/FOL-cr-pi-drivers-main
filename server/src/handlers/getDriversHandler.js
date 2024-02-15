@@ -5,7 +5,7 @@ const getDriversHandler = (req, res) =>{
     res.status(200).send(`Aquí están todos los drivers!=)`);
 };
 
-const getDetailHandler = (req, res) =>{
+const getByIdHandler = (req, res) =>{
     const {id} = req.params;
 
 
@@ -16,7 +16,7 @@ const getDetailHandler = (req, res) =>{
 
 module.exports = {
     getDriversHandler,
-    getDetailHandler
+    getByIdHandler
 };
 
 /*
