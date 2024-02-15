@@ -1,10 +1,9 @@
 const { Router } = require("express");
+const { createDriverHandler } = require('../handlers/createDriverHandler')
 
 const createDriverRouter = Router();
 
-createDriverRouter.post('/', (req, res) =>{
-    res.status(200).send('Crear driver');
-    });
+createDriverRouter.post('/', createDriverHandler);
 
 
 module.exports = createDriverRouter;
