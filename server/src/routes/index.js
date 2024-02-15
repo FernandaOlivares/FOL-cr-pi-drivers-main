@@ -1,20 +1,17 @@
 const { Router } = require("express");
+const getDriversRouter = require('./getDriversRouter');
+const createDriverRouter = require('./createDriverRouter');
+const getTeamsRouter = require('./getTeamsRouter');
 
 const router = Router();
 
-//TODO: CONFIGURAMOS NUESTRO ROUTER PRINCIPAL, DONDE LLEGARÁN TODOS LOS ENDPOINTS
+//TODO: CONFIGURAMOS ROUTER PRINCIPAL, DONDE LLEGARÁN TODOS LOS ENDPOINTS
 
-router.get('/drivers', (req, res) =>{
-    res.status(200).send("Aquí están todos los drivers!=)");
-    });
+router.use('/drivers', getDriversRouter);
 
-router.get('/drivers/:id', (req, res) =>{
-    res.status(200).send('Aquí está el detalle del driver!=)');
-    });
+router.use('/post', createDriverRouter);
 
-router.post('/drivers', (req, res) =>{
-    res.status(200).send('Crear driver');
-    });
+router.use('/teams', getTeamsRouter);
 
 
 module.exports = router;
