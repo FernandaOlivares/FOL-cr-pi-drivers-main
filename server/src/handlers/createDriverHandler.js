@@ -1,4 +1,4 @@
-createDriverHandler = (req, res) =>{
+const createDriverHandler = (req, res) =>{
     res.status(200).send('Crear driver');
 };
 
