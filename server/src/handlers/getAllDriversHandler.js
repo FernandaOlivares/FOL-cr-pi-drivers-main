@@ -1,7 +1,7 @@
 const getAllDriversHandler = (req, res) =>{
-    const { forname, surname } = req.query
+    const { forename, surname } = req.query
 
-    if(forname) res.status(200).send(`Aquí está el drivers ${forname} ${surname}!=)`);
+    if(forname) res.status(200).send(`Aquí está el drivers ${forename} ${surname}!=)`);
     res.status(200).send(`Aquí están todos los drivers!=)`);
 };
 

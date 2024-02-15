@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       unique: true,
-      allowNull: false
+      allowNull: false,
     },
     forename: {
       type: DataTypes.STRING,
@@ -22,11 +22,11 @@ module.exports = (sequelize) => {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true,
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
     },
     nationality:{
       type: DataTypes.STRING,
@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
     },
     dob: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     }
   },
   { timestamps: false }
