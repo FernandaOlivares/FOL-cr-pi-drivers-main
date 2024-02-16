@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { Driver } = require('../db');
+const { Driver, Team } = require('../db');
 
 
 const getApiInfo = async () =>{
@@ -22,15 +22,14 @@ const getApiInfo = async () =>{
 };
 
 const getDbInfo = async () => {
-    const driversDb = await Driver.findAll();
-    return driversDb;
-};
-/*{
+    const driversDb = await Driver.findAll({
         include: {
             model : Team,
             attributes : ['name'],
             through: { attributes: [],}
-}} */
+}});
+    return driversDb;
+};
 
 const getAllDrivers = async () => {
     const apiInfo = await getApiInfo();
