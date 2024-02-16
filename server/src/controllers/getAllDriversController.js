@@ -2,9 +2,9 @@ const axios = require('axios');
 const { Driver } = require('../db');
 
 
-// Función que recibe un array de objetos y devuelve un nuevo array con ciertas propiedades seleccionadas de la info de la API
-const apiInfoCleaner = (array) => {
-    return array.map((driver) => {
+const getApiInfo = async () =>{
+    const apiUrl = await axios.get('http://localhost:5000/drivers/');
+    const apiInfo = await apiUrl.data.map((driver) => {
         return {
             id: driver.id,
             forename: driver.name.forename,
@@ -13,37 +13,39 @@ const apiInfoCleaner = (array) => {
             image: driver.image.url,
             nationality: driver.nationality,
             dateOfBirth: driver.dob,
+            //teams: driver.team.map((team) => team.name),
             created: false,
         }
     });
+    return apiInfo;
 };
 
-const getAllDrivers = async () => {
+const getDbInfo = async () => {
     const driversDb = await Driver.findAll();
-    const responseApi = await axios.get('http://localhost:5000/drivers/');
-    const infoApi = responseApi.data;
-    const driverApi = apiInfoCleaner(infoApi);
+    return driversDb;
+};
+/*{
+        include: {
+            model : Team,
+            attributes : ['name'],
+            through: { attributes: [],}
+}} */
 
-    return [...driversDb, ...driverApi];
+const getAllDrivers = async () => {
+    const apiInfo = await getApiInfo();
+    const dbIndo = await getDbInfo();
+    const allDrivers = [...apiInfo, ...dbIndo];
+    return allDrivers;
 };
 
 
 const getDriverByName = async(forename) => {
-    const responseApi = await axios.get(`http://localhost:5000/drivers/`);
-    const infoApi = responseApi.data;
-    const driverApi = apiInfoCleaner(infoApi);
-
-    const driverFiltered = driverApi.filter(driver => driver.forename === forename);
-    const driverDb = await Driver.findAll({where: {forename:forename}});
-
-    return [...driverFiltered, ...driverDb];
+    const allDrivers = await getAllDrivers(forename);
+    const driversFilteredByName = allDrivers.filter(driver => driver.forename === forename);
+    return driversFilteredByName;
 };
 
-/*
-  genres: videoGame.genres.map((genre) => genre.name)
-  Types: types.map((t) => t.type.name)
-  teams: driver.team.map((genre) => genre.name),
-*/
+
 
 module.exports = {
     getAllDrivers,
