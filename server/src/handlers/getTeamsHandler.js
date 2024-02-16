@@ -1,7 +1,7 @@
-const getAllTeamsHandler = (req, res) =>{
+const getTeamsHandler = (req, res) =>{
     res.status(200).send("Aquí están todos los teams! <3");
 };
 
 module.exports = {
-    getAllTeamsHandler
+    getTeamsHandler
 };
