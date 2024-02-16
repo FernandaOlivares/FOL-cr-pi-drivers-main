@@ -21,7 +21,7 @@ const apiInfoCleaner = (array) => {
 
 const getAllDrivers = async () => {
     const driversDb = await Driver.findAll();
-    const responseApi = await axios.get('http://localhost:5000/drivers');
+    const responseApi = await axios.get('http://localhost:5000/drivers/');
     const infoApi = responseApi.data;
     const driverApi = apiInfoCleaner(infoApi);
 
@@ -33,7 +33,6 @@ const getDriverByName = async(forename) => {
     const responseApi = await axios.get(`http://localhost:5000/drivers/`);
     const infoApi = responseApi.data;
     const driverApi = apiInfoCleaner(infoApi);
-    console.log(driverApi);
 
     const driverFiltered = driverApi.filter(driver => driver.forename === forename);
     const driverDb = await Driver.findAll({where: {forename:forename}});
