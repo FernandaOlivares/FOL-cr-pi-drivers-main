@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
       unique: true,
       allowNull: false
     },
-    teams: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     }

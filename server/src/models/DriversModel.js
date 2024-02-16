@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dob: {
+    dateOfBirth: {
       type: DataTypes.STRING,
       allowNull: true,
     }
