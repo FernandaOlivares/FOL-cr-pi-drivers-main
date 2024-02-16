@@ -1,8 +1,19 @@
-const getDriversHandler = (req, res) =>{
-    const { forename, surname } = req.query
+const { getAllDrivers, getDriverByName } = require ('../controllers/getAllDriversController')
 
-    if(forname) res.status(200).send(`Aquí está el drivers ${forename} ${surname}!=)`);
-    res.status(200).send(`Aquí están todos los drivers!=)`);
+const getDriversHandler = async (req, res) =>{
+    const { forename } = req.query;
+
+    try{
+        if(forename){
+          const driverByName = await getDriverByName(forename);
+          res.status(200).json(driverByName);
+        } else {
+            const response = await getAllDrivers();
+            res.status(200).json(response);
+        }
+    } catch(error) { 
+          res.status(400).json({error: error.message});
+        }
 };
 
 
