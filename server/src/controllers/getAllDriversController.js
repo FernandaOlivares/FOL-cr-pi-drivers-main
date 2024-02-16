@@ -5,6 +5,7 @@ const { Driver } = require('../db');
 const getApiInfo = async () =>{
     const apiUrl = await axios.get('http://localhost:5000/drivers/');
     const apiInfo = await apiUrl.data.map((driver) => {
+        
         return {
             id: driver.id,
             forename: driver.name.forename,
@@ -13,7 +14,7 @@ const getApiInfo = async () =>{
             image: driver.image.url,
             nationality: driver.nationality,
             dateOfBirth: driver.dob,
-            //teams: driver.team.map((team) => team.name),
+            teams: (driver.teams && driver.teams.split(',').map(team => team.trim())) ?? ['Up!No teams were found...'],
             created: false,
         }
     });
@@ -38,13 +39,11 @@ const getAllDrivers = async () => {
     return allDrivers;
 };
 
-
 const getDriverByName = async(forename) => {
     const allDrivers = await getAllDrivers(forename);
     const driversFilteredByName = allDrivers.filter(driver => driver.forename === forename);
     return driversFilteredByName;
 };
-
 
 
 module.exports = {
