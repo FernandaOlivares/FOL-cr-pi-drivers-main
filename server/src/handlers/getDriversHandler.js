@@ -17,9 +17,7 @@ const getDriversHandler = async (req, res) =>{
 };
 
 
-module.exports = {
-    getDriversHandler,
-};
+module.exports = { getDriversHandler };
 
 /*
 TODO: CONTROLLER:Es el que hace la interacción con fuentes externas de información

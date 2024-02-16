@@ -20,6 +20,4 @@ const createDriverHandler = async (req, res) =>{
 }
 */
 
-module.exports = {
-    createDriverHandler
-};
+module.exports = { createDriverHandler };
