@@ -1,3 +1,5 @@
+const { getDriverById } = require('../controllers/getDriverByIdController');
+
 const getDriverByIdHandler = async (req, res) =>{
     const {driverId} = req.params;
     const source = isNaN(driverId) ? "db" : "api"
@@ -9,7 +11,7 @@ const getDriverByIdHandler = async (req, res) =>{
       res.status(400).json({error: error.message});
     }
 
-    res.status(200).send(`Aquí está el detalle del driver ID Nº ${driverId}!=)`);
+    //res.status(200).send(`Aquí está el detalle del driver ID Nº ${driverId}!=)`);
 };
 
 
