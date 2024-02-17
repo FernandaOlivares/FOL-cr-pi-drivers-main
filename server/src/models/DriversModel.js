@@ -26,15 +26,15 @@ module.exports = (sequelize) => {
     },
     dateOfBirth: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
     created: {
       type: DataTypes.BOOLEAN,

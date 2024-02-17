@@ -1,8 +1,8 @@
 const { Driver } = require('../db');
 
 
-const createDriverDb = async (forename, surname, nationality) => {
-    const newDriver = await Driver.create({forename, surname, nationality});
+const createDriverDb = async (forename, surname, nationality, dateOfBirth, image, description) => {
+    const newDriver = await Driver.create({forename, surname, nationality, dateOfBirth, image, description});
 return newDriver;
 };
 
@@ -14,6 +14,10 @@ async await se usa para dejar en espera la solicitud hasta que la BD o la API en
 TODO: -> BODY Json
 {
   "forename" : "Fernanda",
-  "surname" : "Lisperguerrrrrr",
-  "nationality" : "chilienneee"
-}*/
+  "surname" : "Lisperguer",
+  "nationality" : "chilienne",
+  "dateOfBirth" : "01-09-1989",
+  "image" : "url.com",
+  "description" : "Very happy.Currently studying to be a developer."
+}
+*/
