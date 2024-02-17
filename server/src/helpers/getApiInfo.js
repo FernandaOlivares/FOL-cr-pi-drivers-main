@@ -1,6 +1,7 @@
 const axios = require('axios');
 const imgDefault =  '../assets/images/f1HeroDefaultImg.jpg';
 
+
 const getApiInfo = async () =>{
     const apiUrl = await axios.get('http://localhost:5000/drivers/');
     const apiInfo = await apiUrl.data.map((driver) => {
@@ -19,5 +20,6 @@ const getApiInfo = async () =>{
     });
     return apiInfo;
 };
+
 
 module.exports = getApiInfo;

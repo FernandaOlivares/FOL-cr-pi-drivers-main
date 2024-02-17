@@ -10,5 +10,5 @@ const getAllDrivers = async () => {
 };
 
 
-module.exports = getAllDrivers ;
+module.exports = getAllDrivers;
 

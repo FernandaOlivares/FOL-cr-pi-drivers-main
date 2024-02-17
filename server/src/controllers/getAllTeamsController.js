@@ -25,4 +25,5 @@ const getAllTeams = async () => {
   return dbTeams;
 };
 
-module.exports = getAllTeams ;
+
+module.exports = getAllTeams;

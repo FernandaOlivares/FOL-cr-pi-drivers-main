@@ -1,5 +1,6 @@
 const getAllTeams = require('../controllers/getAllTeamsController');
 
+
 const getTeamsHandler = async (req, res) =>{
     try{
     const teams = await getAllTeams();
@@ -9,4 +10,5 @@ const getTeamsHandler = async (req, res) =>{
     }
 };
 
-module.exports = { getTeamsHandler };
+
+module.exports = getTeamsHandler;
