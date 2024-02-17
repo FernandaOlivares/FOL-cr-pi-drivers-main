@@ -1,4 +1,6 @@
-const { getAllDrivers, getDriverByName } = require ('../controllers/getAllDriversController')
+const { getAllDrivers } = require ('../controllers/getAllDriversController')
+const { getDriverByName } = require ('../controllers/getDriverByNameController')
+
 
 const getDriversHandler = async (req, res) =>{
     const { forename } = req.query;

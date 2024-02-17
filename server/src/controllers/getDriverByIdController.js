@@ -1,11 +1,14 @@
-const axios = require('axios');
 const { Driver } = require('../db');
+const getApiInfo = require('../helpers/getApiInfo');
+
 
 const getDriverById = async (driverId, source) => {
-    const driver = 
-        source === "api"
-            ? (await axios.get(`http://localhost:5000/drivers/${driverId}`)).data
-            : await Driver.findByPk(driverId);
+    const apiInfo = await getApiInfo();
+    const driver = source === "api"
+        ? apiInfo.find(driver => {
+            return driver.id === parseInt(driverId); // Convertir driverId a un tipo compatible
+        })
+        : await Driver.findByPk(driverId);
     return driver;
 };
 
