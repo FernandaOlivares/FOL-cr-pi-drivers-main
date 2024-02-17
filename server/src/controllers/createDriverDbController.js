@@ -21,7 +21,7 @@ TODO: -> BODY Json
   "surname" : "Lisperguer",
   "nationality" : "Chilean",
   "dateOfBirth" : "01-09-1989",
-  "teams" : "",
+  "teams" : ["Alfa Romeo", "AGS"],
   "image" : "",
   "description" : "Very happy.Currently studying to be a developer."
 }
