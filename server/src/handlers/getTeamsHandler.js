@@ -1,4 +1,4 @@
-const { getAllTeams } = require('../controllers/getAllTeamsController');
+const getAllTeams = require('../controllers/getAllTeamsController');
 
 const getTeamsHandler = async (req, res) =>{
     try{

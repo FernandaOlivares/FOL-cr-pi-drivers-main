@@ -1,4 +1,4 @@
-const { getDriverById } = require('../controllers/getDriverByIdController');
+const getDriverById = require('../controllers/getDriverByIdController');
 
 const getDriverByIdHandler = async (req, res) =>{
     const {driverId} = req.params;

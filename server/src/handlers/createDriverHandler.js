@@ -1,4 +1,4 @@
-const { createDriverDb } = require('../controllers/createDriverDbController');
+const createDriverDb = require('../controllers/createDriverDbController');
 
 
 const createDriverHandler = async (req, res) =>{
@@ -6,18 +6,11 @@ const createDriverHandler = async (req, res) =>{
 
     try{
       const response = await createDriverDb(forename, surname, nationality)
-      res.status(201).send(`Driver ${forename} ${surname}, ${nationality}, successfully created. Well done!`);
+      res.status(201).send(`Driver ${forename} ${surname}, ${nationality}, successfully created. Well done! =)`);
     } catch (error) {
       res.status(400).json({ error: error.message });
       }
     };
 //TODO: POST o PUT: 201 -> "created"
-/*
-{
-  "forname" : "Fernanda",
-  "surname" : "Lisperguer",
-  "nationality" : "chilienne"
-}
-*/
 
 module.exports = { createDriverHandler };

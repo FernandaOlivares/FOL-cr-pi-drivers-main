@@ -13,4 +13,4 @@ const getDriverById = async (driverId, source) => {
 };
 
 
-module.exports = { getDriverById };
+module.exports = getDriverById;

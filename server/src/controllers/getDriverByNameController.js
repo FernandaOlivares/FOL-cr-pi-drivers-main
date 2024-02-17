@@ -1,4 +1,4 @@
-const { getAllDrivers } = require ('../controllers/getAllDriversController')
+const getAllDrivers = require ('../controllers/getAllDriversController')
 
 
 const getDriverByName = async(forename) => {
@@ -8,5 +8,5 @@ const getDriverByName = async(forename) => {
 };
 
 
-module.exports = { getDriverByName };
+module.exports = getDriverByName ;
 

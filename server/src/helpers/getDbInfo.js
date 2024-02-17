@@ -1,5 +1,6 @@
 const { Driver, Team } = require('../db');
 
+
 const getDbInfo = async () => {
     const driversDb = await Driver.findAll({
         include: {
@@ -12,4 +13,4 @@ const getDbInfo = async () => {
 };
 
 
-module.exports = getDbInfo ;
+module.exports = getDbInfo;
