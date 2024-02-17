@@ -1,5 +1,6 @@
 const axios = require('axios');
 const { Driver, Team } = require('../db');
+const imgDefault =  '../assets/images/f1HeroDefaultImg.jpg';
 
 
 const getApiInfo = async () =>{
@@ -11,7 +12,7 @@ const getApiInfo = async () =>{
             forename: driver.name.forename,
             surname: driver.name.surname,
             description: driver.description,
-            image: driver.image.url,
+            image: driver.image?.url ?? imgDefault,
             nationality: driver.nationality,
             dateOfBirth: driver.dob,
             teams: (driver.teams && driver.teams.split(',').map(team => team.trim())) ?? ['Up!No teams were found...'],
