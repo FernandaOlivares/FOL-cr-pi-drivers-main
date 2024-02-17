@@ -5,7 +5,7 @@ const { Team } = require("../db");
 const getAllTeams = async () => {
   const apiUrl = await axios.get('http://localhost:5000/drivers/');
   const apiTeams = apiUrl.data.map((driver) => driver.teams).filter(team => team);
-  const setTeam = new Set();//Recordar que es un objeto
+  const setTeam = new Set();//Constructor Set: Genera un objeto con items de valor único
 
   // Itera a través de los equipos y los agrega al conjunto
   apiTeams.forEach(team => {
