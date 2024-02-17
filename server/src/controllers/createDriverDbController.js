@@ -1,8 +1,12 @@
-const { Driver } = require('../db');
+const { Driver, Team } = require('../db');
 
 
-const createDriverDb = async (forename, surname, nationality, dateOfBirth, image, description) => {
-    const newDriver = await Driver.create({forename, surname, nationality, dateOfBirth, image, description});
+const createDriverDb = async (forename, surname, nationality, dateOfBirth, teams, image, description, created) => {
+   
+  const newDriver = await Driver.create({forename, surname, nationality, dateOfBirth, image, description, created});
+  const teamDb = await Team.findAll({where: {name: teams}});
+  newDriver.addTeam(teamDb);
+
 return newDriver;
 };
 
@@ -15,9 +19,10 @@ TODO: -> BODY Json
 {
   "forename" : "Fernanda",
   "surname" : "Lisperguer",
-  "nationality" : "chilienne",
+  "nationality" : "Chilean",
   "dateOfBirth" : "01-09-1989",
-  "image" : "url.com",
+  "teams" : "",
+  "image" : "",
   "description" : "Very happy.Currently studying to be a developer."
 }
 */
