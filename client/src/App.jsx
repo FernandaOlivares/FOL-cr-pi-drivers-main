@@ -1,14 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Create from '../src/views/Create/Create';        
+import Detail from '../src/views/Detail/Detail';
+import Home from '../src/views/Home/Home';
 
+
+function App() {
+  return (
+    <div>
+        <Home/>
+        <Detail/>
+        <Create/>
+    </div>
+  )
+}
+
+
+export default App;
+
+/*
+
+//import { useState } from 'react'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
+        <Home/>
+        <Detail/>
+        <Create/>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -31,5 +52,6 @@ function App() {
     </>
   )
 }
+*/
 
-export default App
+
