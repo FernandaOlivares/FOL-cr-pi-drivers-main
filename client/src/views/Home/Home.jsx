@@ -8,15 +8,10 @@ const Home = () => (
   <div>
     <p>Estas en Home!</p>
     <NavBar/>
+    
     <Cards/>
      </div>
 );
 
-/*
-function Home() {
-  return (
-    <div> Estas en Home! </div>
-  )
-}
-*/
+
 export default Home;

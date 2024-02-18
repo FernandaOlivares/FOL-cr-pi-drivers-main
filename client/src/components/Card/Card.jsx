@@ -1,5 +1,6 @@
 import styles from './Card.module.css';
 
+
 const Card = () => (
   <div className={styles.card}>
     <h3>Name:</h3>
@@ -8,5 +9,6 @@ const Card = () => (
     <p>Team:</p>
   </div>
 );
+
 
 export default Card;
