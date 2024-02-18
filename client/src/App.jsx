@@ -1,17 +1,25 @@
-import Create from '../src/views/Create/Create';        
-import Detail from '../src/views/Detail/Detail';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import LandingPage from '../src/views/LandingPage/LandingPage';
 import Home from '../src/views/Home/Home';
+import Detail from '../src/views/Detail/Detail';
+import Create from '../src/views/Create/Create';        
+
 import './App.css';
 
 
 function App() {
   return (
-    <div className='App'>
-    <h1>Hello World =D!</h1>
-        <Home/>
-        <Detail/>
-        <Create/>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route exact path='/' element={<LandingPage />} />
+          <Route exact path='/home' element={<Home />} />
+          <Route path='/home/:id' element={<Detail />} />
+          <Route path='/create' element={<Create />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

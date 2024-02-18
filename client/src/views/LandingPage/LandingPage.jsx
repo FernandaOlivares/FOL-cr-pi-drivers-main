@@ -4,7 +4,9 @@
 
 const LandingPage = () => {
   return (
-    <div>
+    <div> 
+      <h1>Hello World =D!</h1>
+      Estas en Landing Page =D ! 
     </div>
   );
 };
