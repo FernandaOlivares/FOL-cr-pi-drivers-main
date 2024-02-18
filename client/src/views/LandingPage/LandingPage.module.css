@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura del contenedor según la altura de la ventana (viewport) */
+  }
+  
+  .overlayButton {
+    position: absolute; /* Establece una posición absoluta para el botón */
+    top: 90%; /* Coloca el botón en la mitad superior del contenedor */
+    left: 50%; /* Coloca el botón en la mitad izquierda del contenedor */
+    transform: translate(-50%, -50%); /* Centra el botón horizontal y verticalmente */
+    background-color: #040404; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: 3px solid #00FFFF;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 50px;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    z-index: 1; /* Coloca el botón encima del video */
+  }
+  
+  /* Cambiar el estilo al pasar el mouse */
+  .overlayButton:hover {
+    background-color: #00FFFF; /* Cambia a un tono más oscuro al pasar el mouse */
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.9); /* Aumenta la intensidad de la sombra */
+  }
+  
+  body {
+    background-color: whitesmoke;
+    margin: 0;
+  }
