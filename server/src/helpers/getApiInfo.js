@@ -12,7 +12,7 @@ const getApiInfo = async () =>{
         surname: driver.name.surname,
         nationality: driver.nationality,
         dateOfBirth: driver.dob,
-        teams: (driver.teams && driver.teams.split(',').map(team => team.trim())) ?? ['Up!No teams were found...'],
+        teams: (driver.teams?.split(',').map(team => team.trim())) ?? ['Up!No teams were found...'],
         image: driver.image?.url ?? imgDefault,
         description: driver.description,
         created: false,
