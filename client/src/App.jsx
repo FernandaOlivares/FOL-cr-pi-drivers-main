@@ -1,11 +1,12 @@
 import Create from '../src/views/Create/Create';        
 import Detail from '../src/views/Detail/Detail';
 import Home from '../src/views/Home/Home';
+import './App.css';
 
 
 function App() {
   return (
-    <div>
+    <div className='App'>
         <Home/>
         <Detail/>
         <Create/>
