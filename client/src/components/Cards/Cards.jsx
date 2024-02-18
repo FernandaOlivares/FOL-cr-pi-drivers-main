@@ -1,10 +1,9 @@
 import Card from '../../components/Card/Card'
-
-import './Cards.module.css'
+import styles from './Cards.module.css';
 
 
 const Cards = () => (
-  <div>
+  <div className={styles.cardContainer }>
     <p>Estas en Cards!</p>
   <Card/>
   <Card/>
