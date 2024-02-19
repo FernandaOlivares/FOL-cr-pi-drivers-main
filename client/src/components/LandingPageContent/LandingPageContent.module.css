@@ -4,8 +4,8 @@
 }
 
 video {
-  width: 100%; /* Ancho del video al 100% del contenedor */
-  height: 100%; /* Altura del video al 100% del contenedor */
+  width: 90%; /* Ancho del video al 100% del contenedor */
+  height: 90%; /* Altura del video al 100% del contenedor */
   object-fit: contain; /* Ajusta el video para mantener la relación de aspecto */
 }
 

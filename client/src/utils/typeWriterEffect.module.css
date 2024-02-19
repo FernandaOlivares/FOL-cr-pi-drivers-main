@@ -1,0 +1,43 @@
+:root {
+    --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+    --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+    --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+    --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+    --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+    --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+    --color-green-greenLight: #00FF00;   /*   var(--color-green-greenLight) */
+    --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+    --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+  }
+
+/* Estilo del contenedor para el efecto de máquina de escribir */
+.container {
+    position: relative; /* Posiciona el contenedor */
+    bottom: 50%;
+    height: 100px; /* Altura fija del contenedor */
+    overflow: hidden; /* Oculta el texto que exceda la altura del contenedor */
+  
+/* Consulta de medios para ajustar el tamaño del contenedor en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    height: 80px; /* Reducir la altura en pantallas más pequeñas */
+}
+  }
+  
+.typewriterText {
+position: absolute; /* Posiciona el componente */
+bottom: 5%; /* Lo coloca en la parte baja del contenedor */
+left: 50%; /* Lo centra horizontalmente */
+transform: translateX(-50%); /* Lo centra horizontalmente */
+overflow: hidden; /* Para ocultar el texto que exceda el tamaño del contenedor */
+border-right: .15em solid var(--color-white-greatness); /* Simula el cursor de la máquina de escribir */
+white-space: nowrap; /* Evita que el texto se rompa */
+letter-spacing: .15em; /* Espaciado entre caracteres */
+animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite; /* Animación */
+
+/* Consulta de medios para ajustar el tamaño del texto en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    font-size: 0.8em; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+}
+}
+  
+  
