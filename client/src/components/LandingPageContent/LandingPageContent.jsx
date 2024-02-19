@@ -6,8 +6,7 @@ const LandingPageContent = () => {
     <div className={styles.videoContainer}>
       <video controls autoPlay loop className={styles.video}>
         <source src={LandingPageVideo} type="video/mp4" />
-        {/* Aquí puedes agregar más etiquetas <source> para diferentes formatos de video */}
-        Tu navegador no admite el elemento de video.
+        Ups! Tu navegador no admite el elemento de video.
       </video>
     </div>
   );

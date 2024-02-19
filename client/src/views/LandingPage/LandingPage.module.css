@@ -17,17 +17,17 @@ body {
 
 .bodyContainer {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  min-height: 100vh; /* Ajusta la altura mínima del contenedor según la altura de la ventana (viewport) */
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh; 
 }
 
 .overlayButton {
   position: absolute;
-  bottom: 14.5%;
+  bottom: 80%;
   left: 88.5%;
   transform: translateX(-50%);
-  color: transparent; /* Hace que el texto sea transparente */
+  color: transparent;
   padding: 10px 20px;
   font-size: 0.75vw;
   font-family: 'Roboto', sans-serif;
@@ -44,10 +44,10 @@ body {
 
 @keyframes blink {
   0% {
-    opacity: 0; /* Comienza con opacidad nula */
+    opacity: 0;
   }
   100% {
-    opacity: 1; /* Termina con opacidad total */
+    opacity: 1;
   }
 }
 
@@ -56,17 +56,17 @@ body {
     background-color: var(--color-black-redbull);
     border-color: var(--color-red-ferrari);
     box-shadow: 0px 0px 1.5vw var(--color-red-ferrari);
-    color: #fff; /* Hace que el texto sea transparente */
+    color: #fff; 
     animation: none;
   }
 }
 
 .overlayButton:hover {
-  color: var(--color-white-greatness); /* Cambia el color del texto al hacer hover */
+  color: var(--color-white-greatness);
   background-color: var(--color-red-ferrari);
-  border-color: var(--color-yellow-formula1) ;
-  box-shadow: 0px 0px 1.5vw var(--color-yellow-formula1) ;
-  animation: none; /* Anula la animación de parpadeo al pasar el cursor */
+  border-color: var(--color-red-ferrari) ;
+  box-shadow: 0px 0px 1.5vw var(--color-red-ferrari) ;
+  animation: none;
 }
 
 
