@@ -1,0 +1,27 @@
+.videoContainer {
+  position: relative; /* Establece una posición relativa para el contenedor */
+  width: 100%; /* Ancho del contenedor del video al 90% del ancho de su contenedor padre */
+}
+
+video {
+  width: 100%; /* Ancho del video al 100% del contenedor */
+  height: 100%; /* Altura del video al 100% del contenedor */
+  object-fit: contain; /* Ajusta el video para mantener la relación de aspecto */
+}
+
+/* Media queries para hacer el video más pequeño en pantallas más pequeñas */
+@media (max-width: 600px) {
+  .videoContainer {
+    width: 80%;
+    max-width: 500px;
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 400px) {
+  .videoContainer {
+    width: 90%;
+    max-width: 300px;
+    max-height: 70vh;
+  }
+}

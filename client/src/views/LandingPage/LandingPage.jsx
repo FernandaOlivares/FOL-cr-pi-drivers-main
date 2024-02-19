@@ -1,12 +1,14 @@
-//import { Link } from 'react-router-dom';
-//import BackgroundVideo from "../../components/BackgroundVideo/BackgroundVideo";
-//import style from "./LandingPage.module.css";
+import { Link } from 'react-router-dom';
+import LandingPageContent from '../../components/LandingPageContent/LandingPageContent.jsx';
+import styles from "./LandingPage.module.css";
 
 const LandingPage = () => {
   return (
-    <div> 
-      <h1>Hello World =D!</h1>
-      Estas en Landing Page =D ! 
+    <div className= {styles.bodyContainer}>
+       <Link to="/home">
+      <button className={styles.overlayButton}>L I G H T S -  O U T !!</button>
+      <LandingPageContent />
+      </Link>
     </div>
   );
 };
