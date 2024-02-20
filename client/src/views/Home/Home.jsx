@@ -1,17 +1,23 @@
-import NavBar from '../../components/NavBar/NavBar'
-import Cards from '../../components/Cards/Cards'
+import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
+import Cards from '../../components/Cards/Cards';
 
-import './Home.module.css'
+import styles from './Home.module.css'
 
-
-const Home = () => (
-  <div>
-    <p>Estas en Home!</p>
-    <NavBar/>
+const Home = () => {
+  
     
-    <Cards/>
-     </div>
-);
-
+  return (
+        <div className={styles.homeContainer}>
+        <h1>F1 LEGENDS!</h1>
+          <div>
+            <NavBar />
+          </div>
+          <div>
+            <Cards />
+          </div>
+        </div>
+    );
+};
 
 export default Home;

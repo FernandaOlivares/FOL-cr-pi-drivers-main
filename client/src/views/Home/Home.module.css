@@ -1,0 +1,48 @@
+.homeContainer {
+    background-color: #000000; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alineación de texto al centro */
+  }
+  
+  .body {
+    background-color: #000000;
+  }
+  
+  .homeButton {
+    width: 12%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0%;
+    margin-left: 73%;
+    background-color: #040404; /* Verde azulado */
+    color: #fff; /* Texto en color blanco */
+    border: 2px solid #00FFFFE6;
+    border-radius: 50px;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-decoration: none; /* Quita el subrayado */
+  }
+  
+  /* Cambiar el estilo del botón al pasar el mouse */
+  .homeButton:hover {
+    background-color: rgba(0, 255, 255, 0.9); /* Cambia a un tono más claro al pasar el mouse */
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 1); /* Aumenta la intensidad de la sombra */
+  }
+  
+  .logo {
+    position: fixed;
+    top: 1%;
+    left: 0;
+    padding: 10px; /* Agrega espacio alrededor del logotipo si es necesario */
+    transition: top 0.3s ease;
+  }
+  
+  .logo img {
+    width: 320px; /* Ajusta el ancho deseado para tu logotipo */
+    height: auto; /* Mantiene la proporción de aspecto */
+  }
+  

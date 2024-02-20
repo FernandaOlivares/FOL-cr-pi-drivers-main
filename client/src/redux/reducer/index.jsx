@@ -1,21 +1,21 @@
-//TODO: Declaro estado inicial, es donde va el código
-import { GET_DRIVERS } from '../actions/index.jsx'
+import { GET_DRIVERS } from '../actions/index.jsx';
 
-let initialState = {
+
+const initialState = {
     allDrivers: [], 
 };
 
-function rootReducer (state = initialState, action){
-    switch(action.type){
+
+function rootReducer(state = initialState, action) {
+    switch (action.type) {
         case GET_DRIVERS:
             return {
                 ...state,
-                allUsers: action.payload,
+                allDrivers: action.payload,
             };
         default:
             return state;
     }
 }
-
 
 export default rootReducer;

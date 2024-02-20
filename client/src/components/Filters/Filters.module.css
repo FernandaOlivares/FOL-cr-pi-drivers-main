@@ -1,0 +1,41 @@
+.filterContainer select {
+    margin-top: 5%;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffffe6; /* Texto verde brillante */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-right: 10px; /* Espacio derecho para separar los botones */
+    outline: none; /* Quita el borde de enfoque predeterminado */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
+    border-radius: 50px;
+  }
+  .filterContainer select:hover {
+    background-color: rgba(0, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
+  }
+    
+    /* Estilo para los botones de filtro */
+    .filterBtn {
+      padding: 10px 20px; /* Espaciado interno */
+      font-size: 16px; /* Tamaño de fuente */
+      border: none; /* Sin borde */
+      background-color: #1a1a1a; /* Fondo oscuro */
+      color: #ffffffe6; /* Texto verde brillante */
+      cursor: pointer; /* Cambia el cursor al pasar por encima */
+      border-radius: 5px; /* Bordes redondeados */
+      margin-right: 10px; /* Espacio derecho para separar los botones */
+      outline: none; /* Quita el borde de enfoque predeterminado */
+      transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
+    }
+    
+    /* Estilo para el botón activo (seleccionado) */
+    .filterBtn.active {
+      background-color: #ff6600; /* Cambia el fondo a naranja para resaltar la selección */
+      color: #fff; /* Texto blanco cuando está activo */
+    }
+    
+  
+    
