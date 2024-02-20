@@ -1,20 +1,17 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-//import { useAllDrivers } from '../../redux/selectors/index';
+import { useAllDrivers } from '../../redux/selectors/index';
 import Card from '../../components/Card/Card';
-import { getDrivers } from '../../redux/actions/index';
 import styles from './Cards.module.css';
 
 
 const Cards = () => {
-  const dispatch = useDispatch();
-  const allDrivers = useSelector((state) => state.allDrivers);
-    
+  const allDrivers = useAllDrivers();
+  //const dispatch = useDispatch();
+  //const allDrivers = useSelector((state) => state.allDrivers);
   
-    useEffect(() => {
+   /* useEffect(() => {
       dispatch(getDrivers())
     }, [dispatch]);
-  
+  */
     
   return (
     <div className={styles.cardContainer}>

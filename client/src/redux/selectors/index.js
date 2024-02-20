@@ -4,7 +4,7 @@ import { getDrivers } from '../actions/index';
 
 export const useAllDrivers = () => {
   const dispatch = useDispatch();
-  const allDrivers = useSelector((state) => state.drivers);
+  const allDrivers = useSelector((state) => state.allDrivers);
 
   useEffect(() => {
     dispatch(getDrivers());
@@ -13,4 +13,4 @@ export const useAllDrivers = () => {
   return allDrivers;
 };
 
-export const AllTeams = () => useSelector((state) => state.teams);
+export const UseAllTeams = () => useSelector((state) => state.allTeams);
