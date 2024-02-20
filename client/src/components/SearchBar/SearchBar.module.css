@@ -1,30 +1,38 @@
 .searchBarContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin: auto; /* Centra horizontalmente la barra de búsqueda */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  }
-  
+.searchBarInput {
+  padding: 8px; /* Reducir el padding para achicar la caja de entrada */
+  border: 2px solid #666;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 200px; /* Reducir el ancho del input */
+  margin-right: 10px; /* Agregar margen derecho para separar el botón */
+}
+
+.searchBarButton {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Agregar margen superior */
+}
+
+.searchBarButton:hover {
+  background-color: #66ffeb;
+}
+
+@media screen and (max-width: 600px) {
   .searchBarInput {
-    padding: 10px;
-    border: 2px solid #666;
-    border-radius: 5px;
-    font-size: 1em;
-    width: 300px;
+    width: 150px; /* Reducir el ancho del input para pantallas más pequeñas */
+    margin-right: 5px; /* Reducir el margen derecho */
   }
-  
-  .searchBarButton {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .searchBarButton:hover {
-    background-color: #66ffeb; 
-  }
-  
+}
