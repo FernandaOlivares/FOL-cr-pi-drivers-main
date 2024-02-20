@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //import { useAllDrivers } from '../../redux/selectors/index';
@@ -18,19 +17,14 @@ const Cards = () => {
     console.log('Respuesta a mi consulta:', allDrivers)
     
   return (
-    <div>
-      {allDrivers?.map((driver) => {
+    <div className={styles.cardContainer}>
+      {allDrivers?.map((eachDriver) => {
         return (
-          <div key={driver.id}>
-            <Card
-              key={driver.id}
-              forename={driver.forename}
-              surname={driver.surname}
-              image={driver.image}
-            />
+          <div key={eachDriver.id}>
+            <Card eachDriver={eachDriver}/>
           </div>
         );
-      })}
+      })};
     </div>
   );
 };
