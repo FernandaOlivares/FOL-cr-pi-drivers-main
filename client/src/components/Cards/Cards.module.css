@@ -2,8 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: right;
   align-items: flex-start;
-  max-width: 800px;
-  margin: 20px;
+  max-width: 1200px; /* Ajusta el ancho máximo según sea necesario para acomodar cuatro tarjetas */
+  margin: 25px;
+  margin-right: -10%; /* Agrega espacio adicional en el lado izquierdo para mover el contenedor hacia la derecha */
 }
