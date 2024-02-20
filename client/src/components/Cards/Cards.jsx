@@ -21,7 +21,7 @@ const Cards = () => {
             <Card eachDriver={eachDriver}/>
           </div>
         );
-      })};
+      })}
     </div>
   );
 };
