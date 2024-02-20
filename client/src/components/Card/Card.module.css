@@ -36,7 +36,28 @@
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 768px) {
+
+
+/*
+.saturatedStyle {
+  filter: saturate(150%);
+}
+
+.imageFilter {
+   filter: sepia(100%);
+}
+.Image Filters Type:
+  .blackAndWhite {
+    filter: grayscale(100%);} /* Aplica el filtro de blanco y negro 
+  
+  .gamerFilter {
+    filter: contrast(130%) brightness(90%) saturate(120%) hue-rotate(-10deg);}
+
+  .sepiaFilter { filter: sepia(100%);}
+  */
+
+
+  @media screen and (min-width: 768px) {
   .card {
     margin: 0 auto; /* Centrar la tarjeta en pantallas más grandes */
   }
