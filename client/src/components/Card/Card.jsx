@@ -5,7 +5,9 @@ import defaultImg from '../../assets/f1HeroDefaultImg.jpg'
 
 const Card = ({eachDriver}) => {
   const { forename, surname, image, teams } = eachDriver;
-  const joinTeams = teams?.join(" - ") ?? "Independent Driver";
+  const joinTeams = (teams && teams.length > 0) ? teams.join(" - ") : (teams ?? "Independent Driver");
+
+
 
   return (
     <div className={styles.card}>
