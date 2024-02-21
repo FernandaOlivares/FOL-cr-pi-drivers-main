@@ -9,7 +9,7 @@ const Home = () => {
     
   return (
         <div className={styles.homeContainer}>
-        <h1>F1 LEGENDS!</h1>
+        <h1 className={`${styles.logoContainer}`}>F1 LEGENDS!</h1>
           <div>
             <NavBar />
           </div>

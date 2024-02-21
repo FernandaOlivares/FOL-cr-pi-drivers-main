@@ -14,9 +14,9 @@ const Card = ({eachDriver}) => {
       <img className={`${styles.imageFilter}`}
       src={image ? image : defaultImg}
       alt={`${forename} ${surname}'s picture not found`}/>
-      <h2 className={styles.overlayTextName}>{forename}</h2>
-      <h2 className={styles.overlayTextName}>{surname}</h2>
-      <p className={styles.overlayTextName}>{joinTeams}</p>
+      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{forename}</h2>
+      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt }`}>{surname}</h2>
+      <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</p>
       
     </div>
   );

@@ -1,3 +1,14 @@
+:root {
+  --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+  --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+  --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+  --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+  --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+  --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+  --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+  --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+}
+
 .homeContainer {
     background-color: #000000; /* Color de fondo */
     padding: 20px; /* Espaciado interno */
@@ -33,16 +44,25 @@
     box-shadow: 0px 0px 20px rgba(0, 255, 255, 1); /* Aumenta la intensidad de la sombra */
   }
   
-  .logo {
-    position: fixed;
-    top: 1%;
-    left: 0;
-    padding: 10px; /* Agrega espacio alrededor del logotipo si es necesario */
-    transition: top 0.3s ease;
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white-greatness); /* Color de fondo del contenedor */
+    padding: 10px; /* Ajusta el espaciado interior del contenedor según sea necesario */
+    margin-top: -10px; /* Mueve el contenedor hacia arriba */
+    color: var(--color-black-redbull)
+}
+.logo {
+  margin:0%; /* Ajusta el margen del h1 según sea necesario */
+  font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+  font-weight: bold; /* Opcional: ajusta el grosor del texto según sea necesario */
+  color: var(--color-white-greatness) /* Opcional: ajusta el color del texto según sea necesario */
+}
+
+  .robotoMonoFont {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
   }
-  
-  .logo img {
-    width: 320px; /* Ajusta el ancho deseado para tu logotipo */
-    height: auto; /* Mantiene la proporción de aspecto */
-  }
-  
