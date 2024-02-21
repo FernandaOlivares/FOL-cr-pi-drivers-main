@@ -10,7 +10,7 @@ const SearchBar = () => {
           name="search"
           placeholder="Search"
         />
-        <button className={styles.searchBarButton}>Buscar</button>
+        <button className={styles.overlayButton}>Buscar</button>
       </form>
     </div>
   );

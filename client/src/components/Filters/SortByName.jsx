@@ -16,7 +16,7 @@ const SortByName = ({setCurrentPage, setOrder}) => {
 return (
   <div className={styles.filterContainer}>
     <select onChange={(sortOption) => handleSortByName(sortOption)} name='sortByName' id='sortByName' className={styles.filterBtn} defaultValue=''>
-        <option value='' disabled id='sortByName'>ORDER BY : NAME</option>
+        <option value='' disabled id='sortByName'>Full Name</option>
         <option value='fromAToZ'>From A to Z</option>
         <option value='fromZToA'>From Z to A</option>
     </select>

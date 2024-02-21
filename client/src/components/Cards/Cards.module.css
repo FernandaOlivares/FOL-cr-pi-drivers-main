@@ -1,10 +1,40 @@
+:root {
+  --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+  --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+  --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+  --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+  --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+  --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+  --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+  --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+}
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: right;
   align-items: flex-start;
-  max-width: 1200px; /* Ajusta el ancho máximo según sea necesario para acomodar cuatro tarjetas */
-  margin: 25px;
-  margin-right: -10%; /* Agrega espacio adicional en el lado izquierdo para mover el contenedor hacia la derecha */
+  max-width: 90%;
+  margin: 50px auto 25px;
+  padding: 0 20px;
+
+
+}
+/* Pantallas medianas */
+@media screen and (min-width: 768px) {
+  .cardContainer {
+    max-width: 768px; 
+  }
+}
+/* Pantallas grandes */
+@media screen and (min-width: 992px) {
+  .cardContainer {
+    max-width: 992px;
+  }
+}
+/* Pantallas extra grandes */
+@media screen and (min-width: 1200px) {
+  .cardContainer {
+    max-width: 1200px;
+  }
 }

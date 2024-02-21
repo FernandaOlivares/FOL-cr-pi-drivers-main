@@ -33,7 +33,7 @@ const FilterByTeam = ({setCurrentPage, setOrder}) => {
 return (
   <div className={styles.filterContainer}>
     <select onChange={(teamOption) => handleFilterByTeam(teamOption)} name='filterByTeam' id='filterByTeam' className={styles.filterBtn} defaultValue=''>
-        <option value='' disabled id='filterByTeam'>FILTER BY : TEAM</option>
+        <option value='' disabled id='filterByTeam'>Team</option>
         
     </select>
   </div>

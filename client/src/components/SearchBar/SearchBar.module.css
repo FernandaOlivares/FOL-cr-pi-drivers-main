@@ -1,8 +1,22 @@
+:root {
+  --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+  --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+  --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+  --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+  --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+  --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+  --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+  --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+}
+
 .searchBarContainer {
-  margin: auto; /* Centra horizontalmente la barra de búsqueda */
+  margin: 0%; /* Centra horizontalmente la barra de búsqueda */
+  margin-bottom: 10%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
 }
 
 .searchBarInput {
@@ -10,25 +24,28 @@
   border: 2px solid #666;
   border-radius: 5px;
   font-size: 1em;
-  width: 200px; /* Reducir el ancho del input */
+  width: 91%;; /* Reducir el ancho del input */
   margin-right: 10px; /* Agregar margen derecho para separar el botón */
 }
 
-.searchBarButton {
-  background-color: #555;
-  color: #fff;
-  border: none;
+.overlayButton {
+  width: 100%;
+  margin-top: 5%;
+  color: var(--color-white-greatness);
+  background-color: #1a1a1a;
   padding: 10px 20px;
+  font-size: 0.90vw;
+  font-family: 'Roboto', sans-serif;
   border-radius: 5px;
-  font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px; /* Agregar margen superior */
-}
-
-.searchBarButton:hover {
-  background-color: #66ffeb;
-}
+  z-index: 1;
+  }
+  
+  .overlayButton:hover {
+  color: var(--color-white-greatness);
+  border-color: var(--color-silver-alfaromeo);
+  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+  }
 
 @media screen and (max-width: 600px) {
   .searchBarInput {

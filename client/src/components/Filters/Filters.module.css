@@ -1,41 +1,56 @@
+:root {
+  --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+  --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+  --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+  --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+  --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+  --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+  --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+  --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+}
+.filterContainer {
+  display: flex;
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  width: 100%;
+}
+
+
 .filterContainer select {
-    margin-top: 5%;
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de fuente */
-    border: none; /* Sin borde */
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #ffffffe6; /* Texto verde brillante */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    border-radius: 5px; /* Bordes redondeados */
-    margin-right: 10px; /* Espacio derecho para separar los botones */
-    outline: none; /* Quita el borde de enfoque predeterminado */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
-    border-radius: 50px;
-  }
-  .filterContainer select:hover {
-    background-color: rgba(0, 255, 255, 0.9);
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
-  }
+  margin-top: 0%;
+  margin-bottom: 3%;
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 0.90vw;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  border-color: var(--color-silver-alfaromeo);; /* Sin borde */
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #ffffffe6; /* Texto verde brillante */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
+}
+
+.filterContainer select:hover {
+  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+}
     
-    /* Estilo para los botones de filtro */
-    .filterBtn {
-      padding: 10px 20px; /* Espaciado interno */
-      font-size: 16px; /* Tamaño de fuente */
-      border: none; /* Sin borde */
-      background-color: #1a1a1a; /* Fondo oscuro */
-      color: #ffffffe6; /* Texto verde brillante */
-      cursor: pointer; /* Cambia el cursor al pasar por encima */
-      border-radius: 5px; /* Bordes redondeados */
-      margin-right: 10px; /* Espacio derecho para separar los botones */
-      outline: none; /* Quita el borde de enfoque predeterminado */
-      transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
-    }
-    
-    /* Estilo para el botón activo (seleccionado) */
-    .filterBtn.active {
-      background-color: #ff6600; /* Cambia el fondo a naranja para resaltar la selección */
-      color: #fff; /* Texto blanco cuando está activo */
-    }
-    
-  
-    
+/* Estilo para los botones de filtro */
+.filterBtn {
+  width: 100%;
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: none; /* Sin borde */
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #ffffffe6; /* Texto verde brillante */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-right: 10px; /* Espacio derecho para separar los botones */
+  outline: none; /* Quita el borde de enfoque predeterminado */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
+}
+
+/* Estilo para el botón activo (seleccionado) */
+.filterBtn.active {
+
+  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+}

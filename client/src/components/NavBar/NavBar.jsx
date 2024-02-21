@@ -28,13 +28,18 @@ const NavBar = () => (
   <button onClick = { e=> {handleClick(e)} }>Reload Drivers</button>
 */
   <div className={styles.navBarContainer}>
+    <p>Search By Forename:</p>
     <SearchBar />
+    <p>Sort By:</p>
     <SortByName/>
     <SortByDateOfBirth/>
+    <p>Filter By:</p>
     <FilterByTeam/>
     <FilterBySource/>
-    <Link to= '/drivers'>Add Driver</Link>
-    <button>Reload Drivers</button>
+
+    <Link className={styles.linkButton} to= '/drivers'>Add Driver</Link>
+    
+    <button className={styles.overlayButton}>Reload Drivers</button>
 
   </div>
 );

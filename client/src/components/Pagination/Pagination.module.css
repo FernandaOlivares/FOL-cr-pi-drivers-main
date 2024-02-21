@@ -1,0 +1,56 @@
+:root {
+    --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+    --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+    --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+    --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+    --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+    --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+    --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+    --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+  }
+
+.container {
+    position: absolute;
+    top: 80px; /* Ajusta la distancia desde la parte superior según sea necesario */
+    right: 20px; /* Ajusta la distancia desde el lado derecho según sea necesario */
+}
+  
+.paginado {
+display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: center;
+margin-left: -112%;
+margin-top: 10%;
+}
+  
+.number {
+list-style: none;
+}
+
+.overlayButton {
+color: var(--color-white-greatness) ;
+padding: 10px 20px;
+font-size: 0.90vw;
+font-family: 'Roboto', sans-serif;
+border-radius: 5px;
+cursor: pointer;
+z-index: 1;
+background-color: var(--color-black-redbull);
+}
+
+.overlayButton:hover {
+color: var(--color-white-greatness);
+border-color: var(--color-silver-alfaromeo);
+box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+}
+
+  
+@media (max-width: 480px) {
+.container > a {
+    width: 90%;
+    min-width: unset;
+}
+}
+  
+  

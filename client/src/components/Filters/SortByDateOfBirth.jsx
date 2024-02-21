@@ -16,7 +16,7 @@ const SortByDateOfBirth = ({setCurrentPage, setOrder}) => (
   */
   <div className={styles.filterContainer}>
     <select onChange={(sortOption) => handleSortByDateOfBirth(sortOption)} name='sortByDateOfBirth' id='sortByDateOfBirth' className={styles.filterBtn} defaultValue=''>
-        <option value='' disabled id='sortByDateOfBirth'>ORDER BY : DATE OF BIRTH</option>
+        <option value='' disabled id='sortByDateOfBirth'>Date of Birth</option>
         <option value='Ascending'>Ascending</option>
         <option value='Descending'>Descending</option>
     </select>
