@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from './typewriterEffect.module.css';
 import { useEffect, useState } from 'react';
 
