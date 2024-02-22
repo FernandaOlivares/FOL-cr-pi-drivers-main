@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import axios from 'axios';
 
-export const GET_DRIVERS = 'GET_DRIVERS';
+export const GET_ALL_DRIVERS = 'GET_ALL_DRIVERS';
 export const FILTER_DRIVERS_BY_TEAMS = 'FILTER_DRIVERS_BY_TEAMS';
 export const SORT_BY_NAME = 'SORT_BY_NAME';
 export const SORT_BY_DATE_OF_BIRTH = 'SORT_BY_DATE_OF_BIRTH';
@@ -13,11 +13,11 @@ SDAD
 
 */
 
-export const getDrivers = () => {
+export const getAllDrivers = () => {
     return async function (dispatch) {
           const response = await axios.get("http://localhost:3001/drivers");
           return dispatch({
-              type: 'GET_DRIVERS',
+              type: 'GET_ALL_DRIVERS',
               payload: response.data,
           });
       }

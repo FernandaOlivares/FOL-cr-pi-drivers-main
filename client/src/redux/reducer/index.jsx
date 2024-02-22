@@ -1,4 +1,4 @@
-import { GET_DRIVERS } from '../actions/index.jsx';
+import { GET_ALL_DRIVERS } from '../actions/index.jsx';
 
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
     switch (action.type) {
-        case GET_DRIVERS:
+        case GET_ALL_DRIVERS:
             return {
                 ...state,
                 allDrivers: action.payload,

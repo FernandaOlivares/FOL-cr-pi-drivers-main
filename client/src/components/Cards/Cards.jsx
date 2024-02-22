@@ -1,15 +1,21 @@
 /* eslint-disable no-unused-vars */
-import { useAllDrivers } from '../../redux/selectors/index';
 import Card from '../../components/Card/Card';
 import styles from './Cards.module.css';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import Pagination from '../Pagination/Pagination.jsx'
+import { getAllDrivers } from '../../redux/actions/index.jsx'
 
 
 const Cards = () => {
-  const allDrivers = useAllDrivers();
-  
+  const dispatch = useDispatch();
+  const allDrivers = useSelector((state) => state.allDrivers);
+
+  useEffect(() => {
+    dispatch(getAllDrivers());
+  }, [dispatch]);
+
+
   //PAGINATION//
   const [currentPage, setCurrentPage] = useState(1);//currenPage guara la pagina actual en un estado local/ y setDriversPerPage es una constante que set la página actual/ Comienza en 1 porque siempre inicio en la 1ra pagina
   const [driversPerPage, setDriversPerPage] = useState(9);//Destructuring de los primeros 9 elementos del array driverPerPage.Estas constantes guardan ene el estado local, cuantos drivers quiero por página
