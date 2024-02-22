@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import './Form.module.css'
 
-
 const Form = () => {
-    const[input, setInput] =useState({
+    const [input, setInput] = useState({
         forename: '',
         surname: '',
         nationality: '',
@@ -23,60 +22,81 @@ const Form = () => {
         teams: '',
     })
 
-    const validate = (i) =>{
-        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.email)){
-        console.log('Error en el mail')
-        }
-        console.log('Todo ok haz tu dispatch')
+    function validateFormInput(driverInfo) {
+        setError(prevError => ({
+            ...prevError,
+            forename: !driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.forename.trim()) ? '*Please enter a valid forename.' : '',
+            surname: !driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.surname.trim()) ? '*Please enter a valid surname.' : '',
+            nationality: !driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.nationality.trim()) ? '*Please enter a valid nationality.' : '',
+            image: !driverInfo.image || !/^(ftp|http|https):\/\/[^ "]+$/.test(driverInfo.image.trim()) ? '*Please enter a valid link image.' : '',
+            dateOfBirth: !driverInfo.dateOfBirth || !/\d{4}-\d{2}-\d{2}/.test(driverInfo.dateOfBirth.trim()) ? '*Please date of birth is required and must be in YYYY-MM-DD format.' : '',
+            description: !driverInfo.description ? '*Description is required.' : '',
+            teams: !driverInfo.teams ? 'Teams are required.' : ''
+        }));
     }
+    
 
     const handleChange = (formInput) => {
         formInput.preventDefault();
         setInput({
             ...input,
-            [input.target.name]:input.target.value,
+            [formInput.target.name]: formInput.target.value,
 
         })
-        validate({
+        validateFormInput({
             ...input,
-            [formInput.target.value]: formInput.target.value,
+            [formInput.target.name]: formInput.target.value,
         })
     };
 
-
-
-  <div> Estas en Create! 
-    <form onSubmit={''} >
+    return (
         <div>
-            <label>Forename:</label>
-            <input name='forename' value={input.value} onChange={handleChange}/>
+            <form>
+                <div>
+                    <label>Forename:
+                        <input name='forename' value={input.forename} onChange={handleChange}/>
+                        <span>{error.forename}</span>
+                    </label>
+                </div>
+                <div>
+                    <label>Surname:
+                        <input name='surname' value={input.surname} onChange={handleChange}/>
+                        <span>{error.surname}</span>
+                    </label>
+                </div>
+                <div>
+                    <label>Nationality:
+                        <input name='nationality' value={input.nationality} onChange={handleChange}/>
+                        <span>{error.nationality}</span>
+                    </label>
+                </div>
+                <div>
+                    <label>Image:
+                        <input name='image' value={input.image} onChange={handleChange}/>
+                        <span>{error.image}</span>
+                    </label>
+                </div>
+                <div>
+                    <label>Date Of Birth:
+                        <input name='dateOfBirth' value={input.dateOfBirth} onChange={handleChange}/>
+                        <span>{error.dateOfBirth}</span>
+                    </label>
+                </div>
+                <div>
+                    <label>Description:
+                        <input name='description' value={input.description} onChange={handleChange}/>
+                        <span>{error.description}</span>
+                    </label>
+                </div>
+                <div>
+                    <label>Teams:
+                        <input name='teams' value={input.teams} onChange={handleChange}/>
+                        <span>{error.teams}</span>
+                    </label>
+                </div>
+            </form>
         </div>
-        <div>
-            <label>Surname:</label>
-            <input name='surname' value={input.value} onChange={handleChange}/>
-        </div>
-        <div>
-            <label> Nationality:</label>
-            <input name='nationality' value={input.value} onChange={handleChange}/>
-        </div>
-        <div>
-            <label> Image:</label>
-            <input name='image' value={input.value} onChange={handleChange}/>
-        </div>
-        <div>
-            <label>Date Of Birth:</label>
-            <input name='dateOfBirth' value={input.value} onChange={handleChange}/>
-        </div>
-        <div>
-            <label> Description:</label>
-            <input name='description' value={input.value} onChange={handleChange}/>
-        </div>
-        <div>
-            <label>Teams:</label> 
-            <input name='teams' value={input.value} onChange={handleChange}/>
-        </div>
-    </form>
-  </div>
+    );
 };
 
 export default Form;
