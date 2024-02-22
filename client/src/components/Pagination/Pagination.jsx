@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
 import styles from '../Pagination/Pagination.module.css';
 
 const Pagination = ({ driversPerPage, allDrivers, pagination, currentPage, setCurrentPage }) => {
