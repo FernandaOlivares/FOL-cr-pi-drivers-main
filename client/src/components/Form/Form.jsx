@@ -10,17 +10,39 @@ const Form = () => {
         image: '',
         dateOfBirth: '',
         description: '',
-        teams: ''
+        teams: '',
     });
 
-    const handleChange = (input) => {
-        input.preventDefault();
+    const [error, setError] = useState({
+        forename: '',
+        surname: '',
+        nationality: '',
+        image: '',
+        dateOfBirth: '',
+        description: '',
+        teams: '',
+    })
+
+    const validate = (i) =>{
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.email)){
+        console.log('Error en el mail')
+        }
+        console.log('Todo ok haz tu dispatch')
+    }
+
+    const handleChange = (formInput) => {
+        formInput.preventDefault();
         setInput({
             ...input,
             [input.target.name]:input.target.value,
 
         })
+        validate({
+            ...input,
+            [formInput.target.value]: formInput.target.value,
+        })
     };
+
 
 
   <div> Estas en Create! 
@@ -50,7 +72,7 @@ const Form = () => {
             <input name='description' value={input.value} onChange={handleChange}/>
         </div>
         <div>
-            <label>Teams:</label>
+            <label>Teams:</label> 
             <input name='teams' value={input.value} onChange={handleChange}/>
         </div>
     </form>
