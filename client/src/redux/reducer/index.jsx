@@ -2,7 +2,8 @@ import { GET_ALL_DRIVERS } from '../actions/index.jsx';
 
 
 const initialState = {
-    allDrivers: [], 
+    allDrivers: [],
+    allDriversBackup : [],
 };
 
 
@@ -12,6 +13,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 allDrivers: action.payload,
+                allDriversBackup: action.payload,
             };
         default:
             return state;

@@ -11,8 +11,8 @@ import styles from './Home.module.css'
 
 
 const Home = () => {
-
-    //********************** GET ALL DRIVERS **********************//
+  
+//********************** GET ALL DRIVERS **********************//
   const dispatch = useDispatch();
   const allDrivers = useSelector((state) => state.allDrivers);
 
@@ -21,7 +21,7 @@ const Home = () => {
   }, [dispatch]);
 
 
-  //********************** PAGINATION **********************//
+//********************** PAGINATION **********************//
   const [currentPage, setCurrentPage] = useState(1);//currenPage guara la pagina actual en un estado local/ y setDriversPerPage es una constante que set la página actual/ Comienza en 1 porque siempre inicio en la 1ra pagina
   const [driversPerPage, setDriversPerPage] = useState(9);//Destructuring de los primeros 9 elementos del array driverPerPage.Estas constantes guardan ene el estado local, cuantos drivers quiero por página
   const indexOfLastDriver = currentPage * driversPerPage;//9
