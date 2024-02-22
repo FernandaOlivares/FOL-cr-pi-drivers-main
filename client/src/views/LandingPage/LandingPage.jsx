@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import LandingPageContent from '../../components/LandingPageContent/LandingPageContent.jsx';
-import TypewriterEffect from '../../utils/typeWriterEffect.jsx';
+import TypewriterEffect from '../../utils/TypewriterEffect/TypewriterEffect.jsx';
 import styles from "./LandingPage.module.css";
 
 const LandingPage = () => {
