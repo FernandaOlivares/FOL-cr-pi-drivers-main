@@ -11,7 +11,7 @@ const LandingPage = () => {
       </Link>
       <LandingPageContent />
       <div className={styles.typewriterContainer}>
-        <TypewriterEffect text='" Once upon a time there was a man who pursued death for greatness,:every second of the race. . . " - F1 Legends' />
+        <TypewriterEffect text='"Once upon a time, there were men who pursued death for greatness, every second of a race,:reaching speeds up to 375 km/h, becoming...:F1 - Legends"' />
       </div>
     </div>
   );

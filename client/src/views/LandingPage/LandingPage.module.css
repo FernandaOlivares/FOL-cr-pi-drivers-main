@@ -60,6 +60,11 @@ body {
   font-style: normal;
 }
 
+.typewriterContainer {
+  margin-top: 30%;
+  right: -50%;
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
