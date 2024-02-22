@@ -1,16 +1,18 @@
+/* eslint-disable react/prop-types */
 import styles from './SearchBar.module.css';
 
-const SearchBar = () => {
+const SearchBar = ({handleChange, handleSubmit}) => {
   return (
     <div className={styles.searchBarContainer}>
-      <form>
+      <form onChange={handleChange}>
         <input
           className={styles.searchBarInput}
-          id="searchInput" 
-          name="search"
-          placeholder="Search"
+          id='searchInput'
+          name='search'
+          placeholder='Search by Forename...'
+          type = 'search'
         />
-        <button className={styles.overlayButton}>Buscar</button>
+        <button type='submit' onClick={handleSubmit} className={styles.overlayButton}>Search</button>
       </form>
     </div>
   );
