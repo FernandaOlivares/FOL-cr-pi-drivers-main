@@ -6,12 +6,6 @@ export const FILTER_DRIVERS_BY_TEAMS = 'FILTER_DRIVERS_BY_TEAMS';
 export const SORT_BY_NAME = 'SORT_BY_NAME';
 export const SORT_BY_DATE_OF_BIRTH = 'SORT_BY_DATE_OF_BIRTH';
 
-/*FUNTION DESCRIPTION:
-LKSMLAKSMD
-ASDASDAS
-SDAD
-
-*/
 
 export const getAllDrivers = () => {
     return async function (dispatch) {
