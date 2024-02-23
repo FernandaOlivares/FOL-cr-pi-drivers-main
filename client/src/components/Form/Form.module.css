@@ -56,7 +56,7 @@
 .errorMessage {
     color: var(--color-red-ferrari);
     font-size: 14px;
-    margin-left: 50px; /* Ajusta el espacio entre el input y el mensaje de error */
+    margin-left: 10px; /* Ajusta el espacio entre el input y el mensaje de error */
     white-space: nowrap; /* Evita que el mensaje de error se divida en múltiples líneas */
 }
 
