@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Form.module.css';
+import './Form.module.css'
 
 const Form = () => {
     const [input, setInput] = useState({
@@ -23,41 +23,60 @@ const Form = () => {
     });
 
     function validateFormInput(driverInfo) {
-        setError(prevError => ({
-            ...prevError,
-            forename: !driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.forename.trim()) ? '*Please enter a valid forename.' : '',
-            surname: !driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.surname.trim()) ? '*Please enter a valid surname.' : '',
-            nationality: !driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.nationality.trim()) ? '*Please enter a valid nationality.' : '',
-            image: !driverInfo.image || !/^(ftp|http|https):\/\/[^ "]+$/.test(driverInfo.image.trim()) ? '*Please enter a valid link image.' : '',
-            dateOfBirth: !driverInfo.dateOfBirth || !/\d{4}-\d{2}-\d{2}/.test(driverInfo.dateOfBirth.trim()) ? '*Please date of birth is required and must be in YYYY-MM-DD format.' : '',
-            description: !driverInfo.description ? '*Description is required.' : '',
-            teams: !driverInfo.teams ? 'Teams are required.' : ''
-        }));
+        const errors = {};
+
+        if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.forename.trim())) {
+            errors.forename = '*Please enter a valid forename.';
+        }
+
+        if (!driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.surname.trim())) {
+            errors.surname = '*Please enter a valid surname.';
+        }
+
+        if (!driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.nationality.trim())) {
+            errors.nationality = '*Please enter a valid nationality.';
+        }
+
+        if (!driverInfo.image || !/^(ftp|http|https):\/\/[^ "]+$/.test(driverInfo.image.trim())) {
+            errors.image = '*Please enter a valid link image.';
+        }
+
+        if (!driverInfo.dateOfBirth || !/\d{4}-\d{2}-\d{2}/.test(driverInfo.dateOfBirth.trim())) {
+            errors.dateOfBirth = '*Please date of birth is required and must be in YYYY-MM-DD format.';
+        }
+
+        if (!driverInfo.description) {
+            errors.description = '*Description is required.';
+        }
+
+        if (!driverInfo.teams) {
+            errors.teams = 'Teams are required.';
+        }
+
+        setError(errors);
+
+        return Object.keys(errors).length === 0;
     }
-    
-
-    const handleChange = (formInput) => {
-        formInput.preventDefault();
-        setInput({
-            ...input,
-            [formInput.target.name]: formInput.target.value,
-        });
-        validateFormInput({
-            ...input,
-            [formInput.target.name]: formInput.target.value,
-        });
-    };
-
-    const isFormValid = Object.values(error).every(err => err === '');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (isFormValid) {
-            // Handle form submission
-            console.log('Form submitted successfully:', input);
+        const isValid = validateFormInput(input);
+        if (isValid) {
+            // Aquí puedes manejar el envío del formulario
+            console.log('Formulario válido, se puede enviar.');
         } else {
-            console.log('Form has errors. Cannot submit.');
+            console.log('El formulario tiene errores, por favor corríjalos.');
         }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setInput({
+            ...input,
+            [name]: value,
+        });
+        // También validamos el campo que cambió
+        validateFormInput({ ...input, [name]: value });
     };
 
     return (
@@ -105,7 +124,7 @@ const Form = () => {
                         <span>{error.teams}</span>
                     </label>
                 </div>
-                <button type='submit' disabled={!isFormValid}>Create New Driver</button>
+                <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
             </form>
         </div>
     );
