@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Form.module.css'
+import './Form.module.css';
 
 const Form = () => {
     const [input, setInput] = useState({
@@ -20,7 +20,7 @@ const Form = () => {
         dateOfBirth: '',
         description: '',
         teams: '',
-    })
+    });
 
     function validateFormInput(driverInfo) {
         setError(prevError => ({
@@ -41,17 +41,28 @@ const Form = () => {
         setInput({
             ...input,
             [formInput.target.name]: formInput.target.value,
-
-        })
+        });
         validateFormInput({
             ...input,
             [formInput.target.name]: formInput.target.value,
-        })
+        });
+    };
+
+    const isFormValid = Object.values(error).every(err => err === '');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (isFormValid) {
+            // Handle form submission
+            console.log('Form submitted successfully:', input);
+        } else {
+            console.log('Form has errors. Cannot submit.');
+        }
     };
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label>Forename:
                         <input name='forename' value={input.forename} onChange={handleChange}/>
@@ -94,6 +105,7 @@ const Form = () => {
                         <span>{error.teams}</span>
                     </label>
                 </div>
+                <button type='submit' disabled={!isFormValid}>Create New Driver</button>
             </form>
         </div>
     );
