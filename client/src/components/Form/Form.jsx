@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './Form.module.css'
+import Card from '../Card/Card.jsx'
+import styles from './Form.module.css'; // Importa los estilos desde el archivo CSS
 
 const Form = () => {
     const [input, setInput] = useState({
@@ -26,31 +27,31 @@ const Form = () => {
         const errors = {};
 
         if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.forename.trim())) {
-            errors.forename = '*Please enter a valid forename.';
+            errors.forename = '*Invalid forename';
         }
 
         if (!driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.surname.trim())) {
-            errors.surname = '*Please enter a valid surname.';
+            errors.surname = '*Invalid surname';
         }
 
         if (!driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.nationality.trim())) {
-            errors.nationality = '*Please enter a valid nationality.';
+            errors.nationality = '*Invalid nationality.';
         }
 
         if (!driverInfo.image || !/^(ftp|http|https):\/\/[^ "]+$/.test(driverInfo.image.trim())) {
-            errors.image = '*Please enter a valid link image.';
+            errors.image = '*Invalid link image';
         }
 
         if (!driverInfo.dateOfBirth || !/\d{4}-\d{2}-\d{2}/.test(driverInfo.dateOfBirth.trim())) {
-            errors.dateOfBirth = '*Please date of birth is required and must be in YYYY-MM-DD format.';
+            errors.dateOfBirth = '*Format must be YYYY-MM-DD';
         }
 
         if (!driverInfo.description) {
-            errors.description = '*Description is required.';
+            errors.description = '*Description is required';
         }
 
         if (!driverInfo.teams) {
-            errors.teams = 'Teams are required.';
+            errors.teams = '*At least one team required';
         }
 
         setError(errors);
@@ -80,52 +81,78 @@ const Form = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
+
+        <div >
+            <div className={styles.cardContainer}>
+            <Card eachDriver={{
+                forename: input.forename,
+                surname: input.surname,
+                image: input.image,
+                teams: input.teams,
+                id: 0 // Aquí deberías generar un ID único para el conductor, por ejemplo, mediante una función que genere IDs aleatorios o usando un contador.
+            }} />
+            </div>
+            <div className={styles.formContainer}>
+            <form onSubmit={handleSubmit} className={styles.driverForm}>
+                <div className={styles.inputField}>
                     <label>Forename:
-                        <input name='forename' value={input.forename} onChange={handleChange}/>
-                        <span>{error.forename}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='forename' value={input.forename} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.forename}</span>
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div className={styles.inputField}>
                     <label>Surname:
-                        <input name='surname' value={input.surname} onChange={handleChange}/>
-                        <span>{error.surname}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='surname' value={input.surname} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.surname}</span>
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div className={styles.inputField}>
                     <label>Nationality:
-                        <input name='nationality' value={input.nationality} onChange={handleChange}/>
-                        <span>{error.nationality}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='nationality' value={input.nationality} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.nationality}</span>
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div className={styles.inputField}>
                     <label>Image:
-                        <input name='image' value={input.image} onChange={handleChange}/>
-                        <span>{error.image}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='image' value={input.image} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.image}</span>
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div className={styles.inputField}>
                     <label>Date Of Birth:
-                        <input name='dateOfBirth' value={input.dateOfBirth} onChange={handleChange}/>
-                        <span>{error.dateOfBirth}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='dateOfBirth' value={input.dateOfBirth} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.dateOfBirth}</span>
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div className={styles.inputField}>
                     <label>Description:
-                        <input name='description' value={input.description} onChange={handleChange}/>
-                        <span>{error.description}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='description' value={input.description} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.description}</span>
+                        </div>
                     </label>
                 </div>
-                <div>
+                <div className={styles.inputField}>
                     <label>Teams:
-                        <input name='teams' value={input.teams} onChange={handleChange}/>
-                        <span>{error.teams}</span>
+                        <div className={styles.inputContainer}>
+                            <input name='teams' value={input.teams} onChange={handleChange}/>
+                            <span className={styles.errorMessage}>{error.teams}</span>
+                        </div>
                     </label>
                 </div>
                 <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
             </form>
+            </div>
         </div>
     );
 };

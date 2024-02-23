@@ -52,9 +52,8 @@
   height: auto; /* Mantener la proporción de la imagen */
   border-radius: 50px;
   margin-bottom: 10px;
-  filter: sepia(75%);
   transition: filter 0.3s ease-in-out;
-  filter: grayscale(100%);
+
 }
 .card img:hover {
   filter: grayscale(100%);

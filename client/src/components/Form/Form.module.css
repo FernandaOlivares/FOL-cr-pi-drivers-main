@@ -1,0 +1,68 @@
+:root {
+    --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+    --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+    --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+    --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+    --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+    --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+    --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+    --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+  }
+
+.formContainer {
+    width: 780px; /* Ancho fijo del contenedor del formulario */
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: -30%;
+    margin-top: -60%;
+
+}
+  
+  .driverForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputField {
+    margin-bottom: 20px;
+    display: flex; /* Asegura que los elementos de input y mensaje de error se alineen horizontalmente */
+    align-items: left; /* Centra verticalmente los elementos */
+}
+
+.inputField label {
+    margin-bottom: 5px;
+    flex: 1; /* El label ocupará todo el espacio disponible en la fila */
+    text-align: left;
+}
+
+.inputField input {
+    width:65%; /* Resta 10px para dejar espacio al mensaje de error */
+    padding: 8px;
+    border: 1px solid var(--color-silver-alfaromeo);
+    border-radius: 5px;
+}
+
+.inputField input:focus {
+    outline: none;
+    border-color: var(--color-blue-mercedes);
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Establece un ancho fijo para todos los inputContainer */
+}
+
+.errorMessage {
+    color: var(--color-red-ferrari);
+    font-size: 14px;
+    margin-left: 50px; /* Ajusta el espacio entre el input y el mensaje de error */
+    white-space: nowrap; /* Evita que el mensaje de error se divida en múltiples líneas */
+}
+
+.cardContainer {
+    margin-right: -95%;
+    margin-top: 20%;
+}
+
+
