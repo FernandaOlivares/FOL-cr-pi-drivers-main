@@ -10,23 +10,34 @@ export const SORT_BY_DATE_OF_BIRTH = 'SORT_BY_DATE_OF_BIRTH';
 
 export const getAllDrivers = () => {
     return async function (dispatch) {
-          const response = await axios.get("http://localhost:3001/drivers");
-          return dispatch({
-              type: 'GET_ALL_DRIVERS',
-              payload: response.data,
-          });
-      }
-  };
+        try {
+            const response = await axios.get("http://localhost:3001/drivers");
+            dispatch({
+                type: 'GET_ALL_DRIVERS',
+                payload: response.data,
+            });
+        } catch (error) {
+            // Manejo de errores: podrías enviar un error a Redux o manejarlo de otra manera apropiada
+            console.error('Error fetching all drivers:', error);
+        }
+    }
+};
 
-  export const getDriversByName = (forename) => {
+
+export const getDriversByName = (forenameAndOrLastName) => {
     return async function (dispatch) {
-          const response = await axios.get(`http://localhost:3001/drivers?forename=${forename}`);
-          return dispatch({
-              type: 'GET_DRIVERS_BY_NAME',
-              payload: response.data,
-          });
-      }
-  };
+        try {
+            const response = await axios.get(`http://localhost:3001/drivers?forename=${forenameAndOrLastName}`);
+            dispatch({
+                type: 'GET_DRIVERS_BY_NAME',
+                payload: response.data,
+            });
+        } catch (error) {
+            // Manejo de errores: podrías enviar un error a Redux o manejarlo de otra manera apropiada
+            console.error('Error fetching drivers by name:', error);
+        }
+    }
+};
 
 export const FilterDriversByTeams = (payload) => ({
     type: 'FILTER_DRIVERS_BY_TEAMS',
