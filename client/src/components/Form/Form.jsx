@@ -89,7 +89,7 @@ const Form = () => {
                 surname: input.surname,
                 image: input.image,
                 teams: input.teams,
-                id: 0 // Aquí deberías generar un ID único para el conductor, por ejemplo, mediante una función que genere IDs aleatorios o usando un contador.
+                // id: 0 Aquí deberías generar un ID único para el conductor, por ejemplo, mediante una función que genere IDs aleatorios o usando un contador.
             }} />
             </div>
             <div className={styles.formContainer}>
