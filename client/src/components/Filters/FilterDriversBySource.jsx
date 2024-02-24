@@ -1,7 +1,8 @@
-import styles from './Filters.module.css';
 import PropTypes from 'prop-types';
 
-const FilterBySource = ({handleFilterBySource}) => (
+import styles from './Filters.module.css';
+
+const FilterDriversBySource = ({handleFilterBySource}) => (
   <div className={styles.filterContainer}>
     <select onChange={(input) => handleFilterBySource(input)} name='filterBySource' id='filterBySource' className={styles.filterBtn} defaultValue=''>
       <option value='' disabled id='filterBySource'>Source</option>
@@ -12,8 +13,8 @@ const FilterBySource = ({handleFilterBySource}) => (
   </div>
 );
 
-FilterBySource.propTypes = {
+FilterDriversBySource.propTypes = {
   handleFilterBySource: PropTypes.func.isRequired,
 };
 
-export default FilterBySource;
+export default FilterDriversBySource;
