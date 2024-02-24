@@ -3,18 +3,18 @@ import SearchBar from '../SearchBar/SearchBar.jsx';
 import SortDriversByName from '../Filters/SortDriversByName.jsx'
 import FilterByTeam from '../../components/Filters/FilterByTeam.jsx'
 import FilterDriversBySource from '../../components/Filters/FilterDriversBySource.jsx'
-import SortByDateOfBirth from '../../components/Filters/SortByDateOfBirth.jsx'
+import SortDriversByDateOfBirth from '../Filters/SortDriversByDateOfBirth.jsx'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css';
 
-const NavBar = ({handleChange, handleSubmit, handleFilterBySource, handleSortByName}) => (
+const NavBar = ({handleChange, handleSubmit, handleFilterBySource, handleSortByName, handleSortByDateOfBirth}) => (
 
   <div className={styles.navBarContainer}>
     <p>Search By Forename:</p>
     <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
     <p>Sort By:</p>
     <SortDriversByName handleSortByName={handleSortByName}/>
-    <SortByDateOfBirth/>
+    <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth}/>
     <p>Filter By:</p>
     <FilterByTeam/>
     <FilterDriversBySource handleFilterBySource={handleFilterBySource}/>
@@ -31,6 +31,7 @@ NavBar.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleFilterBySource: PropTypes.func.isRequired,
   handleSortByName: PropTypes.func.isRequired,
+  handleSortByDateOfBirth: PropTypes.func.isRequired
 };
 
 

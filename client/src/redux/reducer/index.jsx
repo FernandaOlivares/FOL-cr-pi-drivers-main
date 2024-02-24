@@ -2,7 +2,8 @@ import {
     GET_ALL_DRIVERS,
     GET_DRIVERS_BY_NAME,
     FILTER_DRIVERS_BY_SOURCE, 
-    SORT_DRIVERS_BY_NAME
+    SORT_DRIVERS_BY_NAME,
+    SORT_DRIVERS_BY_DATE_OF_BIRTH,
 } from '../actions/index.jsx';
 
 const initialState = {
@@ -68,6 +69,24 @@ function rootReducer(state = initialState, action) {
             };
             }
         
+        case SORT_DRIVERS_BY_DATE_OF_BIRTH: {
+            const compareDatesOfBirth = (a, b) => {
+                const dateA = new Date(a.dateOfBirth);
+                const dateB = new Date(b.dateOfBirth);
+                return action.payload === 'Ascending' ? dateA - dateB : dateB - dateA;
+            };
+            const sortedDates = [...state.allDrivers].sort(compareDatesOfBirth);
+            console.log(sortedDates);
+            
+            return {
+                ...state,
+                allDrivers: sortedDates,
+            };
+        }
+            
+            
+            
+                    
         default:
             return state;
     }

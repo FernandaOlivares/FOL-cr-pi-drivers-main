@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import Cards from '../../components/Cards/Cards';
 import Pagination from '../../components/Pagination/Pagination.jsx';
 
-import { getAllDrivers, getDriversByName, filterDriversBySource, sortDriversByName} from '../../redux/actions/index.jsx'
+import { getAllDrivers, getDriversByName, filterDriversBySource, sortDriversByName, sortDriversByDateOfBirth} from '../../redux/actions/index.jsx'
 
 import styles from './Home.module.css'
 
@@ -15,7 +15,7 @@ const Home = () => {
 //********************** GET ALL DRIVERS **********************//
   const dispatch = useDispatch();
   const allDrivers = useSelector((state) => state.allDrivers);
-  console.log('Aquí están todos los allDrivers de Home',allDrivers);
+  
 
   useEffect(() => {
     dispatch(getAllDrivers());
@@ -59,6 +59,12 @@ const Home = () => {
     dispatch(sortDriversByName(event.target.value));
   }
 
+//********************** SORT DRIVERS BY DATE OF BIRTH **********************//
+  const handleSortByDateOfBirth = (event) =>{
+    event.preventDefault();
+    dispatch(sortDriversByDateOfBirth(event.target.value));
+  }
+  
   return (
   <div className={styles.homeContainer}>
   <h1 className={`${styles.logoContainer}`}>F1 - LEGENDS!</h1>
@@ -67,7 +73,8 @@ const Home = () => {
       handleChange={handleChange}
       handleSubmit={handleSubmit}
       handleFilterBySource={handleFilterBySource}
-      handleSortByName = {handleSortByName}/>
+      handleSortByName = {handleSortByName}
+      handleSortByDateOfBirth = {handleSortByDateOfBirth}/>
     </div>
     <div>
       <Pagination driversPerPage={driversPerPage} allDrivers={allDrivers.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage} />
