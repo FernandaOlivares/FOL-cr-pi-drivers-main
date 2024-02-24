@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import Cards from '../../components/Cards/Cards';
 import Pagination from '../../components/Pagination/Pagination.jsx';
 
-import { getAllDrivers, getDriversByName } from '../../redux/actions/index.jsx'
+import { getAllDrivers, getDriversByName, filterDriversBySource} from '../../redux/actions/index.jsx'
 
 import styles from './Home.module.css'
 
@@ -32,24 +32,35 @@ const Home = () => {
       setCurrentPage(pageNumber);
   };
 
- //********************** GET BY NAME **********************//
+//********************** GET BY NAME **********************//
 const [searchInput, setSearchInput] = useState(''); //Estado local vacío
 
   const handleChange = (input) =>{
     input.preventDefault();
     setSearchInput(input.target.value);
-  }
+  };
 
   const handleSubmit = (input) =>{
     input.preventDefault();
     dispatch(getDriversByName(searchInput));
-  }
-    
+  };
+
+//********************** FILTER BY SOURCE **********************//
+  const handleFilterBySource = (event) => {
+    event.preventDefault();
+    dispatch(filterDriversBySource(event.target.value)); 
+};
+
+//********************** FILTER BY SOURCE **********************//
+
   return (
   <div className={styles.homeContainer}>
   <h1 className={`${styles.logoContainer}`}>F1 LEGENDS!</h1>
     <div>
-      <NavBar handleChange={handleChange} handleSubmit={handleSubmit}/>
+      <NavBar
+      handleChange={handleChange}
+      handleSubmit={handleSubmit}
+      handleFilterBySource={handleFilterBySource}/>
     </div>
     <div>
       <Pagination driversPerPage={driversPerPage} allDrivers={allDrivers.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage} />

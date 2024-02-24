@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const GET_ALL_DRIVERS = 'GET_ALL_DRIVERS';
 export const GET_DRIVERS_BY_NAME = 'GET_DRIVERS_BY_NAME';
+export const FILTER_DRIVERS_BY_SOURCE = 'FILTER_DRIVERS_BY_SOURCE';
 export const FILTER_DRIVERS_BY_TEAMS = 'FILTER_DRIVERS_BY_TEAMS';
 export const SORT_BY_NAME = 'SORT_BY_NAME';
 export const SORT_BY_DATE_OF_BIRTH = 'SORT_BY_DATE_OF_BIRTH';
@@ -37,6 +38,14 @@ export const getDriversByName = (forenameAndOrLastName) => {
             console.error('Error fetching drivers by name:', error);
         }
     }
+};
+ 
+export const filterDriversBySource = (payload) => {
+    console.log(payload); // Aquí se imprime el payload
+    return {
+        type: 'FILTER_DRIVERS_BY_SOURCE',
+        payload,
+    };
 };
 
 export const FilterDriversByTeams = (payload) => ({
