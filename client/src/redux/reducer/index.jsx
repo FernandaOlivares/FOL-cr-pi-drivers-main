@@ -17,6 +17,7 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
     switch (action.type) {
+        
         case GET_ALL_DRIVERS:
             // Actualiza la lista de todos los conductores y la copia de seguridad
             return {
@@ -97,7 +98,7 @@ function rootReducer(state = initialState, action) {
         
 
         case FILTER_DRIVERS_BY_TEAM: {
-            const filteredDrivers = state.allDrivers.filter(driver => driver.team.includes(action.payload));
+            const filteredDrivers = state.allDriversBackup.filter(driver => driver.teams.includes(action.payload));
             
             return {
                 ...state,
