@@ -7,7 +7,7 @@ export const SORT_DRIVERS_BY_NAME = 'SORT_DRIVERS_BY_NAME';
 export const SORT_DRIVERS_BY_DATE_OF_BIRTH = 'SORT_DRIVERS_BY_DATE_OF_BIRTH';
 export const GET_ALL_TEAMS = 'GET_ALL_TEAMS';
 export const FILTER_DRIVERS_BY_TEAM = 'FILTER_DRIVERS_BY_TEAM';
-
+export const CLEAN_FILTERS = 'CLEAN_FILTERS';
 
 export const getAllDrivers = () => {
     return async function (dispatch) {
@@ -71,3 +71,9 @@ export const filterDriversByTeam = (payload) => ({
     type: FILTER_DRIVERS_BY_TEAM,
     payload,
 });
+
+export const cleanFilters = () => {
+    return {
+      type: CLEAN_FILTERS,
+    };
+  };

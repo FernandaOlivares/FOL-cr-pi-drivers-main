@@ -6,6 +6,7 @@ import {
     SORT_DRIVERS_BY_DATE_OF_BIRTH,
     GET_ALL_TEAMS,
     FILTER_DRIVERS_BY_TEAM,
+    CLEAN_FILTERS,
 } from '../actions/index.jsx';
 
 const initialState = {
@@ -105,6 +106,14 @@ function rootReducer(state = initialState, action) {
                 allDrivers: filteredDrivers,
             };
         } 
+
+        case CLEAN_FILTERS: {
+            return {
+              ...state,
+              allDrivers: state.allDriversBackup,
+            };
+          }
+        
             
         default:
             return state;
