@@ -5,7 +5,15 @@ import NavBar from '../../components/NavBar/NavBar';
 import Cards from '../../components/Cards/Cards';
 import Pagination from '../../components/Pagination/Pagination.jsx';
 
-import { getAllDrivers, getDriversByName, filterDriversBySource, sortDriversByName, sortDriversByDateOfBirth} from '../../redux/actions/index.jsx'
+import {
+  getAllDrivers,
+  getDriversByName,
+  filterDriversBySource,
+  sortDriversByName,
+  sortDriversByDateOfBirth,
+  getAllTeams,
+  filterDriversByTeam
+} from '../../redux/actions/index.jsx'
 
 import styles from './Home.module.css'
 
@@ -15,12 +23,10 @@ const Home = () => {
 //********************** GET ALL DRIVERS **********************//
   const dispatch = useDispatch();
   const allDrivers = useSelector((state) => state.allDrivers);
-  
 
   useEffect(() => {
     dispatch(getAllDrivers());
   }, [dispatch]);
-
 
 //********************** PAGINATE DRIVERS **********************//
   const [pageFilterType, setPageFilterType] = useState('');
@@ -64,6 +70,19 @@ const Home = () => {
     event.preventDefault();
     dispatch(sortDriversByDateOfBirth(event.target.value));
   }
+
+//********************** GET ALL TEAMS **********************//
+  const allTeams = useSelector((state) => state.allTeams);
+
+  useEffect(() => {
+    dispatch(getAllTeams());
+  }, [dispatch]);
+
+//********************** FILTER DRIVERS BY TEAM **********************//
+  const handleFilterByTeam = (event) => {
+    event.preventDefault();
+    dispatch(filterDriversByTeam(event.target.value)); 
+  };
   
   return (
   <div className={styles.homeContainer}>
@@ -74,7 +93,9 @@ const Home = () => {
       handleSubmit={handleSubmit}
       handleFilterBySource={handleFilterBySource}
       handleSortByName = {handleSortByName}
-      handleSortByDateOfBirth = {handleSortByDateOfBirth}/>
+      handleSortByDateOfBirth = {handleSortByDateOfBirth}
+      handleFilterByTeam = {handleFilterByTeam}
+      allTeams = { allTeams }/>
     </div>
     <div>
       <Pagination driversPerPage={driversPerPage} allDrivers={allDrivers.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage} />

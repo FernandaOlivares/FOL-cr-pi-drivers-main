@@ -3,14 +3,16 @@ import axios from 'axios';
 export const GET_ALL_DRIVERS = 'GET_ALL_DRIVERS';
 export const GET_DRIVERS_BY_NAME = 'GET_DRIVERS_BY_NAME';
 export const FILTER_DRIVERS_BY_SOURCE = 'FILTER_DRIVERS_BY_SOURCE';
-export const FILTER_DRIVERS_BY_TEAMS = 'FILTER_DRIVERS_BY_TEAMS';
 export const SORT_DRIVERS_BY_NAME = 'SORT_DRIVERS_BY_NAME';
 export const SORT_DRIVERS_BY_DATE_OF_BIRTH = 'SORT_DRIVERS_BY_DATE_OF_BIRTH';
+export const GET_ALL_TEAMS = 'GET_ALL_TEAMS';
+export const FILTER_DRIVERS_BY_TEAM = 'FILTER_DRIVERS_BY_TEAM';
+
 
 export const getAllDrivers = () => {
     return async function (dispatch) {
         try {
-            const response = await axios.get("http://localhost:3001/drivers");
+            const response = await axios.get('http://localhost:3001/drivers');
             dispatch({
                 type: GET_ALL_DRIVERS,
                 payload: response.data,
@@ -46,12 +48,26 @@ export const sortDriversByName = (payload) => ({
     payload,
 });
 
-export const filterDriversByTeams = (payload) => ({
-    type: FILTER_DRIVERS_BY_TEAMS,
+export const sortDriversByDateOfBirth = (payload) =>({
+    type: SORT_DRIVERS_BY_DATE_OF_BIRTH,
     payload,
 });
 
-export const sortDriversByDateOfBirth = (payload) =>({
-    type: SORT_DRIVERS_BY_DATE_OF_BIRTH,
+export const getAllTeams = () => {
+    return async function (dispatch) {
+        try {
+            const response = await axios.get('http://localhost:3001/teams');
+            dispatch({
+                type: GET_ALL_TEAMS,
+                payload: response.data,
+            });
+        } catch (error) {
+            console.error('Error fetching all teams:', error);
+        }
+    }
+};
+
+export const filterDriversByTeam = (payload) => ({
+    type: FILTER_DRIVERS_BY_TEAM,
     payload,
 });

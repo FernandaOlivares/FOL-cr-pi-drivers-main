@@ -4,11 +4,15 @@ import {
     FILTER_DRIVERS_BY_SOURCE, 
     SORT_DRIVERS_BY_NAME,
     SORT_DRIVERS_BY_DATE_OF_BIRTH,
+    GET_ALL_TEAMS,
+    FILTER_DRIVERS_BY_TEAM,
 } from '../actions/index.jsx';
 
 const initialState = {
     allDrivers: [],
     allDriversBackup: [],
+    allTeams: [],
+    allTeamsBackup: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -83,10 +87,24 @@ function rootReducer(state = initialState, action) {
                 allDrivers: sortedDates,
             };
         }
+
+        case GET_ALL_TEAMS:
+            return {
+                ...state,
+                allTeams: action.payload,
+                allTeamsBackup: action.payload,
+            };
+        
+
+        case FILTER_DRIVERS_BY_TEAM: {
+            const filteredDrivers = state.allDrivers.filter(driver => driver.team.includes(action.payload));
             
+            return {
+                ...state,
+                allDrivers: filteredDrivers,
+            };
+        } 
             
-            
-                    
         default:
             return state;
     }

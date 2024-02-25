@@ -11,14 +11,14 @@
 
 .navBarContainer {
   position: fixed;
-  top: 24%;
+  top: 18%;
   left: 1%;
   display: flex;
   flex-direction: column; /* Cambia la dirección de los elementos a columna */
   justify-content: flex-start; /* Alinea los elementos en la parte superior */
   align-items: center; /* Centra verticalmente los elementos */
   width: 16%;
-  height: 70%;
+  height: 80%;
   border-radius: 8px;
   padding: 20px;
   overflow: hidden;
