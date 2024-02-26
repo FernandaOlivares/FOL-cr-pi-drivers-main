@@ -13,7 +13,7 @@ const NavBar = ({handleChange, handleSubmit, handleFilterBySource, handleSortByN
     <p>Search By Forename:</p>
     <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
     <p>You did not find a driver?</p>
-    <Link className={styles.linkButton} to= '/drivers'>Add Driver</Link>
+    <Link className={styles.linkButton} to= '/create'>Add Driver</Link>
     <p>Sort By:</p>
     <SortDriversByName handleSortByName={handleSortByName}/>
     <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth}/>
