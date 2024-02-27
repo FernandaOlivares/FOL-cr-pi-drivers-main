@@ -12,17 +12,3 @@ return newDriver;
 
 
 module.exports = createDriverDb;
-
-/*
-async await se usa para dejar en espera la solicitud hasta que la BD o la API envíen la información, si no lo usamos crearíamos un Driver Undefine
-TODO: -> BODY Json
-{
-  "forename" : "Fernanda",
-  "surname" : "Lisperguer",
-  "nationality" : "Chilean",
-  "dateOfBirth" : "01-09-1989",
-  "teams" : ["Alfa Romeo", "AGS"],
-  "image" : "",
-  "description" : "Very happy.Currently studying to be a developer."
-}
-*/
