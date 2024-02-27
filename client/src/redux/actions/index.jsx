@@ -8,6 +8,8 @@ export const SORT_DRIVERS_BY_DATE_OF_BIRTH = 'SORT_DRIVERS_BY_DATE_OF_BIRTH';
 export const GET_ALL_TEAMS = 'GET_ALL_TEAMS';
 export const FILTER_DRIVERS_BY_TEAM = 'FILTER_DRIVERS_BY_TEAM';
 export const CLEAN_FILTERS = 'CLEAN_FILTERS';
+export const POST_NEW_DRIVER = 'POST_NEW_DRIVER';
+
 
 export const getAllDrivers = () => {
     return async function (dispatch) {
@@ -76,4 +78,24 @@ export const cleanFilters = () => {
     return {
       type: CLEAN_FILTERS,
     };
-  };
+};
+
+export const postNewDriver = (payload) => {
+    return async function (dispatch) {
+        try {
+            // Realizar la solicitud POST para crear un nuevo conductor
+            const response = await axios.post('http://localhost:3001/post/', payload);
+
+            // Despachar una acción al store con el tipo POST_NEW_DRIVER y los datos relevantes del conductor creado
+            dispatch({ type: POST_NEW_DRIVER, payload: response.data });
+
+            // Devolver los datos del conductor creado si es necesario
+            return response.data;
+        } catch (error) {
+            // Capturar y manejar cualquier error que ocurra durante la solicitud POST
+            console.error('Error posting new driver:', error);
+            // Lanzar el error nuevamente para que pueda ser manejado en componentes superiores si es necesario
+            throw error;
+        }
+    }
+};

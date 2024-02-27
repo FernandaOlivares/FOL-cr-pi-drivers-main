@@ -1,11 +1,17 @@
-import Form from '../../components/Form/Form.jsx'
-import './Create.module.css'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllTeams } from '../../redux/actions/index.jsx';
+import Form from '../../components/Form/Form.jsx';
+import './Create.module.css';
+
+const CreateNewDriver = () => {
 
 
-const Create = () => (
-  <div>
-    <Form/>
-  </div>
-);
+  return (
+    <div>
+      <Form />
+    </div>
+  );
+};
 
-export default Create;
+export default CreateNewDriver;

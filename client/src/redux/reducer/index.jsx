@@ -7,6 +7,7 @@ import {
     GET_ALL_TEAMS,
     FILTER_DRIVERS_BY_TEAM,
     CLEAN_FILTERS,
+    POST_NEW_DRIVER,
 } from '../actions/index.jsx';
 
 const initialState = {
@@ -114,6 +115,11 @@ function rootReducer(state = initialState, action) {
             };
           }
         
+        case POST_NEW_DRIVER: {
+        return {
+            ...state,
+        };
+        }
             
         default:
             return state;

@@ -19,3 +19,4 @@ const SearchBar = ({handleChange, handleSubmit}) => {
 };
 
 export default SearchBar;
+ 

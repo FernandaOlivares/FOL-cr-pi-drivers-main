@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
       validate: {
         notEmpty: true,
         isAlpha: true,
-        len: [1, 30],
+        len: [2, 30],
       },
     },
     surname: {
@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       validate: {
         notEmpty: true,
         isAlpha: true,
-        len: [1, 30],
+        len: [2, 30],
       },
     },
     nationality: {
