@@ -84,7 +84,7 @@ export const postNewDriver = (payload) => {
     return async function (dispatch) {
         try {
             // Realizar la solicitud POST para crear un nuevo conductor
-            const response = await axios.post('http://localhost:3001/post/', payload);
+            const response = await axios.post('http://localhost:3001/post/drivers', payload);
 
             // Despachar una acción al store con el tipo POST_NEW_DRIVER y los datos relevantes del conductor creado
             dispatch({ type: POST_NEW_DRIVER, payload: response.data });

@@ -4,7 +4,7 @@ const createDriverHandler = require('../handlers/createDriverHandler');
 const createDriverRouter = Router();
 
 
-createDriverRouter.post('/', createDriverHandler);
+createDriverRouter.post('/drivers', createDriverHandler);
 
 
 module.exports = createDriverRouter;
