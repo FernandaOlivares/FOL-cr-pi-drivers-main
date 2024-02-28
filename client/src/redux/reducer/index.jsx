@@ -8,6 +8,7 @@ import {
     FILTER_DRIVERS_BY_TEAM,
     CLEAN_FILTERS,
     POST_NEW_DRIVER,
+    GET_DRIVER_BY_ID,
 } from '../actions/index.jsx';
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
     allDriversBackup: [],
     allTeams: [],
     allTeamsBackup: [],
+    driverById: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -119,6 +121,13 @@ function rootReducer(state = initialState, action) {
         return {
             ...state,
         };
+        }
+
+        case GET_DRIVER_BY_ID: {
+            return{
+                ...state,
+                driverById: action.payload
+            }
         }
             
         default:

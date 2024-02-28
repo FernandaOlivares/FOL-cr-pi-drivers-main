@@ -9,6 +9,7 @@ export const GET_ALL_TEAMS = 'GET_ALL_TEAMS';
 export const FILTER_DRIVERS_BY_TEAM = 'FILTER_DRIVERS_BY_TEAM';
 export const CLEAN_FILTERS = 'CLEAN_FILTERS';
 export const POST_NEW_DRIVER = 'POST_NEW_DRIVER';
+export const GET_DRIVER_BY_ID = 'GET_DRIVER_BY_ID';
 
 
 export const getAllDrivers = () => {
@@ -96,6 +97,20 @@ export const postNewDriver = (payload) => {
             console.error('Error posting new driver:', error);
             // Lanzar el error nuevamente para que pueda ser manejado en componentes superiores si es necesario
             throw error;
+        }
+    }
+};
+
+export const getDriverById = (id) => {
+    return async function (dispatch) {
+        try {
+            const response = await axios.get(`http://localhost:3001/drivers/${id}`);
+            dispatch({
+                type: GET_DRIVER_BY_ID,
+                payload: response.data,
+            });
+        } catch (error) {
+            console.error('Error fetching driver by Id:', error);
         }
     }
 };
