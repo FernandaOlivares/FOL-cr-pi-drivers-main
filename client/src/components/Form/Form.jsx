@@ -149,6 +149,12 @@ const Form = () => {
         validateFormInput({ ...input, teams: [...input.teams, selectedTeam] });
     };
     
+    const handleDeleteTeam = (teamName) => {
+        setInput({
+            ...input,
+            teams: input.teams.filter(team => team !== teamName)
+        });
+    };
 
     return (
 
@@ -215,14 +221,21 @@ const Form = () => {
                 </div>
                 <div className={styles.filterContainer}>
                     <select onChange={(event) => handleSelect(event)} name='teamSelect' id='teamSelect' className={styles.filterBtn} defaultValue=''>
-                        <option value='' disabled id='teamSelect'>Teams</option>
+                        <option value='' disabled id='teamSelect'>Add Teams</option>
                         {allTeams?.map((team) => {
                         return (
                             <option key={team.id} value={team.name}>{team.name}</option>
                         );
-                        })}
+                        })}2
                     </select>
-                    <ul><li>{input.teams.join(' - ')}</li></ul>
+                    <ul>
+                    {input.teams.map((team, index) => (
+                        <li key={index}>
+                            {team} 
+                            <button onClick={() => handleDeleteTeam(team)}>x</button>
+                        </li>
+                    ))}
+                    </ul>   
                     <span className={styles.errorMessage}>{error.teams}</span>
                 </div>
                 <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
