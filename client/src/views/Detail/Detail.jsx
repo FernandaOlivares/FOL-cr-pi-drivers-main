@@ -15,17 +15,17 @@ const Detail = () => {
   const { id } = useParams(); // Obtén el parámetro id de la URL
 
   useEffect(() => {
-    console.log('ID a buscar:', id);
     dispatch(getDriverById(id)); // Utiliza el id obtenido de la URL
   }, [dispatch, id]);
 
   const driverDetail = useSelector((state) => state.driverById);
- /* console.log('Muestra el detail?', driverDetail);
   const joinTeams = (driverDetail && driverDetail.teams && driverDetail.teams.length > 0)
     ? driverDetail.teams.join(" - ")
     : (driverDetail && driverDetail.teams ? driverDetail.teams : "Independent Driver");
-         <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</p>
-*/
+     console.log(joinTeams);
+    
+
+
 
   return (
     <div>
@@ -43,7 +43,7 @@ const Detail = () => {
             <p>{driverDetail.id}</p>
             <p>{driverDetail.dateOfBirth}</p>
             <p>{driverDetail.nationality}</p>
-       
+            <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</p>
             <p>{driverDetail.description}</p>
           </div>
         ) : <p>Please wait a minute; it is taking longer than normal...</p>
