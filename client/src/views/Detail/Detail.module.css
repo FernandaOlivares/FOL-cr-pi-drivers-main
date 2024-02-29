@@ -1,0 +1,94 @@
+:root {
+    --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+    --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+    --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+    --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+    --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+    --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+    --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+    --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+  }
+  
+  .card {
+    background-color: var(--color-black-redbull);
+    color: #fff;
+    padding: 20px;
+    border-radius: 100px;
+    width: 200px; /* Cambiar el ancho a relativo */
+    max-width: 300px; /* Establecer un ancho máximo para evitar que la tarjeta se expanda demasiado en pantallas grandes */
+    min-height: 378px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 1px solid #fff; /* Agregar borde blanco y fino */
+  }
+  
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-silver-alfaromeo);
+    box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
+  }
+  
+  .card h2 {
+    font-size: 1.2em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--color-white-greatness); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .card p {
+    font-size: 1em;
+    color: var(--color-white-greatness);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card img {
+    width: 50%;
+    max-width: 50%; /* Asegurar que la imagen no se salga de la tarjeta */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 50px;
+    margin-bottom: 10px;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+  }
+  .card img:hover {
+    filter: grayscale(100%);
+  }
+  
+  .robotoMonoFont {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .robotoMonoFontBolt {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  .nameContainer {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+    font-family: 'Roboto', sans-serif; /* Establece la fuente como Roboto */
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  .overlayTextName {
+    /* Estilos adicionales para los nombres si es necesario */
+    margin: 0; /* Elimina los márgenes por defecto */
+  }
+  
+  
+    @media screen and (min-width: 768px) {
+    .card {
+      margin: 0 auto; /* Centrar la tarjeta en pantallas más grandes */
+    }
+  }
+  

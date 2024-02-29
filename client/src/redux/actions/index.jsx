@@ -9,7 +9,8 @@ export const GET_ALL_TEAMS = 'GET_ALL_TEAMS';
 export const FILTER_DRIVERS_BY_TEAM = 'FILTER_DRIVERS_BY_TEAM';
 export const CLEAN_FILTERS = 'CLEAN_FILTERS';
 export const POST_NEW_DRIVER = 'POST_NEW_DRIVER';
-export const GET_DRIVER_BY_ID = 'GET_DRIVER_BY_ID';
+export const GET_DRIVER_BY_ID_SUCCESS = 'GET_DRIVER_BY_ID_SUCCESS';
+export const GET_DRIVER_BY_ID_FAILURE = 'GET_DRIVER_BY_ID_FAILURE';
 
 
 export const getAllDrivers = () => {
@@ -17,7 +18,7 @@ export const getAllDrivers = () => {
         try {
             const response = await axios.get('http://localhost:3001/drivers');
             dispatch({
-                type: GET_ALL_DRIVERS,
+                type: 'GET_ALL_DRIVERS',
                 payload: response.data,
             });
         } catch (error) {
@@ -26,12 +27,12 @@ export const getAllDrivers = () => {
     }
 };
 
-export const getDriversByName = (forenameOrFullName) => {
+export const getDriversByName = (name) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3001/drivers?forename=${forenameOrFullName}`);
+            const response = await axios.get(`http://localhost:3001/drivers?forename=${name}`);
             dispatch({
-                type: GET_DRIVERS_BY_NAME,
+                type: 'GET_DRIVERS_BY_NAME',
                 payload: response.data,
             });
         } catch (error) {
@@ -41,18 +42,18 @@ export const getDriversByName = (forenameOrFullName) => {
 };
  
 export const filterDriversBySource = (payload) => ({
-    type: FILTER_DRIVERS_BY_SOURCE,
+    type: 'FILTER_DRIVERS_BY_SOURCE',
     payload,
 });
 
 
 export const sortDriversByName = (payload) => ({
-    type: SORT_DRIVERS_BY_NAME,
+    type: 'SORT_DRIVERS_BY_NAME',
     payload,
 });
 
 export const sortDriversByDateOfBirth = (payload) =>({
-    type: SORT_DRIVERS_BY_DATE_OF_BIRTH,
+    type: 'SORT_DRIVERS_BY_DATE_OF_BIRTH',
     payload,
 });
 
@@ -61,7 +62,7 @@ export const getAllTeams = () => {
         try {
             const response = await axios.get('http://localhost:3001/teams');
             dispatch({
-                type: GET_ALL_TEAMS,
+                type: 'GET_ALL_TEAMS',
                 payload: response.data,
             });
         } catch (error) {
@@ -71,13 +72,13 @@ export const getAllTeams = () => {
 };
 
 export const filterDriversByTeam = (payload) => ({
-    type: FILTER_DRIVERS_BY_TEAM,
+    type: 'FILTER_DRIVERS_BY_TEAM',
     payload,
 });
 
 export const cleanFilters = () => {
     return {
-      type: CLEAN_FILTERS,
+      type: 'CLEAN_FILTERS',
     };
 };
 
@@ -88,7 +89,10 @@ export const postNewDriver = (payload) => {
             const response = await axios.post('http://localhost:3001/post/drivers', payload);
 
             // Despachar una acción al store con el tipo POST_NEW_DRIVER y los datos relevantes del conductor creado
-            dispatch({ type: POST_NEW_DRIVER, payload: response.data });
+            dispatch({ 
+                type: 'POST_NEW_DRIVER',
+                payload: response.data
+            });
 
             // Devolver los datos del conductor creado si es necesario
             return response.data;
@@ -102,15 +106,21 @@ export const postNewDriver = (payload) => {
 };
 
 export const getDriverById = (id) => {
-    return async function (dispatch) {
-        try {
-            const response = await axios.get(`http://localhost:3001/drivers/${id}`);
-            dispatch({
-                type: GET_DRIVER_BY_ID,
-                payload: response.data,
-            });
-        } catch (error) {
-            console.error('Error fetching driver by Id:', error);
-        }
+  return async function (dispatch) {
+    try {
+      const response = await axios.get(`http://localhost:3001/drivers/${id}`);
+      
+      dispatch({
+        type: 'GET_DRIVER_BY_ID_SUCCESS',
+        payload: response.data,
+      });
+    } catch (error) {
+      console.error('Error fetching driver by Id:', error);
+      // También puedes despachar una acción de error si es necesario
+      dispatch({
+        type: 'GET_DRIVER_BY_ID_FAILURE',
+        payload: error.message, // Puedes enviar información del error si lo deseas
+      });
     }
+  };
 };

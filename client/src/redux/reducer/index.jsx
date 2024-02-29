@@ -8,7 +8,7 @@ import {
     FILTER_DRIVERS_BY_TEAM,
     CLEAN_FILTERS,
     POST_NEW_DRIVER,
-    GET_DRIVER_BY_ID,
+    GET_DRIVER_BY_ID_SUCCESS,
 } from '../actions/index.jsx';
 
 const initialState = {
@@ -123,12 +123,16 @@ function rootReducer(state = initialState, action) {
         };
         }
 
-        case GET_DRIVER_BY_ID: {
-            return{
-                ...state,
-                driverById: action.payload
-            }
-        }
+        case GET_DRIVER_BY_ID_SUCCESS: {
+            // Realiza cualquier manipulación de datos necesaria aquí, como combinar los datos nuevos con los existentes, si es necesario
+            const updatedDriverById = action.payload; // Asigna los datos del conductor obtenidos de la acción
+          
+            return {
+              ...state,
+              driverById: updatedDriverById, // Asigna los datos actualizados al estado driverById
+            };
+          }
+          
             
         default:
             return state;
