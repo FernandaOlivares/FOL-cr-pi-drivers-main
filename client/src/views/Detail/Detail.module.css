@@ -9,18 +9,23 @@
     --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
   }
   
+  .detailContainer {
+    display: flex;
+    align-items: flex-start;
+    max-width: 95%;
+    margin: 15px 15px 15px 15px;
+  }
+  
   .card {
     background-color: var(--color-black-redbull);
     color: #fff;
     padding: 20px;
     border-radius: 100px;
-    width: 200px; /* Cambiar el ancho a relativo */
-    max-width: 300px; /* Establecer un ancho máximo para evitar que la tarjeta se expanda demasiado en pantallas grandes */
-    min-height: 378px;
+    width: 1800px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    border: 1px solid #fff; /* Agregar borde blanco y fino */
+    border: 1px solid #fff;
   }
   
   
@@ -30,14 +35,28 @@
     border-color: var(--color-silver-alfaromeo);
     box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
   }
-  
-  .card h2 {
-    font-size: 1.2em;
-    margin-top: 30px;
+
+  .card h1 {
+    margin-top: 10px;
     margin-bottom: 10px;
     color: var(--color-white-greatness); 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    margin-left: -60%;
+  }
+  
+  .card h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--color-white-greatness); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: -60%;
+  }
+  .card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--color-white-greatness); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: -60%;
   }
   
   .card p {
@@ -47,10 +66,12 @@
   }
   
   .card img {
-    width: 50%;
+    width: 25%;
     max-width: 50%; /* Asegurar que la imagen no se salga de la tarjeta */
     height: auto; /* Mantener la proporción de la imagen */
     border-radius: 50px;
+    margin-top: 4%;
+    margin-left: -60%;
     margin-bottom: 10px;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
@@ -86,9 +107,21 @@
   }
   
   
-    @media screen and (min-width: 768px) {
-    .card {
-      margin: 0 auto; /* Centrar la tarjeta en pantallas más grandes */
+  /* Pantallas medianas */
+  @media screen and (min-width: 768px) {
+    .cardContainer {
+      max-width: 768px; 
     }
   }
-  
+  /* Pantallas grandes */
+  @media screen and (min-width: 992px) {
+    .cardContainer {
+      max-width: 992px;
+    }
+  }
+  /* Pantallas extra grandes */
+  @media screen and (min-width: 1200px) {
+    .cardContainer {
+      max-width: 1200px;
+    }
+  }

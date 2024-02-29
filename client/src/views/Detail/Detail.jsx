@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'; 
 
@@ -12,27 +9,27 @@ import styles from './Detail.module.css';
 
 const Detail = () => {
   const dispatch = useDispatch();
-  const { id } = useParams(); // Obtén el parámetro id de la URL
+  const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true); //! Track loading status
 
   useEffect(() => {
-    dispatch(getDriverById(id)); // Utiliza el id obtenido de la URL
+    dispatch(getDriverById(id)).then(() => {
+      setIsLoading(false); //! Set loading status to false when data is fetched & ensure that the entire driver information is loaded before rendering
+    });
   }, [dispatch, id]);
 
   const driverDetail = useSelector((state) => state.driverById);
   const joinTeams = (driverDetail && driverDetail.teams && driverDetail.teams.length > 0)
     ? driverDetail.teams.join(" - ")
     : (driverDetail && driverDetail.teams ? driverDetail.teams : "Independent Driver");
-     console.log(joinTeams);
-    
-
-
 
   return (
-    <div>
-      <p>Estás en Detail!</p>
+    <div className={styles.detailContainer}>
       {
-        driverDetail ? (
-          <div>
+        isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className={styles.card}>
             <img
               className={`${styles.imageFilter}`}
               src={driverDetail.image || defaultImg}
@@ -40,13 +37,13 @@ const Detail = () => {
             />
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename}</h1>
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname}</h1>
-            <p>{driverDetail.id}</p>
-            <p>{driverDetail.dateOfBirth}</p>
-            <p>{driverDetail.nationality}</p>
-            <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</p>
-            <p>{driverDetail.description}</p>
+            <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</h3>
+            <p>Id: {driverDetail.id}</p>
+            <p>Date Of Birth:{driverDetail.dateOfBirth}</p>
+            <p>Nationality: {driverDetail.nationality}</p>
+            <p>Biography: {driverDetail.description}</p>
           </div>
-        ) : <p>Please wait a minute; it is taking longer than normal...</p>
+        )
       }
     </div>
   );
