@@ -27,7 +27,7 @@ const Detail = () => {
     <div className={styles.detailContainer}>
       {
         isLoading ? (
-          <p>Loading...</p>
+          <p>Sit tight, data is loading...</p>
         ) : (
           <div className={styles.card}>
             <img
