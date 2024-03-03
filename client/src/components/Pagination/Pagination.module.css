@@ -44,6 +44,14 @@ color: var(--color-white-greatness);
 border-color: var(--color-white-greatness); 
 box-shadow: 0px 0px 1.5vw var(--color-white-greatness) 
 }
+.currentPage{
+    color: var(--color-white-greatness);
+    border-color: var(--color-white-greatness); 
+    box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
+}
+.overlayButton:focus {
+    outline-color: var(--color-white-greatness); /* Cambiar el color del borde al hacer clic */
+}
 
   
 @media (max-width: 480px) {

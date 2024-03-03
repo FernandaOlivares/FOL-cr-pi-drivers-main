@@ -54,7 +54,7 @@ const Pagination = ({ driversPerPage, allDrivers, pagination, currentPage, setCu
                     </li>
                     {pageNumbers && visiblePages.map(number => (
                         <li className={styles.number} key={number} style={{ display: visiblePages.includes(number) ? 'inline-block' : 'none' }}>
-                            <button className={styles.overlayButton} onClick={() => pagination(number)}>{number}</button>
+                            <button className={currentPage === number ? `${styles.overlayButton} ${styles.currentPage}` : styles.overlayButton}  onClick={() => pagination(number)}>{number}</button>
                         </li>
                     ))}
                     <li className={styles.number}>
