@@ -20,30 +20,31 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  border: 1px solid #fff; /* Agregar borde blanco y fino */
+  border: 2px solid antiquewhite;
 }
 
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-color: var(--color-silver-alfaromeo);
-  box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
+  border-color: antiquewhite;
+  box-shadow: 0px 0px 1.5vw antiquewhite;
 }
 
 .card h2 {
   font-size: 1.2em;
   margin-top: 30px;
   margin-bottom: 10px;
-  color: var(--color-white-greatness); 
+  color: antiquewhite;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
 .card p {
   font-size: 1em;
-  color: var(--color-white-greatness);
+  color: antiquewhite;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-style: italic;
 }
 
 .card img {

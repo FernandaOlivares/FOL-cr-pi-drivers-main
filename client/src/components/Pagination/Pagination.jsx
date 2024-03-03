@@ -46,9 +46,9 @@ const Pagination = ({ driversPerPage, allDrivers, pagination, currentPage, setCu
     const visiblePages = getVisiblePages();
 
     return (
-        <div className={styles.container}>
+        <div className={styles.paginationContainer}>
             <nav>
-                <ul className={styles.paginado}>
+                <ul className={styles.pagination}>
                     <li className={styles.number}>
                         <button className={styles.overlayButton} onClick={prevPage}>{"<<"}</button>
                     </li>

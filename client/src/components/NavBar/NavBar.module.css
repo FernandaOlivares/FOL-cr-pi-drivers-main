@@ -11,7 +11,7 @@
 
 .navBarContainer {
   position: fixed;
-  top: 18%;
+  top: 10%;
   left: 1%;
   display: flex;
   flex-direction: column; /* Cambia la dirección de los elementos a columna */
@@ -28,7 +28,10 @@
   margin-top: 3%;
   width: 80%;
   color: var(--color-white-greatness) ;
-  padding: 10px 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   font-size: 0.90vw;
   font-family: 'Roboto', sans-serif;
   border-radius: 5px;

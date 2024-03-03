@@ -9,10 +9,10 @@
   --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
 }
 
-
 body {
   background-color: var(--color-black-redbull)   ;
 }
+
 
 .bodyContainer {
   display: flex;

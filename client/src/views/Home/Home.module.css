@@ -1,68 +1,55 @@
 :root {
-  --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
-  --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
-  --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
-  --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
-  --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
-  --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
-  --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
-  --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+--color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+--color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+--color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+--color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+--color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+--color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+--color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+--color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
 }
+
 
 .homeContainer {
-    background-color: #000000; /* Color de fondo */
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Alineación de texto al centro */
-  }
-  
-  .body {
-    background-color: #000000;
-  }
-  
-  .homeButton {
-    width: 12%;
-    height: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0%;
-    margin-left: 73%;
-    background-color: #040404; /* Verde azulado */
-    color: #fff; /* Texto en color blanco */
-    border: 2px solid #00FFFFE6;
-    border-radius: 50px;
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    text-decoration: none; /* Quita el subrayado */
-  }
-  
-  /* Cambiar el estilo del botón al pasar el mouse */
-  .homeButton:hover {
-    background-color: rgba(0, 255, 255, 0.9); /* Cambia a un tono más claro al pasar el mouse */
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 1); /* Aumenta la intensidad de la sombra */
-  }
-  
-  .logoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-white-greatness); /* Color de fondo del contenedor */
-    padding: 10px; /* Ajusta el espaciado interior del contenedor según sea necesario */
-    margin-top: -10px; /* Mueve el contenedor hacia arriba */
-    color: var(--color-black-redbull)
-}
-.logo {
-  margin:0%; /* Ajusta el margen del h1 según sea necesario */
-  font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
-  font-weight: bold; /* Opcional: ajusta el grosor del texto según sea necesario */
-  color: var(--color-white-greatness) /* Opcional: ajusta el color del texto según sea necesario */
+/*text-align: center;*/
+width: 950px; /* Ancho fijo */
+max-width: 100%; /* Ancho máximo */
+padding: 0; /* Asegurar que no haya relleno */
+margin-left: 22%;
+margin-top: -1%;
 }
 
-  .robotoMonoFont {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-  }
+.logoContainer {
+  width: 110vw;
+  height: 50%;
+  background-color: antiquewhite;
+  padding: 10px;
+  margin-top: -2%;
+  margin-left: -4.8%;
+  color: var(--color-black-redbull);
+  text-align: left;
+  font-size: 2.4em;
+  font-weight: lighter;
+  border: 1px solid antiquewhite;
+}
+
+.titleContainer {
+  width: 50vw;
+  background-color: antiquewhite;
+  font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
+  color: var(--color-black-redbull); /* Color de texto para el título de la colección */
+  text-align: center;
+  margin-top: -6%;
+  margin-left: 30%;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+
+
+.robotoMonoFont {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}

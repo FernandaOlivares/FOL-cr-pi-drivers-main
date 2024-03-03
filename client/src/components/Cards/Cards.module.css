@@ -9,15 +9,18 @@
   --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
 }
 .cardContainer {
+  width: 63vw;
+  height: 175vh;
   display: flex;
   flex-wrap: wrap;
   gap: 77.5px;
-  justify-content: right;
+  justify-content: center;
   align-items: flex-start;
-  max-width: 90%;
-  margin: 100px auto 25px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 25px;
+  margin-left: auto;
   padding: 0 20px;
-
 
 }
 /* Pantallas medianas */

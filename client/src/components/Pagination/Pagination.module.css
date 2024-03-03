@@ -9,19 +9,24 @@
     --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
   }
 
-.container {
-    position: absolute;
-    top: 70px; /* Ajusta la distancia desde la parte superior según sea necesario */
-    right: 20px; /* Ajusta la distancia desde el lado derecho según sea necesario */
+.paginationContainer {
+    /*position: fixed; Posición fija */
+    top: 0%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    height: 50px; /* Altura fija */
+    align-items: center;
+    margin-top: 5%;
+    padding: 0.3%;
 }
   
-.paginado {
-display: flex;
-flex-direction: row;
-text-align: center;
-justify-content: center;
-margin-left: -160%;
-margin-top: 18%;
+.pagination {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin: 0; /* Asegurar que no haya margen */
+    padding: 0; /* Asegurar que no haya relleno */
 }
   
 .number {

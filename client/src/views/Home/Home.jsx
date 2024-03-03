@@ -91,8 +91,12 @@ const Home = () => {
   };
   
   return (
+  <div>
+    <div>
+    <h1 className={styles.logoContainer } > F1 - LEGENDS </h1>
+    <h2 className={styles.titleContainer}>| The Collection |</h2>
+    </div>
   <div className={styles.homeContainer}>
-  <h1 className={`${styles.logoContainer}`}>F1 - LEGENDS!</h1>
     <div>
       <NavBar
       handleChange={handleChange}
@@ -109,6 +113,7 @@ const Home = () => {
     </div>
     <div>
       <Cards currentDrivers={currentDrivers} />
+    </div>
     </div>
   </div>
     );
