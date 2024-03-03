@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'; 
 
-import defaultImg from '../../assets/f1HeroDefaultImg.jpg';
+import defaultImg from '../../assets/f1DefaultImg.jpeg';
 import { getDriverById } from '../../redux/actions/index.jsx';
 
 import styles from './Detail.module.css';

@@ -9,6 +9,9 @@
 --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
 }
 
+html, body {
+  background-color: var(--color-black-redbull); /* Fondo negro */
+}
 
 .homeContainer {
 /*text-align: center;*/
@@ -17,10 +20,11 @@ max-width: 100%; /* Ancho máximo */
 padding: 0; /* Asegurar que no haya relleno */
 margin-left: 22%;
 margin-top: -1%;
+background-color: var(--color-black-redbull);
 }
 
 .logoContainer {
-  width: 110vw;
+  width: 96vw;
   height: 50%;
   background-color: antiquewhite;
   padding: 10px;
@@ -40,7 +44,7 @@ margin-top: -1%;
   color: var(--color-black-redbull); /* Color de texto para el título de la colección */
   text-align: center;
   margin-top: -6%;
-  margin-left: 30%;
+  margin-left: 31.5%;
   font-style: italic;
   font-weight: lighter;
 }

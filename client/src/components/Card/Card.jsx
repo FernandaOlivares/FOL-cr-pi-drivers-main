@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styles from './Card.module.css';
-import defaultImg from '../../assets/f1HeroDefaultImg.jpg';
+import defaultImg from '../../assets/f1DefaultImg.jpeg';
 import { Link } from 'react-router-dom';
 
 const Card = ({eachDriver}) => {
