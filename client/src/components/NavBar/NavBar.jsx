@@ -16,8 +16,7 @@ const NavBar = (props) => {
     handleSortByDateOfBirth,
     handleFilterByTeam,
     allTeams,
-    handleClick,
-    handleReset
+    handleReset,
   } = props;
 
   return (
