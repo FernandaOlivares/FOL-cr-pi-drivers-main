@@ -47,17 +47,35 @@ background-color: var(--color-black-redbull);
 .overlayButton:hover {
 color: var(--color-white-greatness);
 border-color: var(--color-white-greatness); 
-box-shadow: 0px 0px 1.5vw var(--color-white-greatness) 
+box-shadow: 0px 0px 1.5vw var(--color-white-greatness);
+outline: none;
 }
+
+.overlayButton:focus {
+    outline-color: var(--color-white-greatness); /* Cambiar el color del borde al hacer clic */
+}
+
+.overlayButton:active {
+    border-color: var(--color-silver-alfaromeo);
+    box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+    outline: none;
+}
+
+.overlayButton:focus:not(:active) {
+    outline: none; /* Elimina el borde de enfoque cuando no está activo */
+}
+
 .currentPage{
     color: var(--color-white-greatness);
     border-color: var(--color-white-greatness); 
     box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
 }
-.overlayButton:focus {
-    outline-color: var(--color-white-greatness); /* Cambiar el color del borde al hacer clic */
+.currentPage:active{
+    color: var(--color-white-greatness);
+    border-color: var(--color-white-greatness); 
+    box-shadow: 0px 0px 1.5vw var(--color-white-greatness);
+    outline: none; 
 }
-
   
 @media (max-width: 480px) {
 .container > a {
