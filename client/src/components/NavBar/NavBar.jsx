@@ -17,6 +17,7 @@ const NavBar = (props) => {
     handleFilterByTeam,
     allTeams,
     handleClick,
+    handleReset
   } = props;
 
   return (
@@ -31,7 +32,7 @@ const NavBar = (props) => {
       <p>Filter By:</p>
       <FilterDriversBySource handleFilterBySource={handleFilterBySource}/>
       <FilterDriversByTeam handleFilterByTeam = {handleFilterByTeam} allTeams={allTeams}/>
-      <button onClick={(e)=>handleClick(e)} className={styles.overlayButton}>Reload Drivers</button>
+      <button onClick={handleReset} className={styles.overlayButton}>Reset Filters</button>
     </div>
   );
 };
@@ -45,6 +46,7 @@ NavBar.propTypes = {
   handleFilterByTeam: PropTypes.func.isRequired,
   allTeams: PropTypes.array.isRequired,
   handleClick: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 
 export default NavBar;

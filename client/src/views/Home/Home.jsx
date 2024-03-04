@@ -43,22 +43,34 @@ const Home = () => {
   const indexOfFirstDriver = indexOfLastDriver - driversPerPage;//0
   const currentDrivers = allDrivers.slice(indexOfFirstDriver, indexOfLastDriver);//Que devuelva del i 0 al 8, en total 9 drivers. Va de 0 a 9 pero corta entre i 8 y 9.
 
-  const pagination = (pageNumber) => {
+  const handlePagination = (pageNumber) => {
       setCurrentPage(pageNumber);
+  };
+
+//********************** ALL TYPE OF FILTERS **********************//
+
+  const [filterType, setFilterType] = useState('');
+  const [sortBy, setSortBy] = useState('');
+
+  const handleReset = () => {
+    setSearchInput('');
+    setFilterType('');
+    setSortBy('');
+    dispatch(getAllDrivers()); // También puedes despachar acciones para volver a cargar los datos originales
+    dispatch(getAllTeams());
   };
 
 //********************** GET DRIVERS BY NAME **********************//
   const [searchInput, setSearchInput] = useState(''); //Estado local vacío
 
-    const handleChange = (input) =>{
-      input.preventDefault();
-      setSearchInput(input.target.value);
-    };
+  const handleChange = (event) => {
+    setSearchInput(event.target.value);
+  };
 
-    const handleSubmit = (input) =>{
-      input.preventDefault();
-      dispatch(getDriversByName(searchInput));
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(getDriversByName(searchInput));
+  };
 
 //********************** FILTER DRIVERS BY SOURCE **********************//
   const handleFilterBySource = (event) => {
@@ -106,10 +118,16 @@ const Home = () => {
         handleSortByDateOfBirth = {handleSortByDateOfBirth}
         handleFilterByTeam = {handleFilterByTeam}
         handleClick = {handleClick}
+        handleReset={handleReset}
         allTeams = { allTeams }/>
       </div>
     <div>
-      <Pagination driversPerPage={driversPerPage} allDrivers={allDrivers.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Pagination
+      driversPerPage={driversPerPage}
+      allDrivers={allDrivers.length}
+      handlePagination={handlePagination}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage} />
     </div>
     <div>
       <Cards currentDrivers={currentDrivers} />

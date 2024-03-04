@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styles from '../Pagination/Pagination.module.css';
 
-const Pagination = ({ driversPerPage, allDrivers, pagination, currentPage, setCurrentPage }) => {
+const Pagination = ({ driversPerPage, allDrivers, handlePagination, currentPage, setCurrentPage }) => {
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(allDrivers / driversPerPage); i++) {
         pageNumbers.push(i);
@@ -12,14 +12,14 @@ const Pagination = ({ driversPerPage, allDrivers, pagination, currentPage, setCu
     const nextPage = () => {
         if (currentPage < pageNumbers.length) {
             setCurrentPage(currentPage + 1); // Incrementa currentPage en 1
-            pagination(currentPage + 1); // Llama a pagination con el nuevo valor de currentPage
+            handlePagination(currentPage + 1); // Llama a pagination con el nuevo valor de currentPage
         }
     };
 
     const prevPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1); // Decrementa currentPage en 1
-            pagination(currentPage - 1); // Llama a pagination con el nuevo valor de currentPage
+            handlePagination(currentPage - 1); // Llama a pagination con el nuevo valor de currentPage
         }
     };
 
@@ -54,7 +54,7 @@ const Pagination = ({ driversPerPage, allDrivers, pagination, currentPage, setCu
                     </li>
                     {pageNumbers && visiblePages.map(number => (
                         <li className={styles.number} key={number} style={{ display: visiblePages.includes(number) ? 'inline-block' : 'none' }}>
-                            <button className={currentPage === number ? `${styles.overlayButton} ${styles.currentPage}` : styles.overlayButton}  onClick={() => pagination(number)}>{number}</button>
+                            <button className={currentPage === number ? `${styles.overlayButton} ${styles.currentPage}` : styles.overlayButton}  onClick={() => handlePagination(number)}>{number}</button>
                         </li>
                     ))}
                     <li className={styles.number}>
