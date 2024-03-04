@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 
 import styles from './Filters.module.css';
 
-const SortDriversByName = ({handleSortByName}) => {
+const SortDriversByName = ({handleSortByName, selectedValue}) => {
   
 return (
   <div className={styles.filterContainer}>
-    <select onChange={(sortOption) => handleSortByName(sortOption)} name='sortByName' id='sortByName' className={styles.filterBtn} defaultValue=''>
+    <select value={selectedValue} onChange={handleSortByName} name='sortByName' id='sortByName' className={styles.filterBtn}>
         <option value='' disabled id='sortByName'>Full Name</option>
         <option value='FromAToZ'>From A to Z</option>
         <option value='FromZToA'>From Z to A</option>

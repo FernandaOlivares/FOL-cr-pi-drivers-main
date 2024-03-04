@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import SortDriversByName from '../Filters/SortDriversByName.jsx';
@@ -17,6 +18,7 @@ const NavBar = (props) => {
     handleFilterByTeam,
     allTeams,
     handleReset,
+    selectedValue,
   } = props;
 
   return (
@@ -26,10 +28,10 @@ const NavBar = (props) => {
       <p>You did not find a driver?</p>
       <Link className={styles.linkButton} to= '/create'>Add Driver</Link>
       <p>Sort By:</p>
-      <SortDriversByName handleSortByName={handleSortByName}/>
+      <SortDriversByName handleSortByName={handleSortByName} selectedValue={selectedValue}/>
       <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth}/>
       <p>Filter By:</p>
-      <FilterDriversBySource handleFilterBySource={handleFilterBySource}/>
+      <FilterDriversBySource handleFilterBySource={handleFilterBySource} selectedValue={selectedValue}/>
       <FilterDriversByTeam handleFilterByTeam = {handleFilterByTeam} allTeams={allTeams}/>
       <button onClick={handleReset} className={styles.overlayButton}>Reset Filters</button>
     </div>

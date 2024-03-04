@@ -43,11 +43,12 @@ const Home = () => {
   };
 
 //********************** ALL TYPE OF FILTERS **********************//
-
+  const [selectedValue, setSelectedValue] = useState('');
   const [filterType, setFilterType] = useState('');
   const [sortBy, setSortBy] = useState('');
 
   const handleReset = () => {
+    setSelectedValue('');
     setSearchInput('');
     setFilterType('');
     setSortBy('');
@@ -70,12 +71,14 @@ const Home = () => {
 //********************** FILTER DRIVERS BY SOURCE **********************//
   const handleFilterBySource = (event) => {
     event.preventDefault();
+    setSelectedValue(event.target.value)
     dispatch(filterDriversBySource(event.target.value)); 
   };
 
 //********************** SORT DRIVERS BY NAME OR FULL NAME **********************//
   const handleSortByName = (event) =>{
     event.preventDefault();
+    setSelectedValue(event.target.value)
     dispatch(sortDriversByName(event.target.value));
   }
 
@@ -113,6 +116,7 @@ const Home = () => {
         handleSortByDateOfBirth = {handleSortByDateOfBirth}
         handleFilterByTeam = {handleFilterByTeam}
         handleReset={handleReset}
+        selectedValue={selectedValue}
         allTeams = { allTeams }/>
       </div>
     <div>
