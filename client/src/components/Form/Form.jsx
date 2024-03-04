@@ -169,9 +169,10 @@ const Form = () => {
             }} />
             </div>
             <div className={styles.formContainer}>
+            <p className={styles.formInstructions}>To create a new driver, please add required information*:</p>
             <form onSubmit={handleSubmit} className={styles.driverForm}>
                 <div className={styles.inputField}>
-                    <label>Forename:
+                    <label>Forename*:
                         <div className={styles.inputContainer}>
                             <input type='text' name='forename' value={input.forename} onChange={handleChange}/>
                             <span className={styles.errorMessage}>{error.forename}</span>
@@ -179,7 +180,7 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                    <label>Surname:
+                    <label>Surname*:
                         <div className={styles.inputContainer}>
                             <input type='text'name='surname' value={input.surname} onChange={handleChange}/>
                             <span className={styles.errorMessage}>{error.surname}</span>
@@ -187,7 +188,7 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                    <label>Nationality:
+                    <label>Nationality*:
                         <div className={styles.inputContainer}>
                             <input type='text' name='nationality' value={input.nationality} onChange={handleChange}/>
                             <span className={styles.errorMessage}>{error.nationality}</span>
@@ -195,7 +196,7 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                    <label>Image:
+                    <label>Image*:
                         <div className={styles.inputContainer}>
                             <input type='text' name='image' value={input.image} onChange={handleChange}/>
                             <span className={styles.errorMessage}>{error.image}</span>
@@ -203,7 +204,7 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                    <label>Date Of Birth:
+                    <label>Date Of Birth*:
                         <div className={styles.inputContainer}>
                             <input type='date' name='dateOfBirth' value={input.dateOfBirth} onChange={handleChange}/>
                             <span className={styles.errorMessage}>{error.dateOfBirth}</span>
@@ -211,7 +212,7 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                <label>Description:
+                <label>Description*:
                     <div className={styles.descriptionContainer}>
                         <textarea name='description' value={input.description} onChange={handleChange} className={styles.textarea} />
                         <span className={styles.errorMessage}>{error.description}</span>
@@ -220,30 +221,29 @@ const Form = () => {
                 </div>
                 <div className={styles.filterContainer}>
                     <select onChange={(event) => handleSelect(event)} name='teamSelect' id='teamSelect' className={styles.filterBtn} defaultValue=''>
-                        <option value='' disabled id='teamSelect'>Add Teams</option>
+                        <option value='' disabled id='teamSelect'>Add Teams*</option>
                         {allTeams?.map((team) => {
                         return (
                             <option key={team.id} value={team.name}>{team.name}</option>
                         );
                         })}2
                     </select>
-                    <ul>
+                    <div className={styles.teamListContainer}>
+                    <ul className={styles.teamsList}>
                     {input.teams.map((team, index) => (
                         <li key={index}>
                             {team} 
-                            <button onClick={() => handleDeleteTeam(team)}>x</button>
+                            <button onClick={() => handleDeleteTeam(team)}>X</button>
                         </li>
                     ))}
                     </ul>   
+                    </div>
                     <span className={styles.errorMessage}>{error.teams}</span>
                 </div>
-            </form>
-            <div className={styles.buttonContainer}>
-                <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
-                </div>
                 <div className={styles.buttonContainer}>
-                    <Link to='/home'><button>Home</button></Link>
-                </div>
+                <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
+            </div>
+            </form>
             </div>
         </div>
     );

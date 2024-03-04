@@ -11,14 +11,21 @@
 
 .formContainer {
     width: 780px; /* Ancho fijo del contenedor del formulario */
-    margin: 0 auto;
     padding: 20px;
     margin-left: 0%;
-    margin-top: -52%;
-    background-color: #00D2BE;
-
+    margin-top: -61vh;
+  
+}
+.cardContainer {
+  margin-right: -65%;
+  margin-top: 10vh;
 }
   
+.formInstructions{
+  text-align: left;
+  margin-left: 3%; 
+}
+
   .driverForm {
     display: flex;
     flex-direction: column;
@@ -26,8 +33,8 @@
   
   .inputField {
     margin-bottom: 10px;
-    display: flex; /* Asegura que los elementos de input y mensaje de error se alineen horizontalmente */
-    align-items: left; /* Centra verticalmente los elementos */
+    display: flex;
+    align-items: left;
 }
 
 .inputField label {
@@ -45,7 +52,7 @@
 
 .inputField input:focus {
     outline: none;
-    border-color: var(--color-blue-mercedes);
+    box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);;
 }
 
 .inputContainer {
@@ -57,25 +64,23 @@
 .errorMessage {
     color: var(--color-red-ferrari);
     font-size: 14px;
-    margin-left: 10px; /* Ajusta el espacio entre el input y el mensaje de error */
+    margin-left: 0px; /* Ajusta el espacio entre el input y el mensaje de error */
     white-space: nowrap; /* Evita que el mensaje de error se divida en múltiples líneas */
-}
-
-.cardContainer {
-    margin-right: -95%;
-    margin-top: 20%;
+    
 }
 
 .filterContainer {
-    display: flex;
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
-    width: 37%;
-  }
+  display: flex;
+  flex-direction: column; /* Cambia la dirección principal a columna */
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  width: 100%;
+}
   
   
   .filterContainer select {
-    margin-top: 0%;
-    margin-bottom: 3%;
+    width: 57%;
+    margin-top: 6%;
+    margin-bottom: 2%;
     padding: 10px 20px; /* Espaciado interno */
     font-size: 0.90vw;
     font-family: 'Roboto', sans-serif;
@@ -92,14 +97,56 @@
     box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
   }
 
+  .teamListContainer {
+    width: auto; /* Cambiado a auto para adaptarse al contenido */
+    height: auto;
+    display: flex; /* Convertir el contenedor en un flex container */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan hacia abajo cuando no haya suficiente espacio */
+  }
+  .teamsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    display: flex; /* Convertir la lista en un flex container */
+    flex-wrap: wrap;
+  }
+  .teamsList button {
+    font-size: 0.7em; /* Reduce el tamaño de la letra del botón */
+    padding: 3px 5px; /* Reduce el espacio alrededor del texto dentro del botón */
+
+  }
+  .teamsList button:hover {
+    box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+    border: 1px solid var(--color-silver-alfaromeo);
+  }
+  .teamsList li {
+    font-size: 0.8em;
+    margin-right: 5px; /* Espacio entre los elementos */
+  }
+  
   .buttonContainer {
-    display: inline-block; /* Para que los contenedores de botones se alineen horizontalmente */
-    margin-right: 20px 20xp 20px 20px; /* Espacio entre los contenedores de botones */
-    width: 50%; /* Ocupar el ancho completo disponible */
-    background-color: #DC0000;
-    box-sizing: border-box; /* Incluir el margen y el padding en el ancho total */
+    display: inline-block;
+    margin-right: -1.5%;
+    margin-bottom: 9%;
+    width: 50%;
+    box-sizing: border-box;
+    position: absolute; /* Añadida propiedad de posición absoluta */
+    bottom: 0; /* Alineado en la parte inferior del contenedor */
+    right: 0; /* Alineado a la derecha del contenedor */
 }
 
+  
+  .buttonContainer button {
+    border: 1px solid transparent; /* Borde transparente por defecto */
+  }
+  
+  .buttonContainer button:hover,
+  .buttonContainer button:active {
+    border-color: transparent; /* Borde transparente al pasar el mouse o hacer clic */
+    box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+  }
+  
 .filterBtn {
     width: 60%;
     padding: 10px 20px; /* Espaciado interno */
@@ -123,7 +170,7 @@
 
 
   .descriptionContainer {
-    width: 50%; /* Ancho del contenedor */
+    width: 55%; /* Ancho del contenedor */
     height: 70px; /* Altura del contenedor (puedes ajustar este valor según sea necesario) */
 }
 
@@ -137,5 +184,5 @@
 
 .descriptionContainer textarea:focus {
   outline: none;
-  border-color: var(--color-blue-mercedes);
+  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
 }
