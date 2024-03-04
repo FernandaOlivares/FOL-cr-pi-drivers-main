@@ -1,7 +1,7 @@
 .videoContainer {
   position: relative; /* Establece una posición relativa para el contenedor */
   width: 100%; /* Ancho del contenedor del video al 100% del ancho de su contenedor padre */
-  margin-top: -100px; /* Ajusta el margen superior para mover el video hacia arriba */
+  margin-top: -250px; /* Ajusta el margen superior para mover el video hacia arriba */
 }
 
 video {

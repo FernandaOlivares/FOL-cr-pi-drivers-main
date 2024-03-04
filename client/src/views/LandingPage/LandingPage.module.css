@@ -13,7 +13,6 @@ body {
   background-color: var(--color-black-redbull)   ;
 }
 
-
 .bodyContainer {
   display: flex;
   justify-content: center;
@@ -21,16 +20,41 @@ body {
   min-height: 100vh; 
 }
 
+.logoContainer {
+  width: 17vw;
+  height: auto;
+  padding: 10px;
+  margin-top: -1%;
+  margin-left: -90%;
+  color: antiquewhite;
+  text-align: left;
+  font-size: 2.5em;
+  font-weight: 50;
+  text-decoration: none;
+}
+.logoContainer:hover {
+  border-color: var(--color-black-redbull);
+  color: antiquewhite;
+  }
+
+.headerContainer{
+  display: flex;
+  align-items: flex-start;
+  max-width: 95%;
+  height: auto;
+  margin-left: 5%;
+  margin-top: 0%;
+}
 .overlayButton {
   position: absolute;
-  bottom: 75.5%;
+  bottom: 77.5%;
   left: 91%;
   transform: translateX(-50%);
   color: transparent;
   padding: 10px; /* Ajusta el relleno para que el botón sea circular */
   font-size: 0.75vw;
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   border-radius: 50%; /* Hace que el botón sea circular */
   cursor: pointer;
   z-index: 1;
@@ -63,6 +87,9 @@ body {
 .typewriterContainer {
   margin-top: 30%;
   right: -50%;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-style: italic;
 }
 
 @keyframes blink {

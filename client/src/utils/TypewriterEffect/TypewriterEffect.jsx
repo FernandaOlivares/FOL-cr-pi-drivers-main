@@ -36,7 +36,7 @@ const TypewriterEffect = ({ text }) => {
   }, [text]);
 
   return (
-    <div className={styles.typewriterText}>
+    <div className={`${styles.typewriterText} `}>
       {displayText.map((line, index) => (
         <div key={index}>
           {line}

@@ -5,6 +5,12 @@ import styles from "./LandingPage.module.css";
 
 const LandingPage = () => {
   return (
+    <div>
+      <div>
+      <Link to="/home" className={styles.logoContainer}>
+        F1 - LEGENDS
+      </Link>
+    </div>
     <div className={styles.bodyContainer}>
       <Link to="/home">
         <button className={styles.overlayButton}>LIGHTS OUT!</button>
@@ -13,6 +19,7 @@ const LandingPage = () => {
       <div className={styles.typewriterContainer}>
         <TypewriterEffect text='"Once upon a time, there were men who pursued death for greatness, every second of a race,:reaching speeds up to 375 km/h, becoming...:F1 - Legends"' />
       </div>
+    </div>
     </div>
   );
 };
