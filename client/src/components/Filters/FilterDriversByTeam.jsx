@@ -1,17 +1,18 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 
 import styles from './Filters.module.css';
 
 
-const FilterDriversByTeam = ({ handleFilterByTeam, allTeams }) => {
+const FilterDriversByTeam = ({ handleFilterByTeam, selectedByTeamValue, allTeams }) => {
   return (
     <div className={styles.filterContainer}>
       <select
-        onChange={(teamOption) => handleFilterByTeam(teamOption)}
+        value={selectedByTeamValue}
+        onChange={handleFilterByTeam}
         name='filterByTeam'
         id='filterByTeam'
         className={styles.filterBtn}
-        defaultValue=''
       >
         <option value='' disabled id='filterByTeam'>Team</option>
         {allTeams?.map((team) => {

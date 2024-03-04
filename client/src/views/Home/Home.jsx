@@ -43,11 +43,17 @@ const Home = () => {
   };
 
 //********************** RESET BUTTON **********************//
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedBySourceValue, setSelectedBySourceValue] = useState('');
+  const [selectedByNameValue, setSelectedByNameValue] = useState('');
+  const [selectedByDOBValue, setSelectedByDOBValue] = useState('');
+  const [selectedByTeamValue, setSelectedByTeamValue] = useState('');
 
   const handleReset = () => {
+    setSelectedBySourceValue('');
     setSearchInput('');
-    setSelectedValue('');
+    setSelectedByDOBValue('');
+    setSelectedByNameValue('');
+    setSelectedByTeamValue('');
     dispatch(getAllDrivers());
   };
 
@@ -66,21 +72,21 @@ const Home = () => {
 //********************** FILTER DRIVERS BY SOURCE **********************//
   const handleFilterBySource = (event) => {
     event.preventDefault();
-    setSelectedValue(event.target.value)
+    setSelectedBySourceValue(event.target.value)
     dispatch(filterDriversBySource(event.target.value)); 
   };
 
 //********************** SORT DRIVERS BY NAME OR FULL NAME **********************//
   const handleSortByName = (event) =>{
     event.preventDefault();
-    setSelectedValue(event.target.value)
+    setSelectedByNameValue(event.target.value)
     dispatch(sortDriversByName(event.target.value));
   }
 
 //********************** SORT DRIVERS BY DATE OF BIRTH **********************//
   const handleSortByDateOfBirth = (event) =>{
     event.preventDefault();
-    setSelectedValue(event.target.value)
+    setSelectedByDOBValue(event.target.value)
     dispatch(sortDriversByDateOfBirth(event.target.value));
   }
 
@@ -94,6 +100,7 @@ const Home = () => {
 //********************** FILTER DRIVERS BY TEAM **********************//
   const handleFilterByTeam = (event) => {
     event.preventDefault();
+    setSelectedByTeamValue(event.target.value)
     dispatch(filterDriversByTeam(event.target.value)); 
   };
   
@@ -112,7 +119,10 @@ const Home = () => {
         handleSortByDateOfBirth = {handleSortByDateOfBirth}
         handleFilterByTeam = {handleFilterByTeam}
         handleReset={handleReset}
-        selectedValue={selectedValue}
+        selectedBySourceValue={selectedBySourceValue}
+        selectedByNameValue={selectedByNameValue}
+        selectedByDOBValue={selectedByDOBValue}
+        selectedByTeamValue={selectedByTeamValue}
         allTeams = { allTeams }/>
       </div>
     <div>
