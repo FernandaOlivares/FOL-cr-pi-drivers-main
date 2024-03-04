@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Header.module.css'; // Asegúrate de importar tus estilos CSS aquí
+import styles from './Header.module.css';
 
 const Header = ({pageTitle}) => {
     return (

@@ -2,12 +2,12 @@
 import React from 'react';
 import Form from '../../components/Form/Form.jsx';
 import Header from '../../components/Header/Header.jsx';
-import './Create.module.css';
+import styles from './Create.module.css'; 
 
 const CreateNewDriver = () => {
   return (
     <div>
-      <div>
+      <div className={styles.headerContainer}>
         <Header pageTitle=' | Create a New F1-Legend | '/>
       </div>
       <div>
