@@ -1,0 +1,37 @@
+:root {
+    --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
+    --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
+    --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
+    --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
+    --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
+    --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
+    --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
+    --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+    }
+    
+    .logoContainer {
+      width: 96vw;
+      height: 50%;
+      background-color: antiquewhite;
+      padding: 10px;
+      margin-top: -2%;
+      margin-left: -4.8%;
+      color: var(--color-black-redbull);
+      text-align: left;
+      font-size: 2.4em;
+      font-weight: lighter;
+      border: 1px solid antiquewhite;
+    }
+    
+    .titleContainer {
+      width: 50vw;
+      background-color: antiquewhite;
+      font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
+      color: var(--color-black-redbull); /* Color de texto para el título de la colección */
+      text-align: center;
+      margin-top: -6%;
+      margin-left: 31.5%;
+      font-style: italic;
+      font-weight: lighter;
+    }
+    

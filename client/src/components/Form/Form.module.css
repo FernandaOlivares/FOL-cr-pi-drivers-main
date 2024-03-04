@@ -13,8 +13,9 @@
     width: 780px; /* Ancho fijo del contenedor del formulario */
     margin: 0 auto;
     padding: 20px;
-    margin-left: -30%;
-    margin-top: -60%;
+    margin-left: 0%;
+    margin-top: -52%;
+    background-color: #00D2BE;
 
 }
   
@@ -24,19 +25,19 @@
   }
   
   .inputField {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex; /* Asegura que los elementos de input y mensaje de error se alineen horizontalmente */
     align-items: left; /* Centra verticalmente los elementos */
 }
 
 .inputField label {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     flex: 1; /* El label ocupará todo el espacio disponible en la fila */
     text-align: left;
 }
 
 .inputField input {
-    width:65%; /* Resta 10px para dejar espacio al mensaje de error */
+    width:55%; /* Resta 10px para dejar espacio al mensaje de error */
     padding: 8px;
     border: 1px solid var(--color-silver-alfaromeo);
     border-radius: 5px;
@@ -68,7 +69,7 @@
 .filterContainer {
     display: flex;
     align-items: flex-start; /* Alinea los elementos en la parte superior */
-    width: 100%;
+    width: 37%;
   }
   
   
@@ -91,8 +92,16 @@
     box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
   }
 
-  .filterBtn {
-    width: 100%;
+  .buttonContainer {
+    display: inline-block; /* Para que los contenedores de botones se alineen horizontalmente */
+    margin-right: 20px 20xp 20px 20px; /* Espacio entre los contenedores de botones */
+    width: 50%; /* Ocupar el ancho completo disponible */
+    background-color: #DC0000;
+    box-sizing: border-box; /* Incluir el margen y el padding en el ancho total */
+}
+
+.filterBtn {
+    width: 60%;
     padding: 10px 20px; /* Espaciado interno */
     font-size: 16px; /* Tamaño de fuente */
     border: none; /* Sin borde */
@@ -100,13 +109,33 @@
     color: #ffffffe6; /* Texto verde brillante */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     border-radius: 5px; /* Bordes redondeados */
-    margin-right: 10px; /* Espacio derecho para separar los botones */
+    margin-right: 20px; /* Espacio derecho para separar los botones */
     outline: none; /* Quita el borde de enfoque predeterminado */
     transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color */
-  }
+}
+
   
   /* Estilo para el botón activo (seleccionado) */
   .filterBtn.active {
   
     box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
   }
+
+
+  .descriptionContainer {
+    width: 50%; /* Ancho del contenedor */
+    height: 70px; /* Altura del contenedor (puedes ajustar este valor según sea necesario) */
+}
+
+.descriptionContainer textarea {
+    width: 100%; /* Asegúrate de que el textarea ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegúrate de que el textarea ocupe toda la altura del contenedor */ /* El textarea ocupará todo el ancho disponible */
+    padding: 8px;
+    border: 1px solid var(--color-silver-alfaromeo);
+    border-radius: 5px;
+}
+
+.descriptionContainer textarea:focus {
+  outline: none;
+  border-color: var(--color-blue-mercedes);
+}

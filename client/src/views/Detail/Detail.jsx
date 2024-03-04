@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import defaultImg from '../../assets/f1DefaultImg.jpeg';
 import { getDriverById } from '../../redux/actions/index.jsx';
+import Header from '../../components/Header/Header.jsx';
 
 import styles from './Detail.module.css';
 
@@ -24,6 +25,10 @@ const Detail = () => {
     : (driverDetail && driverDetail.teams ? driverDetail.teams : "Independent Driver");
 
   return (
+    <div>
+      <div>
+      <Header pageTitle=' | The F1 - Legend Detail Information | '/>
+      </div>
     <div className={styles.detailContainer}>
       {
         isLoading ? (
@@ -45,6 +50,7 @@ const Detail = () => {
           </div>
         )
       }
+    </div>
     </div>
   );
 };

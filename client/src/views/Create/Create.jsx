@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllTeams } from '../../redux/actions/index.jsx';
+/* eslint-disable no-unused-vars */
+import React from 'react';
 import Form from '../../components/Form/Form.jsx';
+import Header from '../../components/Header/Header.jsx';
 import './Create.module.css';
 
 const CreateNewDriver = () => {
-
-
   return (
     <div>
-      <Form />
+      <div>
+        <Header pageTitle=' | Create a New F1-Legend | '/>
+      </div>
+      <div>
+        <Form/>
+      </div>
     </div>
   );
 };

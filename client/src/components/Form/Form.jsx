@@ -159,7 +159,6 @@ const Form = () => {
     return (
 
         <div >
-            <div>Create a New Driver</div>
             <div className={styles.cardContainer}>
             <Card eachDriver={{
                 forename: input.forename,
@@ -212,12 +211,12 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                    <label>Description:
-                        <div className={styles.inputContainer}>
-                            <textarea name='description' value={input.description} onChange={handleChange} />
-                            <span className={styles.errorMessage}>{error.description}</span>
-                        </div>
-                    </label>
+                <label>Description:
+                    <div className={styles.descriptionContainer}>
+                        <textarea name='description' value={input.description} onChange={handleChange} className={styles.textarea} />
+                        <span className={styles.errorMessage}>{error.description}</span>
+                    </div>
+                </label>
                 </div>
                 <div className={styles.filterContainer}>
                     <select onChange={(event) => handleSelect(event)} name='teamSelect' id='teamSelect' className={styles.filterBtn} defaultValue=''>
@@ -238,9 +237,11 @@ const Form = () => {
                     </ul>   
                     <span className={styles.errorMessage}>{error.teams}</span>
                 </div>
-                <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
             </form>
-                <div>
+            <div className={styles.buttonContainer}>
+                <button type='submit' disabled={!Object.keys(error).every(key => error[key] === '')}>Create New Driver</button>
+                </div>
+                <div className={styles.buttonContainer}>
                     <Link to='/home'><button>Home</button></Link>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import NavBar from '../../components/NavBar/NavBar';
 import Cards from '../../components/Cards/Cards';
 import Pagination from '../../components/Pagination/Pagination.jsx';
+import Header from '../../components/Header/Header.jsx';
 
 import {
   getAllDrivers,
@@ -93,21 +94,20 @@ const Home = () => {
   return (
   <div>
     <div>
-    <h1 className={styles.logoContainer } > F1 - LEGENDS </h1>
-    <h2 className={styles.titleContainer}>| The Collection |</h2>
+    <Header pageTitle=' | The F1-Legends Cards Collection | '/>
     </div>
-  <div className={styles.homeContainer}>
-    <div>
-      <NavBar
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-      handleFilterBySource={handleFilterBySource}
-      handleSortByName = {handleSortByName}
-      handleSortByDateOfBirth = {handleSortByDateOfBirth}
-      handleFilterByTeam = {handleFilterByTeam}
-      handleClick = {handleClick}
-      allTeams = { allTeams }/>
-    </div>
+    <div className={styles.homeContainer}>
+      <div>
+        <NavBar
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        handleFilterBySource={handleFilterBySource}
+        handleSortByName = {handleSortByName}
+        handleSortByDateOfBirth = {handleSortByDateOfBirth}
+        handleFilterByTeam = {handleFilterByTeam}
+        handleClick = {handleClick}
+        allTeams = { allTeams }/>
+      </div>
     <div>
       <Pagination driversPerPage={driversPerPage} allDrivers={allDrivers.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>

@@ -20,7 +20,7 @@
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  border: 2px solid antiquewhite;
+  border: 5px solid antiquewhite;
 }
 
 
@@ -35,14 +35,14 @@
   font-size: 1.2em;
   margin-top: 30px;
   margin-bottom: 10px;
-  color: antiquewhite;
+  color: var(--color-white-greatness) ;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
 .card p {
   font-size: 1em;
-  color: antiquewhite;
+  color: var(--color-white-greatness) ;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-style: italic;
 }
