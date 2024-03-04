@@ -29,7 +29,7 @@ const NavBar = (props) => {
       <Link className={styles.linkButton} to= '/create'>Add Driver</Link>
       <p>Sort By:</p>
       <SortDriversByName handleSortByName={handleSortByName} selectedValue={selectedValue}/>
-      <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth}/>
+      <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth} selectedValue={selectedValue}/>
       <p>Filter By:</p>
       <FilterDriversBySource handleFilterBySource={handleFilterBySource} selectedValue={selectedValue}/>
       <FilterDriversByTeam handleFilterByTeam = {handleFilterByTeam} allTeams={allTeams}/>

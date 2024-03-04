@@ -42,18 +42,13 @@ const Home = () => {
       setCurrentPage(pageNumber);
   };
 
-//********************** ALL TYPE OF FILTERS **********************//
+//********************** RESET BUTTON **********************//
   const [selectedValue, setSelectedValue] = useState('');
-  const [filterType, setFilterType] = useState('');
-  const [sortBy, setSortBy] = useState('');
 
   const handleReset = () => {
-    setSelectedValue('');
     setSearchInput('');
-    setFilterType('');
-    setSortBy('');
-    dispatch(getAllDrivers()); // También puedes despachar acciones para volver a cargar los datos originales
-    dispatch(getAllTeams());
+    setSelectedValue('');
+    dispatch(getAllDrivers());
   };
 
 //********************** GET DRIVERS BY NAME **********************//
@@ -85,6 +80,7 @@ const Home = () => {
 //********************** SORT DRIVERS BY DATE OF BIRTH **********************//
   const handleSortByDateOfBirth = (event) =>{
     event.preventDefault();
+    setSelectedValue(event.target.value)
     dispatch(sortDriversByDateOfBirth(event.target.value));
   }
 
