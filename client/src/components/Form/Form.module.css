@@ -134,17 +134,28 @@
     position: absolute; /* Añadida propiedad de posición absoluta */
     bottom: 0; /* Alineado en la parte inferior del contenedor */
     right: 0; /* Alineado a la derecha del contenedor */
+    outline: none;
+}
+
+.buttonContainer:focus {
+  outline: none; /* Elimina el contorno al hacer clic en el botón */
 }
 
   
   .buttonContainer button {
     border: 1px solid transparent; /* Borde transparente por defecto */
   }
-  
-  .buttonContainer button:hover,
-  .buttonContainer button:active {
-    border-color: transparent; /* Borde transparente al pasar el mouse o hacer clic */
+  .buttonContainer button:hover {
+    border-color: var(--color-black-redbull);
     box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+    outline: none;
+  }
+  
+  
+  .buttonContainer button:active {
+    border-color: var(--color-silver-alfaromeo);
+    box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+    outline: none;
   }
   
 .filterBtn {

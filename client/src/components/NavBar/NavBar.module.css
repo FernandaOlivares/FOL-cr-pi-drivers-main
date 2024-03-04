@@ -38,12 +38,16 @@
   cursor: pointer;
   z-index: 1;
   background-color: #1a1a1a;
+  border-color: var(--color-black-redbull);
   }
   
   .linkButton:hover {
   color: var(--color-white-greatness);
-  border-color: var(--color-silver-alfaromeo);
+  border-color: var(--color-black-redbull);
   box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+  }
+  .linkButton:active {
+    border-color: var(--color-silver-alfaromeo) ;
   }
 
 .overlayButton {
@@ -57,10 +61,20 @@
   cursor: pointer;
   z-index: 1;
   background-color: #1a1a1a;
+  outline: none;
+
   }
   
   .overlayButton:hover {
-  color: var(--color-white-greatness);
-  border-color: var(--color-silver-alfaromeo);
-  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+    color: var(--color-white-greatness);
+    box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+    border-color: var(--color-black-redbull);
+    outline: none;
+  }
+  .overlayButton:focus {
+    outline: none;
+  }
+ 
+  .overlayButton:active {
+    border-color: var(--color-silver-alfaromeo) ;
   }

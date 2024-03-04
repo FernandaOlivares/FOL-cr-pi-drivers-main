@@ -43,8 +43,16 @@
   
   .overlayButton:hover {
   color: var(--color-white-greatness);
-  border-color: var(--color-silver-alfaromeo);
+  border-color: var(--color-black-redbull);
   box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+  }
+
+  .overlayButton:focus {
+    outline: none; /* Elimina el contorno al hacer clic en el botón */
+  }
+
+  .overlayButton:active {
+    border-color: var(--color-silver-alfaromeo) ;
   }
 
 @media screen and (max-width: 600px) {
