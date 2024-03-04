@@ -26,7 +26,7 @@ const Detail = () => {
 
   return (
     <div>
-      <div>
+      <div className={styles.headerContainer}>
       <Header pageTitle=' | The F1 - Legend Detail Information | '/>
       </div>
     <div className={styles.detailContainer}>

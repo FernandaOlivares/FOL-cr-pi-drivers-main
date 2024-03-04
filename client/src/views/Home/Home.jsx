@@ -94,7 +94,7 @@ const Home = () => {
   return (
   <div>
     <div>
-    <Header pageTitle=' | The F1-Legends Cards Collection | '/>
+    <Header pageTitle=' | The F1 - Legends Cards Collection | '/>
     </div>
     <div className={styles.homeContainer}>
       <div>

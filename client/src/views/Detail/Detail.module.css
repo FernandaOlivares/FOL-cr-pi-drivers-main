@@ -94,6 +94,14 @@
     font-weight: bold;
     font-style: normal;
   }
+
+  .headerContainer{
+    display: flex;
+    align-items: flex-start;
+    max-width: 95%;
+    height: auto;
+    margin-left: 5%;
+  }
  
   
 
