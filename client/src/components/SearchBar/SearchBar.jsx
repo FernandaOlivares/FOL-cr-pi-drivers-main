@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 import styles from './SearchBar.module.css';
 
-const SearchBar = ({handleChange, handleSubmit}) => {
+const SearchBar = ({handleChange, handleSubmit, searchInput}) => {
   return (
     <div className={styles.searchBarContainer}>
-      <form onChange={handleChange}>
+      <form>
         <input
+          value={searchInput}
+          onChange={handleChange}
           className={styles.searchBarInput}
           id='searchInput'
           name='search'

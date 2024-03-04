@@ -49,8 +49,8 @@ const Home = () => {
   const [selectedByTeamValue, setSelectedByTeamValue] = useState('');
 
   const handleReset = () => {
-    setSelectedBySourceValue('');
     setSearchInput('');
+    setSelectedBySourceValue('');
     setSelectedByDOBValue('');
     setSelectedByNameValue('');
     setSelectedByTeamValue('');
@@ -123,6 +123,7 @@ const Home = () => {
         selectedByNameValue={selectedByNameValue}
         selectedByDOBValue={selectedByDOBValue}
         selectedByTeamValue={selectedByTeamValue}
+        searchInput={searchInput}
         allTeams = { allTeams }/>
       </div>
     <div>

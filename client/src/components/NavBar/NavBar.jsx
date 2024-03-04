@@ -24,12 +24,13 @@ const NavBar = (props) => {
     selectedByNameValue,
     selectedByDOBValue,
     selectedByTeamValue,
+    searchInput,
   } = props;
 
   return (
     <div className={styles.navBarContainer}>
       <p>Search By Forename:</p>
-      <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
+      <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} searchInput={searchInput} />
       <p>You did not find a driver?</p>
       <Link className={styles.linkButton} to= '/create'>Add Driver</Link>
       <p>Sort By:</p>
