@@ -10,28 +10,79 @@
     }
     
     .logoContainer {
-      width: 96vw;
+      width: 93vw;
       height: 50%;
       background-color: antiquewhite;
       padding: 10px;
-      margin-top: -2%;
-      margin-left: -4.8%;
+      margin-top: -7%;
+      margin-left: -100%;
       color: var(--color-black-redbull);
       text-align: left;
       font-size: 2.4em;
       font-weight: lighter;
       border: 1px solid antiquewhite;
+      text-decoration: none;
+      color: var(--color-black-redbull);
+    }
+
+    .logoContainer:hover {
+      color: var(--color-black-redbull);
+      border-color: var(--color-black-redbull);
+      box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+      }
+    
+      .titleContainer {
+        width: 80vw;
+        height: 8.3vh;
+        background-color: antiquewhite;
+        font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
+        color: var(--color-black-redbull); /* Color de texto para el título de la colección */
+        text-align: center; /* Centrar horizontalmente el texto */
+        display: flex; /* Convertir el contenedor en un flex container */
+        justify-content: center; /* Centrar horizontalmente el contenido */
+        align-items: center; /* Centrar verticalmente el contenido */
+        margin-top: -5.5%;
+        margin-left: 12%;
+        font-style: italic;
+        font-weight: lighter;
+      }
+      
+
+    .buttonContainer {
+      float: right; /* Alinear a la derecha */
+      text-align: center; /* Alinear el contenido a la derecha dentro del contenedor */
+      margin-top: -64px; /* Espacio superior */
+      margin-right: -40px; /* Espacio derecho */
+      width: 120px;
+      height: 30px;
+      border-radius: 5px;
+      display: flex; /* Convertir el contenedor en un flex container */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+      font-size: 1vw;
+      color: black;
+      text-decoration: none;
+      border-color: var(--color-black-redbull);
+    }
+
+
+    .linkButton {
+      margin-top: -15px; /* Ajusta este valor según sea necesario para subir el botón */
+      margin-right: -160px;
+      width: 80%;
+      color: var(--color-black-redbull);
+      padding: 6px 8px;
+      font-size: 0.90vw;
+      font-family: 'Roboto', sans-serif;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: antiquewhite;
+      border: 1px solid var(--color-black-redbull);
     }
     
-    .titleContainer {
-      width: 50vw;
-      background-color: antiquewhite;
-      font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
-      color: var(--color-black-redbull); /* Color de texto para el título de la colección */
-      text-align: center;
-      margin-top: -6%;
-      margin-left: 31.5%;
-      font-style: italic;
-      font-weight: lighter;
+    .linkButton:hover {
+      color: var(--color-black-redbull);
+      border-color: var(--color-black-redbull);
+      box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
     }
     
