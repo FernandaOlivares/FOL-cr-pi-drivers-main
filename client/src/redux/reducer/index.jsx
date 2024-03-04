@@ -6,7 +6,6 @@ import {
     SORT_DRIVERS_BY_DATE_OF_BIRTH,
     GET_ALL_TEAMS,
     FILTER_DRIVERS_BY_TEAM,
-    CLEAN_FILTERS,
     POST_NEW_DRIVER,
     GET_DRIVER_BY_ID_SUCCESS,
 } from '../actions/index.jsx';
@@ -109,13 +108,6 @@ function rootReducer(state = initialState, action) {
                 allDrivers: filteredDrivers,
             };
         } 
-
-        case CLEAN_FILTERS: {
-            return {
-              ...state,
-              allDrivers: state.allDriversBackup,
-            };
-          }
         
         case POST_NEW_DRIVER: {
         return {
@@ -134,7 +126,6 @@ function rootReducer(state = initialState, action) {
             };
           }
           
-            
         default:
             return state;
     }
