@@ -10,8 +10,11 @@ const createDriverDb = async (forename, surname, nationality, dateOfBirth, teams
           await newDriver.addTeam(team);
       }
   }
-
-  return newDriver;
+console.log('NewDriver ID', newDriver.id)
+  return { 
+    driver: newDriver,
+    id: newDriver.id,
+  };
 };
 
 

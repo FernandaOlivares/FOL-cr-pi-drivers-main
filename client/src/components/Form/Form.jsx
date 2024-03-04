@@ -1,22 +1,32 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+// eslint-disable-next-line react-refresh/only-export-components
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from '../Card/Card.jsx';
 import styles from './Form.module.css';
 import { postNewDriver } from '../../redux/actions/index.jsx'
 import { getAllTeams } from '../../redux/actions/index.jsx';
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 const Form = () => {
     const dispatch = useDispatch();
     const allTeams = useSelector((state) => state.allTeams);
+    const navigate = useNavigate();
+    const newDriverId = useSelector((state) => state.newDriverId);
+
   
     useEffect(() => {
       dispatch(getAllTeams());
     }, [dispatch]);
+
+    useEffect(() => {
+        if (newDriverId) {
+            navigate(`/home/${newDriverId}`);
+        }
+    }, [newDriverId, navigate]);
 
     const [input, setInput] = useState({
         forename: '',
@@ -99,16 +109,15 @@ const Form = () => {
         return Object.keys(errors).length === 0;
     };
     
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const isValid = validateFormInput(input);
         if (isValid) {
             try {
-                // Despachar acción para crear un nuevo conductor
-                const newDriverData = dispatch(postNewDriver(input));
+                const createdDriver = await dispatch(postNewDriver(input));
+                const newDriverId = createdDriver.id;
                 alert('Driver created successfully!');
-                
-                // Restablecer el estado del formulario
+
                 setInput({
                     forename: '',
                     surname: '',
@@ -120,13 +129,13 @@ const Form = () => {
                 });
             } catch (error) {
                 console.error('Error creating new driver:', error);
-                // Manejo de errores según sea necesario
                 alert('Error creating new driver. Please try again.');
             }
         } else {
             console.log('El formulario tiene errores, por favor corríjalos.');
         }
-    };    
+    };
+    
 
     const handleChange = (event) => {
         const { name, value } = event.target;

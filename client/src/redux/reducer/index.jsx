@@ -17,6 +17,7 @@ const initialState = {
     allTeams: [],
     allTeamsBackup: [],
     driverById: [],
+    newDriverId: null,
 };
 
 function rootReducer(state = initialState, action) {
@@ -85,7 +86,6 @@ function rootReducer(state = initialState, action) {
                 return action.payload === 'Ascending' ? dateA - dateB : dateB - dateA;
             };
             const sortedDates = [...state.allDrivers].sort(compareDatesOfBirth);
-            console.log(sortedDates);
             
             return {
                 ...state,
@@ -120,6 +120,7 @@ function rootReducer(state = initialState, action) {
         case POST_NEW_DRIVER: {
         return {
             ...state,
+            newDriverId: action.payload.id 
         };
         }
 
