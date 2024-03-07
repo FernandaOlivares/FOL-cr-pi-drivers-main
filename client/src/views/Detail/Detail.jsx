@@ -34,6 +34,7 @@ const Detail = () => {
         isLoading ? (
           <p>Sit tight, data is loading...</p>
         ) : (
+          <div>
           <div className={styles.card}>
             <img
               className={`${styles.imageFilter}`}
@@ -43,10 +44,13 @@ const Detail = () => {
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename}</h1>
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname}</h1>
             <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</h3>
-            <p>Id: {driverDetail.id}</p>
+          </div>
+          <div className = {styles.biographyContainer}>
+            <p className={styles.id}>Id: #{driverDetail.id}</p>
             <p>Date Of Birth:{driverDetail.dateOfBirth}</p>
             <p>Nationality: {driverDetail.nationality}</p>
-            <p>Biography: {driverDetail.description}</p>
+            <p>{driverDetail.description}</p>
+          </div>
           </div>
         )
       }
