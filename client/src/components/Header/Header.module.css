@@ -1,100 +1,90 @@
-:root {
-    --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
-    --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
-    --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
-    --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
-    --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
-    --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
-    --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
-    --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
-    }
 
-    .headerContainer {
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: black;
-      padding: 10px; /* Ajusta el relleno según sea necesario */
-      box-sizing: border-box; /* Incluye el relleno en el ancho y alto */
-    }
-    
-    .logoContainer {
-      position:absolute;
-      width: 18vw;
-      background-color: antiquewhite;
-      padding: 4px;
-      top: 23.5px;
-      margin-left: -49%;
-      color: var(--color-black-redbull);
-      text-align: left;
-      font-size: 2.4em;
-      font-weight: lighter;
-      border: 1px solid antiquewhite;
-      text-decoration: none;
-      color: var(--color-black-redbull);
-    }
+.headerContainer {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 16%;
+  padding: 0.5vw;
+  box-sizing: border-box;
+  background-color: black;
+}
 
-    .logoContainer:hover {
-      color: var(--color-black-redbull);
-      border-color: var(--color-black-redbull);
-      box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
-      }
-      
+.logoContainer {
+  position:absolute;
+  width: 18vw;
+  background-color: antiquewhite;
+  padding: 0.4vw;
+  top: 4vh;
+  margin-left: -49.9vw;
+  margin-top: -1vw;
+  color: var(--color-black-redbull);
+  text-align: left;
+  font-size: 2.4vw;
+  font-weight: lighter;
+  border: 1px solid antiquewhite;
+  text-decoration: none;
+}
 
-      .titleContainer {
-        width: 80vw;
-        height: 8.4vh;
-        background-color: antiquewhite;
-        font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
-        color: var(--color-black-redbull); /* Color de texto para el título de la colección */
-        text-align: center; /* Centrar horizontalmente el texto */
-        display: flex; /* Convertir el contenedor en un flex container */
-        justify-content: center; /* Centrar horizontalmente el contenido */
-        align-items: center; /* Centrar verticalmente el contenido */
-        margin-top: 0.9%;
-        margin-left: 19.5%;
-        font-style: italic;
-        font-weight: lighter;
-      }
-      
+.logoContainer:hover {
+  color: var(--color-black-redbull);
+  border-color: var(--color-black-redbull);
+  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+}
 
-    .buttonContainer {
-      float: right; /* Alinear a la derecha */
-      text-align: center; /* Alinear el contenido a la derecha dentro del contenedor */
-      margin-top: -64px; /* Espacio superior */
-      margin-right: 110px; /* Espacio derecho */
-      width: 120px;
-      height: 30px;
-      border-radius: 5px;
-      display: flex; /* Convertir el contenedor en un flex container */
-      justify-content: center; /* Centrar horizontalmente */
-      align-items: center; /* Centrar verticalmente */
-      font-size: 1vw;
-      color: black;
-      text-decoration: none;
-      border-color: var(--color-black-redbull);
-    }
+.titleContainer {
+  position:absolute;
+  width: 80vw;
+  background-color: antiquewhite;
+  padding: 0.95vw;
+  top: 4vh;
+  font-size: 1.8vw;
+  color: var(--color-black-redbull);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1vw;
+  margin-left: 18.7vw;
+  font-style: italic;
+  font-weight: lighter;
+}
 
+.buttonContainer {
+  float: right;
+  text-align: center;
+  margin-top: -5.9vh;
+  margin-right: 12vw;
+  width: 15vw;
+  height: 5vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  color: black;
+  text-decoration: none;
+  border-color: var(--color-black-redbull);
+}
 
-    .homeButton {
-      margin-top: -15px;
-      margin-right: 0px;
-      width: 900%;
-      color: var(--color-black-redbull);
-      padding: 6px 8px;
-      font-size: 0.90vw;
-      font-family: 'Roboto', sans-serif;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: antiquewhite;
-      border: 1px solid var(--color-black-redbull);
-    }
-    
-    .homeButton:hover {
-      color: var(--color-black-redbull);
-      border-color: var(--color-black-redbull);
-      box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
-    }
-    
+.homeButton {
+  height: 2.5vh;
+  width: 9vw;
+  margin-top: -6vh;
+  margin-right: -15vh;
+  color: var(--color-black-redbull);
+  padding: 0.4vw 0.3vw;
+  font-size: 0.85vw;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: antiquewhite;
+  border: 1px solid var(--color-black-redbull);
+}
+
+.homeButton:hover {
+  color: var(--color-black-redbull);
+  border-color: var(--color-black-redbull);
+  box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
+}
