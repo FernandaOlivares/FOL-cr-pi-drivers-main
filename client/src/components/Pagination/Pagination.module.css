@@ -9,15 +9,18 @@
     --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
   }
 
-.paginationContainer {
-    /*position: fixed; Posición fija */
-    top: 0%; /* Centrado vertical */
-    left: 50%; /* Centrado horizontal */
-    height: 50px; /* Altura fija */
-    align-items: center;
+  .paginationContainer {
+    position: fixed;
+    width: 100vw; /* Ancho de la ventana del navegador */
+    height: 35px;
+    top: 3%;
+    left: 0; /* Fijar el lado izquierdo */
+    right: 0; /* Fijar el lado derecho */
     margin-top: 5%;
     padding: 0.3%;
+    z-index: 1000;
 }
+
   
 .pagination {
     display: flex;
@@ -25,7 +28,8 @@
     text-align: center;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
-    margin: 0; /* Asegurar que no haya margen */
+    margin-left: 19%; /* Asegurar que no haya margen */
+    margin-top: 0;
     padding: 0; /* Asegurar que no haya relleno */
 }
   
@@ -68,7 +72,7 @@ outline: none;
 .currentPage{
     color: var(--color-white-greatness);
     border-color: var(--color-white-greatness); 
-    box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
+   /* box-shadow: 0px 0px 1.5vw var(--color-white-greatness)*/
 }
 .currentPage:active{
     color: var(--color-white-greatness);

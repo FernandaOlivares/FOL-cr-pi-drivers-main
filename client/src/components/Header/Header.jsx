@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Header = ({pageTitle}) => {
     return (
-        <div>
+        <div className={styles.headerContainer}>
             <Link to="/home" className={styles.logoContainer}>F1 - LEGENDS</Link>
             <h2 className={styles.titleContainer}>{pageTitle}</h2>
             <div className={styles.buttonContainer}>
-                <Link className={styles.linkButton}  to='/home'>Home</Link>
+                <Link className={styles.homeButton}  to='/home'>Home</Link>
             </div>
         </div>
     );

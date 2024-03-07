@@ -8,14 +8,25 @@
     --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
     --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
     }
+
+    .headerContainer {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      padding: 10px; /* Ajusta el relleno según sea necesario */
+      box-sizing: border-box; /* Incluye el relleno en el ancho y alto */
+    }
     
     .logoContainer {
-      width: 93vw;
-      height: 50%;
+      position:absolute;
+      width: 18vw;
       background-color: antiquewhite;
-      padding: 10px;
-      margin-top: -7%;
-      margin-left: -100%;
+      padding: 4px;
+      top: 23.5px;
+      margin-left: -49%;
       color: var(--color-black-redbull);
       text-align: left;
       font-size: 2.4em;
@@ -30,10 +41,11 @@
       border-color: var(--color-black-redbull);
       box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);
       }
-    
+      
+
       .titleContainer {
         width: 80vw;
-        height: 8.3vh;
+        height: 8.4vh;
         background-color: antiquewhite;
         font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
         color: var(--color-black-redbull); /* Color de texto para el título de la colección */
@@ -41,8 +53,8 @@
         display: flex; /* Convertir el contenedor en un flex container */
         justify-content: center; /* Centrar horizontalmente el contenido */
         align-items: center; /* Centrar verticalmente el contenido */
-        margin-top: -5.5%;
-        margin-left: 12%;
+        margin-top: 0.9%;
+        margin-left: 19.5%;
         font-style: italic;
         font-weight: lighter;
       }
@@ -52,7 +64,7 @@
       float: right; /* Alinear a la derecha */
       text-align: center; /* Alinear el contenido a la derecha dentro del contenedor */
       margin-top: -64px; /* Espacio superior */
-      margin-right: -40px; /* Espacio derecho */
+      margin-right: 110px; /* Espacio derecho */
       width: 120px;
       height: 30px;
       border-radius: 5px;
@@ -66,10 +78,10 @@
     }
 
 
-    .linkButton {
-      margin-top: -15px; /* Ajusta este valor según sea necesario para subir el botón */
-      margin-right: -160px;
-      width: 80%;
+    .homeButton {
+      margin-top: -15px;
+      margin-right: 0px;
+      width: 900%;
       color: var(--color-black-redbull);
       padding: 6px 8px;
       font-size: 0.90vw;
@@ -80,7 +92,7 @@
       border: 1px solid var(--color-black-redbull);
     }
     
-    .linkButton:hover {
+    .homeButton:hover {
       color: var(--color-black-redbull);
       border-color: var(--color-black-redbull);
       box-shadow: 0px 0px 1.5vw var(--color-silver-alfaromeo);

@@ -17,11 +17,12 @@
   justify-content: center; /* Alinea horizontalmente al centro */
   align-items: flex-start; /* Alinea verticalmente al principio */
   align-content: flex-start; /* Alinea el contenido verticalmente al principio */
-  margin-top: 0px;
+  margin-top: 150px;
   margin-right: auto;
   margin-bottom: 25px;
-  margin-left: auto;
+  margin-left: -7%;
   padding: 0 20px;
+
 }
 
 /* Pantallas medianas */

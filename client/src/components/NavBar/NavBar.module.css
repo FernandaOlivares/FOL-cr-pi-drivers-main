@@ -11,7 +11,7 @@
 
 .navBarContainer {
   position: fixed;
-  top: 10%;
+  top: 13%;
   left: 1%;
   display: flex;
   flex-direction: column; /* Cambia la dirección de los elementos a columna */
