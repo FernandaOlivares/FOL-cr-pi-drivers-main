@@ -11,41 +11,41 @@
   
   .detailContainer {
     display: flex;
-    align-items: flex-start;
+    margin-top: 3%;
+    flex-direction: column; /* Hacer que los hijos se apilen verticalmente */
+    align-items: flex-start; /* Alinear los hijos a la izquierda */
     max-width: 95%;
     height: auto;
-    margin: 15px;
-  }
-  
-  .card {
+    overflow-y: auto; /* Permitir desplazamiento vertical si es necesario */
+}
+
+
+.card {
     background-color: var(--color-black-redbull);
     color: #fff;
-    width: 40vw;
+    width: 50vw; /* Establece el ancho máximo al 50% del ancho de la ventana */
+    max-width: 50%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     float: left;
-  }
-
-  .biographyContainer {
-    display: flex;
-    flex-direction: column; /* Hace que los elementos se apilen uno sobre el otro */
-    align-items: center; /* Alinea los elementos horizontalmente en el centro */
-    align-self: flex-start; /* Alinea el contenedor en la parte superior del contenedor principal */
-    max-width: 95%;
-    height: auto;
-    margin: 5%;
-    background-color: antiquewhite;
-    border-radius: 50px;
+    overflow-y: auto;
+ 
 }
 
-  
-  /*.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-silver-alfaromeo);
-    box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
-  }*/
+.biographyContainer {
+  display: flex;
+  flex-direction: column; /* Hace que los elementos se apilen uno sobre el otro */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  justify-content: flex-start; /* Justifica el contenido horizontalmente al principio */
+  align-self: flex-start; /* Alinea el contenedor en la parte superior del contenedor principal */
+  max-width: 50vw; /* Establece el ancho máximo al 50% del ancho de la ventana */
+  height: auto;
+  margin: 5%;
+  border-radius: 50px;
+  overflow-y: auto;
+  text-align: justify;
+}
 
   .card h1 {
     margin-top: 0;
@@ -94,15 +94,39 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-color: var(--color-silver-alfaromeo);
     box-shadow: 0px 0px 1.5vw var(--color-white-greatness);
+    animation: grayscaleTransition 2s ease-in-out forwards;
 }
 
   .card img:hover {
-    filter: grayscale(50%);
+    filter: grayscale(50%)!important;
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border-color: var(--color-silver-alfaromeo);
-    box-shadow: 0px 0px 1.5vw var(--color-white-greatness)
+    box-shadow: 0px 0px 1.5vw antiquewhite;
   }
+
+  @keyframes grayscaleTransition {
+    from {
+        filter: grayscale(50%); /* Escala de grises al principio */
+    }
+    to {
+        filter: grayscale(100%); /* Escala de grises completa */
+    }
+}
+
+  .teamsContainer{
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .descriptionContainer {
+    text-align: justify; /* Justifica el texto de borde izquierdo a derecho */
+    max-width: 100%; /* Ancho máximo */
+    max-height: 100%; /* Ancho máximo */
+    overflow: scroll; /* Habilita la barra de desplazamiento */
+}
+
+
   
   .robotoMonoFont {
     font-family: "Roboto Mono", monospace;

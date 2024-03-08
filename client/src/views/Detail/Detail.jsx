@@ -43,13 +43,17 @@ const Detail = () => {
             />
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename}</h1>
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname}</h1>
+            <div className = {styles.teamsContainer}>
             <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</h3>
+            </div>
           </div>
           <div className = {styles.biographyContainer}>
             <p className={styles.id}>Id: #{driverDetail.id}</p>
-            <p>Date Of Birth:{driverDetail.dateOfBirth}</p>
+            <p>Date Of Birth: {driverDetail.dateOfBirth}</p>
             <p>Nationality: {driverDetail.nationality}</p>
+            <div className = {styles.descriptionContainer}>
             <p>{driverDetail.description}</p>
+            </div>
           </div>
           </div>
         )
