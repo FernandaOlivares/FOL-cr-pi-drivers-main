@@ -11,6 +11,11 @@ const LandingPage = () => {
         F1 - LEGENDS
       </Link>
     </div>
+    <div className={styles.buttonContainer}>
+      <Link to="/home" className={styles.homeButton}>
+        Home
+      </Link>
+    </div>
     <div className={styles.bodyContainer}>
       <Link to="/home">
         <button className={styles.overlayButton}>LIGHTS OUT!</button>

@@ -1,7 +1,7 @@
 
 .headerContainer {
   position: fixed;
-  z-index: 1000;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -69,10 +69,11 @@
 }
 
 .homeButton {
+  z-index: 1000;
   height: 2.5vh;
   width: 9vw;
-  margin-top: -6vh;
-  margin-right: -15vh;
+  margin-top: 18vh;
+  margin-right: -20vh;
   color: var(--color-black-redbull);
   padding: 0.4vw 0.3vw;
   font-size: 0.85vw;
