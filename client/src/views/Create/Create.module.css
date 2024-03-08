@@ -6,3 +6,12 @@
     margin-left: 0%;
     margin-top: -0.5vh;
 }
+
+.formContainer{
+    display: flex;
+    align-items: flex-start;
+    max-width: 95%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 7.5vh;
+}

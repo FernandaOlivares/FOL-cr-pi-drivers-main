@@ -10,7 +10,7 @@ const CreateNewDriver = () => {
       <div className={styles.headerContainer}>
         <Header pageTitle=' | Create a New F1-Legend | '/>
       </div>
-      <div>
+      <div className={styles.formContainer}>
         <Form/>
       </div>
     </div>
