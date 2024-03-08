@@ -37,22 +37,22 @@ const Detail = () => {
           <div>
           <div className={styles.card}>
             <img
-              className={`${styles.imageFilter}`}
-              src={driverDetail.image || defaultImg}
-              alt={`${driverDetail.forename} ${driverDetail.surname}'s picture not found`}
+            className={`${styles.imageFilter}`}
+            src={driverDetail.image || defaultImg}
+            alt={`${driverDetail.forename} ${driverDetail.surname}'s picture not found.`}
             />
-            <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename}</h1>
-            <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname}</h1>
+            <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename || 'Forename not found'}</h1>
+            <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname || 'Surname not found'}</h1>
             <div className = {styles.teamsContainer}>
-            <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</h3>
+            <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams || 'Teams not found.'}</h3>
             </div>
           </div>
           <div className = {styles.biographyContainer}>
-            <p className={styles.id}>Id: #{driverDetail.id}</p>
-            <p>Date Of Birth: {driverDetail.dateOfBirth}</p>
-            <p>Nationality: {driverDetail.nationality}</p>
+            <p className={styles.id}>Id: # {driverDetail.id || 'Information not found.'}</p>
+            <p>Date Of Birth: {driverDetail.dateOfBirth || 'Not found.'}</p>
+            <p>Nationality: {driverDetail.nationality || 'Not found.'}</p>
             <div className = {styles.descriptionContainer}>
-            <p>{driverDetail.description}</p>
+            <p>{driverDetail.description || 'Biography not found.'}</p>
             </div>
           </div>
           </div>
