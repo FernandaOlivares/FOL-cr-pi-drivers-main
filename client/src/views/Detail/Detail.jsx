@@ -11,11 +11,11 @@ import styles from './Detail.module.css';
 const Detail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [isLoading, setIsLoading] = useState(true); //! Track loading status
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     dispatch(getDriverById(id)).then(() => {
-      setIsLoading(false); //! Set loading status to false when data is fetched & ensure that the entire driver information is loaded before rendering
+      setIsLoading(false);
     });
   }, [dispatch, id]);
 
