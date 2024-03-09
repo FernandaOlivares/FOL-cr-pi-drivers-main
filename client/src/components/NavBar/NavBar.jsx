@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import SortDriversByName from '../Filters/SortDriversByName.jsx';
@@ -19,7 +17,6 @@ const NavBar = (props) => {
     handleFilterByTeam,
     allTeams,
     handleReset,
-    selectedValue,
     selectedBySourceValue,
     selectedByNameValue,
     selectedByDOBValue,
@@ -34,7 +31,7 @@ const NavBar = (props) => {
       <p>You did not find a driver?</p>
       <Link className={styles.linkButton} to= '/create'>Add Driver</Link>
       <p>Sort By:</p>
-      <SortDriversByName handleSortByName={handleSortByName} selectedValue={selectedValue} selectedByNameValue={selectedByNameValue}/>
+      <SortDriversByName handleSortByName={handleSortByName} selectedByNameValue={selectedByNameValue}/>
       <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth} selectedByDOBValue={selectedByDOBValue}/>
       <p>Filter By:</p>
       <FilterDriversBySource handleFilterBySource={handleFilterBySource} selectedBySourceValue={selectedBySourceValue}/>
@@ -51,8 +48,13 @@ NavBar.propTypes = {
   handleSortByName: PropTypes.func.isRequired,
   handleSortByDateOfBirth: PropTypes.func.isRequired,
   handleFilterByTeam: PropTypes.func.isRequired,
-  allTeams: PropTypes.array.isRequired,
   handleReset: PropTypes.func.isRequired,
+  selectedBySourceValue: PropTypes.string.isRequired,
+  selectedByNameValue: PropTypes.string.isRequired,
+  selectedByDOBValue: PropTypes.string.isRequired,
+  selectedByTeamValue: PropTypes.string.isRequired,
+  searchInput: PropTypes.string.isRequired,
+  allTeams: PropTypes.array.isRequired,
 };
 
 export default NavBar;
