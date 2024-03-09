@@ -1,6 +1,7 @@
 import { 
     GET_ALL_DRIVERS,
     GET_DRIVERS_BY_NAME,
+    GET_DRIVERS_BY_NAME_ERROR,
     FILTER_DRIVERS_BY_SOURCE, 
     SORT_DRIVERS_BY_NAME,
     SORT_DRIVERS_BY_DATE_OF_BIRTH,
@@ -17,6 +18,7 @@ const initialState = {
     allTeamsBackup: [],
     driverById: [],
     newDriverId: null,
+    error: null,
 };
 
 function rootReducer(state = initialState, action) {
@@ -31,10 +33,16 @@ function rootReducer(state = initialState, action) {
             };
         
         case GET_DRIVERS_BY_NAME:
-            // Actualiza la lista de conductores según el nombre de búsqueda
             return {
                 ...state,
                 allDrivers: action.payload,
+                error: null
+            };
+        case GET_DRIVERS_BY_NAME_ERROR:
+            return {
+                ...state,
+                allDrivers: [],
+                error: 'Driver not found'
             };
     
         case FILTER_DRIVERS_BY_SOURCE: {

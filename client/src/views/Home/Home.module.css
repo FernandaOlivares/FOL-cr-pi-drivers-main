@@ -21,6 +21,7 @@ padding: 0; /* Asegurar que no haya relleno */
 margin-left: 22%;
 margin-top: -1%;
 background-color: var(--color-black-redbull);
+z-index: 5;
 }
 
 .logoContainer {
@@ -49,11 +50,18 @@ background-color: var(--color-black-redbull);
   font-weight: lighter;
 }
 
-
-
 .robotoMonoFont {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
+}
+
+.errorContainer{
+  position: fixed;
+  top: 40vh;
+  right: 30vw;
+  width: 23vw;
+  max-width: 100%;
+  z-index: 0;
 }

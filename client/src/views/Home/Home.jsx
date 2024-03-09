@@ -30,6 +30,10 @@ const Home = () => {
     dispatch(getAllDrivers());
   }, [dispatch]);
 
+
+//********************** ERROR HANDLING **********************//
+const error = useSelector(state => state.error);
+
 //********************** PAGINATE DRIVERS **********************//
   const [pageFilterType, setPageFilterType] = useState('');
   const [currentPage, setCurrentPage] = useState(1);//currenPage guara la pagina actual en un estado local/ y setDriversPerPage es una constante que set la página actual/ Comienza en 1 porque siempre inicio en la 1ra pagina
@@ -58,7 +62,7 @@ const Home = () => {
   };
 
 //********************** GET DRIVERS BY NAME **********************//
-  const [searchInput, setSearchInput] = useState(''); //Estado local vacío
+  const [searchInput, setSearchInput] = useState('');
 
   const handleChange = (event) => {
     setSearchInput(event.target.value);
@@ -135,6 +139,18 @@ const Home = () => {
       setCurrentPage={setCurrentPage} />
     </div>
     <div>
+      <div className={styles.errorContainer}>
+      {error && (
+        <div className={styles.errorContainer}>
+            <p className={styles.errorMessage}>
+                <span role="img" aria-label="Oops!">⚠️</span> Ups! Forename driver not found...
+            </p>
+            <p className={styles.errorMessage}>
+                Try again or add a new driver by clicking on "Add Driver" button.
+            </p>
+        </div>
+    )}
+      </div>
       <Cards currentDrivers={currentDrivers} />
     </div>
     </div>

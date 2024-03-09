@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const GET_ALL_DRIVERS = 'GET_ALL_DRIVERS';
 export const GET_DRIVERS_BY_NAME = 'GET_DRIVERS_BY_NAME';
+export const GET_DRIVERS_BY_NAME_ERROR = 'GET_DRIVERS_BY_NAME_ERROR';
 export const FILTER_DRIVERS_BY_SOURCE = 'FILTER_DRIVERS_BY_SOURCE';
 export const SORT_DRIVERS_BY_NAME = 'SORT_DRIVERS_BY_NAME';
 export const SORT_DRIVERS_BY_DATE_OF_BIRTH = 'SORT_DRIVERS_BY_DATE_OF_BIRTH';
@@ -10,6 +11,7 @@ export const FILTER_DRIVERS_BY_TEAM = 'FILTER_DRIVERS_BY_TEAM';
 export const POST_NEW_DRIVER = 'POST_NEW_DRIVER';
 export const GET_DRIVER_BY_ID_SUCCESS = 'GET_DRIVER_BY_ID_SUCCESS';
 export const GET_DRIVER_BY_ID_FAILURE = 'GET_DRIVER_BY_ID_FAILURE';
+
 
 
 export const getAllDrivers = () => {
@@ -26,18 +28,25 @@ export const getAllDrivers = () => {
     }
 };
 
-export const getDriversByName = (name) => {
-    return async function (dispatch) {
+export const getDriversByName = (searchInput) => {
+    return async (dispatch) => {
         try {
-            const response = await axios.get(`http://localhost:3001/drivers?forename=${name}`);
-            dispatch({
-                type: 'GET_DRIVERS_BY_NAME',
-                payload: response.data,
-            });
+            // Realizar la solicitud al backend para obtener los resultados de la búsqueda
+            const response = await axios.get(`http://localhost:3001/drivers?forename=${searchInput}`);
+
+            if (response.data.length > 0) {
+                // Si se encuentran resultados, disparar la acción de éxito con los resultados
+                dispatch({ type: GET_DRIVERS_BY_NAME, payload: response.data });
+            } else {
+                // Si no se encuentran resultados, disparar la acción de error
+                dispatch({ type: GET_DRIVERS_BY_NAME_ERROR });
+            }
         } catch (error) {
+            // Manejar el error en caso de que ocurra
             console.error('Error fetching drivers by name:', error);
+            dispatch({ type: GET_DRIVERS_BY_NAME_ERROR });
         }
-    }
+    };
 };
  
 export const filterDriversBySource = (payload) => ({
