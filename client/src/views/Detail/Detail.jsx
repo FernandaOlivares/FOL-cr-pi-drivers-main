@@ -48,7 +48,7 @@ const Detail = () => {
             </div>
           </div>
           <div className = {styles.biographyContainer}>
-            <p className={styles.id}>Id: # {driverDetail.id || 'Information not found'}</p>
+            <p className={styles.id}>Id: # {driverDetail.id || 'Not found'}</p>
             <p>Date Of Birth: {driverDetail.dateOfBirth || 'Not found'}</p>
             <p>Nationality: {driverDetail.nationality || 'Not found'}</p>
             <div className = {styles.descriptionContainer}>
