@@ -1,5 +1,6 @@
 import { 
     GET_ALL_DRIVERS,
+    GET_ALL_DRIVERS_ERROR,
     GET_DRIVERS_BY_NAME,
     GET_DRIVERS_BY_NAME_ERROR,
     FILTER_DRIVERS_BY_SOURCE, 
@@ -31,14 +32,20 @@ function rootReducer(state = initialState, action) {
                 allDrivers: action.payload,
                 allDriversBackup: action.payload,
             };
-        
+        case GET_DRIVERS_BY_NAME_ERROR:
+            return {
+                ...state,
+                allDrivers: [],
+                error: 'Driver not found'
+            };
+
         case GET_DRIVERS_BY_NAME:
             return {
                 ...state,
                 allDrivers: action.payload,
                 error: null
             };
-        case GET_DRIVERS_BY_NAME_ERROR:
+        case GET_ALL_DRIVERS_ERROR:
             return {
                 ...state,
                 allDrivers: [],

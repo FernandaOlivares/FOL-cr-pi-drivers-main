@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const GET_ALL_DRIVERS = 'GET_ALL_DRIVERS';
+export const GET_ALL_DRIVERS_ERROR = 'GET_ALL_DRIVERS_ERROR';
 export const GET_DRIVERS_BY_NAME = 'GET_DRIVERS_BY_NAME';
 export const GET_DRIVERS_BY_NAME_ERROR = 'GET_DRIVERS_BY_NAME_ERROR';
 export const FILTER_DRIVERS_BY_SOURCE = 'FILTER_DRIVERS_BY_SOURCE';
@@ -13,20 +14,21 @@ export const GET_DRIVER_BY_ID_SUCCESS = 'GET_DRIVER_BY_ID_SUCCESS';
 export const GET_DRIVER_BY_ID_FAILURE = 'GET_DRIVER_BY_ID_FAILURE';
 
 
-
 export const getAllDrivers = () => {
-    return async function (dispatch) {
-        try {
-            const response = await axios.get('http://localhost:3001/drivers');
-            dispatch({
-                type: 'GET_ALL_DRIVERS',
-                payload: response.data,
-            });
-        } catch (error) {
-            console.error('Error fetching all drivers:', error);
-        }
+  return async (dispatch) => {
+    try {
+      const response = await axios.get('http://localhost:3001/drivers');
+      dispatch({
+        type: 'GET_ALL_DRIVERS',
+        payload: response.data,
+      });
+    } catch (error) {
+      console.error('Error fetching all drivers:', error);
+      dispatch({ type: 'GET_ALL_DRIVERS_ERROR', payload: 'An error occurred while fetching all drivers' });
     }
+  };
 };
+
 
 export const getDriversByName = (searchInput) => {
     return async (dispatch) => {

@@ -12,13 +12,14 @@
 .formContainer {
     width: 780px; /* Ancho fijo del contenedor del formulario */
     padding: 20px;
-    margin-left: -10%;
-    margin-top: -61vh;
-  
+    margin-left: -15%;
+    margin-top: -69vh;
 }
 .cardContainer {
-  margin-right: -90%;
+  max-width: 30%;
   margin-top: 10vh;
+  position: relative; /* Agrega posición relativa */
+  right: -72vh; /* Mueve el contenedor hacia la derecha */
 }
   
 .formInstructions{

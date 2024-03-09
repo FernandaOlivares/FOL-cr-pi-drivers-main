@@ -170,11 +170,11 @@ const Form = () => {
         <div >
             <div className={styles.cardContainer}>
             <Card eachDriver={{
-                forename: input.forename,
+                forename: input.forename === 'Forename not found' ? '' : input.forename,
                 surname: input.surname,
                 image: input.image,
                 teams: input.teams,
-                id: 0 //Aquí deberías generar un ID único para el conductor, por ejemplo, mediante una función que genere IDs aleatorios o usando un contador.
+                id: 0,
             }} />
             </div>
             <div className={styles.formContainer}>

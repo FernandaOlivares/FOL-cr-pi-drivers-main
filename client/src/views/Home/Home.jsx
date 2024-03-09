@@ -140,19 +140,17 @@ const error = useSelector(state => state.error);
       setCurrentPage={setCurrentPage} />
     </div>
     <div>
-      <div className={styles.errorContainer}>
-      {error && (
-        <div className={styles.errorContainer}>
-            <p className={styles.errorMessage}>
-                <span role="img" aria-label="Oops!">⚠️</span> Ups! Forename driver not found...
-            </p>
-            <p className={styles.errorMessage}>
-                Try again or add a new driver by clicking on "Add Driver" button.
-            </p>
-        </div>
-    )}
-      </div>
+      {currentDrivers.length > 0 ? (
       <Cards currentDrivers={currentDrivers} />
+      ) : (<div className={styles.errorContainer}>
+        <p className={styles.errorMessage}>
+            <span role="img" aria-label="Oops!">⚠️</span> Ups! Driver not found...
+        </p>
+        <p className={styles.errorMessage}>
+            Try again or add a new driver by clicking on "Add Driver" button.
+        </p>
+    </div>
+        )}
     </div>
     </div>
   </div>
