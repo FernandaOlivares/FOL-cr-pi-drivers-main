@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({eachDriver}) => {
   const { forename, surname, image, teams, id } = eachDriver;
-  const joinTeams = (teams && teams.length > 0) ? teams.join(" - ") : (teams ?? "Independent Driver");
+  const joinTeams = (teams && teams.length > 0) ? teams.join(" - ") : (teams ?? 'Teams not found');
 
 
 
@@ -19,9 +19,9 @@ const Card = ({eachDriver}) => {
           alt={`${forename} ${surname}'s picture not found`}
         />
       </div>
-      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{forename}</h2>
-      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt }`}>{surname}</h2>
-      <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</p>
+      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{forename || 'Forename not found'}</h2>
+      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt }`}>{surname || 'Surname not found'}</h2>
+      <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams  || 'Teams not found'}</p>
       </Link>
     </div>
   );

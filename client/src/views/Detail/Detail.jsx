@@ -22,7 +22,7 @@ const Detail = () => {
   const driverDetail = useSelector((state) => state.driverById);
   const joinTeams = (driverDetail && driverDetail.teams && driverDetail.teams.length > 0)
     ? driverDetail.teams.join(" - ")
-    : (driverDetail && driverDetail.teams ? driverDetail.teams : "Independent Driver");
+    : (driverDetail && driverDetail.teams ? driverDetail.teams : 'Teams not found');
 
   return (
     <div>
@@ -39,20 +39,20 @@ const Detail = () => {
             <img
             className={`${styles.imageFilter}`}
             src={driverDetail.image || defaultImg}
-            alt={`${driverDetail.forename} ${driverDetail.surname}'s picture not found.`}
+            alt={`${driverDetail.forename} ${driverDetail.surname}'s picture not found`}
             />
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename || 'Forename not found'}</h1>
             <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname || 'Surname not found'}</h1>
             <div className = {styles.teamsContainer}>
-            <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams || 'Teams not found.'}</h3>
+            <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams || 'Teams not found'}</h3>
             </div>
           </div>
           <div className = {styles.biographyContainer}>
-            <p className={styles.id}>Id: # {driverDetail.id || 'Information not found.'}</p>
-            <p>Date Of Birth: {driverDetail.dateOfBirth || 'Not found.'}</p>
-            <p>Nationality: {driverDetail.nationality || 'Not found.'}</p>
+            <p className={styles.id}>Id: # {driverDetail.id || 'Information not found'}</p>
+            <p>Date Of Birth: {driverDetail.dateOfBirth || 'Not found'}</p>
+            <p>Nationality: {driverDetail.nationality || 'Not found'}</p>
             <div className = {styles.descriptionContainer}>
-            <p>{driverDetail.description || 'Biography not found.'}</p>
+            <p>{driverDetail.description || 'Biography not found'}</p>
             </div>
           </div>
           </div>
