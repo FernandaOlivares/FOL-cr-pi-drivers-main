@@ -51,18 +51,16 @@ const Form = () => {
     const validateFormInput = (driverInfo) => {
         const errors = {};
     
-        // Validar longitud mínima y máxima para el nombre
-        if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.forename.trim()) || driverInfo.forename.length < 2 || driverInfo.forename.length > 30) {
-            errors.forename = '*Invalid forename (2-50 characters)';
+        if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.forename.trim()) || driverInfo.forename.length < 2 || driverInfo.forename.length > 30) {
+            errors.forename = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
         }
-    
-        // Validar longitud mínima y máxima para el apellido
-        if (!driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.surname.trim()) || driverInfo.surname.length < 2 || driverInfo.surname.length > 30) {
-            errors.surname = '*Invalid surname (2-50 characters)';
+        
+        if (!driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.surname.trim()) || driverInfo.surname.length < 2 || driverInfo.surname.length > 30) {
+            errors.surname = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
         }
-
-        if (!driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(driverInfo.nationality.trim()) || driverInfo.nationality.length < 2 || driverInfo.nationality.length > 30) {
-            errors.nationality = '*Invalid nationality (2-50 characters)';
+        
+        if (!driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.nationality.trim()) || driverInfo.nationality.length < 2 || driverInfo.nationality.length > 30) {
+            errors.nationality = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
         }
     
         if (!driverInfo.dateOfBirth || !/\d{4}-\d{2}-\d{2}/.test(driverInfo.dateOfBirth.trim())) {
@@ -215,7 +213,14 @@ const Form = () => {
                 <div className={styles.inputField}>
                     <label>Date Of Birth*:
                         <div className={styles.inputContainer}>
-                            <input type='date' name='dateOfBirth' value={input.dateOfBirth} onChange={handleChange}/>
+                        <input 
+                        type='date' 
+                        name='dateOfBirth' 
+                        value={input.dateOfBirth} 
+                        onChange={handleChange}
+                        min='1900-01-01' // Establece el límite mínimo del año
+                        max='9999-12-31' // Establece el límite máximo del año
+                        />
                             <span className={styles.errorMessage}>{error.dateOfBirth}</span>
                         </div>
                     </label>

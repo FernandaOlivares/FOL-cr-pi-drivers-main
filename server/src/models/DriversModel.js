@@ -15,8 +15,11 @@ module.exports = (sequelize) => {
       allowNull: false,
       validate: {
         notEmpty: true,
-        isAlpha: true,
         len: [2, 30],
+        isForename(value) {
+          if (!/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(value.trim())) {
+            throw new Error('Forename must contain only letters, spaces, and hyphens');
+          }}
       },
     },
     surname: {
@@ -26,6 +29,10 @@ module.exports = (sequelize) => {
         notEmpty: true,
         isAlpha: true,
         len: [2, 30],
+        isSurname(value) {
+          if (!/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(value.trim())) {
+            throw new Error('Surname must contain only letters, spaces, and hyphens');
+          }}
       },
     },
     nationality: {
@@ -35,6 +42,10 @@ module.exports = (sequelize) => {
         notEmpty: true,
         isAlpha: true,
         len: [1, 30],
+        isNationality(value) {
+          if (!/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+$/.test(value.trim())) {
+            throw new Error('Surname must contain only letters, spaces, and hyphens');
+          }}
       },
     },
     dateOfBirth: {
