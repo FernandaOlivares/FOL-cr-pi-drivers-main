@@ -12,7 +12,7 @@
 .card {
   background-color: var(--color-black-redbull);
   color: #fff;
-  padding: 20px;
+  padding: 12%;
   border-radius: 100px;
   width: 200px; /* Cambiar el ancho a relativo */
   max-width: 300px; /* Establecer un ancho máximo para evitar que la tarjeta se expanda demasiado en pantallas grandes */
@@ -30,12 +30,14 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-color: hsl(60, 100%, 90%);
   box-shadow: 0px 0px 1.5vw antiquewhite;
+  filter: grayscale(50%);
+}
+.card:hover img {
+  filter: grayscale(25%);
 }
 
 .card h2 {
   font-size: 1.2em;
-  margin-top: 30px;
-  margin-bottom: 10px;
   color: var(--color-white-greatness) ;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -43,22 +45,43 @@
 
 .card p {
   font-size: 1em;
-  color: var(--color-white-greatness) ;
+  color: var(--color-white-greatness);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-style: italic;
+  overflow: hidden; /* Oculta el texto que no cabe */
+  display: -webkit-box; /* Establece el contenedor como un bloque flexible de caja WebKit */
+  -webkit-box-orient: vertical; /* Establece la orientación vertical para el contenedor WebKit */
+  -webkit-line-clamp: 2; /* Limita el número de líneas a mostrar */
+  line-clamp: 2; /* Establece el número máximo de líneas a mostrar */
+  white-space: normal; /* Permite que el texto se envuelva si supera el límite de líneas */
+  text-overflow: ellipsis; /* Muestra tres puntos (...) cuando el texto desborda */
+  margin-top: 0.5vh;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  width: 200px;
+  height: 250px;
+  max-width: 100%;
+  background-color: var(--color-black-redbull);
+  border-radius: 75px;
+  margin-top: -0.5vh;
+  margin-bottom: 0.5vh;
+  border: 0.5px solid var(--color-black-redbull);
 }
 
 .card img {
-  width: 50%;
-  max-width: 50%; /* Asegurar que la imagen no se salga de la tarjeta */
+  width: 70%;
+  max-width: 100%; /* Asegurar que la imagen no se salga de la tarjeta */
   height: auto; /* Mantener la proporción de la imagen */
+  max-height: 90%;
   border-radius: 50px;
   margin-bottom: 10px;
   transition: filter 0.3s ease-in-out;
   filter: grayscale(100%);
-}
-.card img:hover {
-  filter: grayscale(100%);
+  border: 1px solid antiquewhite;
 }
 
 .robotoMonoFont {
@@ -86,6 +109,7 @@
   /* Estilos adicionales para los nombres si es necesario */
   margin: 0; /* Elimina los márgenes por defecto */
 }
+
 
 
   @media screen and (min-width: 768px) {

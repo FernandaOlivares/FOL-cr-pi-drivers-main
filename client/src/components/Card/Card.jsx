@@ -12,9 +12,13 @@ const Card = ({eachDriver}) => {
   return (
     <div className={styles.card}> 
       <Link to={`/home/${id}`}>
-      <img className={`${styles.imageFilter}`}
-      src={image ? image : defaultImg}
-      alt={`${forename} ${surname}'s picture not found`}/>
+      <div className={styles.imageContainer}>
+        <img
+          className={styles.imageFilter}
+          src={image ? image : defaultImg}
+          alt={`${forename} ${surname}'s picture not found`}
+        />
+      </div>
       <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{forename}</h2>
       <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt }`}>{surname}</h2>
       <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams}</p>
