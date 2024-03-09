@@ -58,6 +58,7 @@ const error = useSelector(state => state.error);
     setSelectedByDOBValue('');
     setSelectedByNameValue('');
     setSelectedByTeamValue('');
+    setCurrentPage(1);
     dispatch(getAllDrivers());
   };
 
