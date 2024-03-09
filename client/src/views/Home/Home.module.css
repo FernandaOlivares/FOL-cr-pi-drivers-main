@@ -20,7 +20,6 @@ max-width: 100%; /* Ancho máximo */
 padding: 0; /* Asegurar que no haya relleno */
 margin-left: 22%;
 margin-top: -1%;
-background-color: var(--color-black-redbull);
 z-index: 5;
 }
 

@@ -16,7 +16,7 @@
   border-radius: 100px;
   width: 200px; /* Cambiar el ancho a relativo */
   max-width: 300px; /* Establecer un ancho máximo para evitar que la tarjeta se expanda demasiado en pantallas grandes */
-  min-height: 378px;
+  min-height: 400px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
