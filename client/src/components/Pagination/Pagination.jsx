@@ -23,9 +23,10 @@ const Pagination = ({ driversPerPage, allDrivers, handlePagination, currentPage,
         }
     };
 
+
     const getVisiblePages = () => {
         const totalPages = pageNumbers.length;
-        const maxVisiblePages = 7;
+        const maxVisiblePages = 10;
         let startPage = currentPage - Math.floor(maxVisiblePages / 2);
         let endPage = currentPage + Math.floor(maxVisiblePages / 2);
 
@@ -48,18 +49,22 @@ const Pagination = ({ driversPerPage, allDrivers, handlePagination, currentPage,
     return (
         <div className={styles.paginationContainer}>
             <nav>
-                <ul className={styles.pagination}>
-                    <li className={styles.number}>
-                        <button className={styles.overlayButton} onClick={prevPage}>{"<<"}</button>
-                    </li>
+            <ul className={styles.pagination}>
+                    {currentPage !== 1 && (
+                        <li className={styles.number}>
+                            <button className={styles.overlayButton} onClick={prevPage}>{'<'}</button>
+                        </li>
+                    )}
                     {pageNumbers && visiblePages.map(number => (
                         <li className={styles.number} key={number} style={{ display: visiblePages.includes(number) ? 'inline-block' : 'none' }}>
                             <button className={currentPage === number ? `${styles.overlayButton} ${styles.currentPage}` : styles.overlayButton}  onClick={() => handlePagination(number)}>{number}</button>
                         </li>
                     ))}
-                    <li className={styles.number}>
-                        <button className={styles.overlayButton} onClick={nextPage}>{">>"}</button>
-                    </li>
+                   {currentPage !== pageNumbers.length && (
+                        <li className={styles.number}>
+                            <button className={styles.overlayButton} onClick={nextPage}>{'>'}</button>
+                        </li>
+                    )}
                 </ul>
             </nav>
         </div>
