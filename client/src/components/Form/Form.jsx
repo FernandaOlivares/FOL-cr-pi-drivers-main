@@ -71,7 +71,8 @@ const Form = () => {
         const errors = {};
         const isValidDuplicate = validateDuplicateDriver(driverInfo);
         if (!isValidDuplicate) return false;
-    
+        
+        
         if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.forename.trim()) || driverInfo.forename.length < 2 || driverInfo.forename.length > 30) {
             errors.forename = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-30 chars.';
         }
@@ -122,6 +123,10 @@ const Form = () => {
         if (!driverInfo.teams || driverInfo.teams.length === 0) {
             errors.teams = '*At least one team required';
         }
+        errors.dateOfBirth = '';
+        errors.image = '';
+        errors.description = '';
+        errors.teams = '';
     
         setError(errors);
     
@@ -152,9 +157,7 @@ const Form = () => {
                 console.error('Error creating new driver:', error);
                 alert('Error creating new driver. Please try again.');
             }
-        } else {
-            console.log('El formulario tiene errores, por favor corríjalos.');
-        }
+        } 
     };
 
    
@@ -197,7 +200,6 @@ const Form = () => {
                 teams: input.teams,
                 id: 0,
             }} 
-
             />
             </div>
             </div>
@@ -229,14 +231,6 @@ const Form = () => {
                     </label>
                 </div>
                 <div className={styles.inputField}>
-                    <label>Image*:
-                        <div className={styles.inputContainer}>
-                            <input type='text' name='image' value={input.image} onChange={handleChange}/>
-                        </div>
-                            <span className={styles.errorMessage}>{error.image}</span>
-                    </label>
-                </div>
-                <div className={styles.inputField}>
                     <label>Date Of Birth*:
                         <div className={styles.inputContainer}>
                         <input 
@@ -249,6 +243,14 @@ const Form = () => {
                         />
                         </div>
                             <span className={styles.errorMessage}>{error.dateOfBirth}</span>
+                    </label>
+                </div>
+                <div className={styles.inputField}>
+                    <label>Image*:
+                        <div className={styles.inputContainer}>
+                            <input type='text' name='image' value={input.image} onChange={handleChange}/>
+                        </div>
+                            <span className={styles.errorMessage}>{error.image}</span>
                     </label>
                 </div>
                 <div className={styles.inputField}>
