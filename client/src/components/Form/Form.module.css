@@ -22,6 +22,7 @@
   margin-top: 10vh;
   position: relative;
   right: -55vh;
+  pointer-events: none;
 }
 
 

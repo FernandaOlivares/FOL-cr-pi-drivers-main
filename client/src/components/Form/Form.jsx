@@ -190,14 +190,16 @@ const Form = () => {
 
         <div >
             <div className={styles.cardContainer}>
-            <div className={styles.textWrapper}>
+            <div>
             <Card eachDriver={{
-                forename: input.forename === 'Forename not found' ? '' : input.forename,
-                surname: input.surname,
+                forename: input.forename === '' ? ' ' : input.forename,
+                surname: input.surname === '' ? ' ' : input.surname,
                 image: input.image,
                 teams: input.teams,
                 id: 0,
-            }} />
+            }} 
+            onClick={() => {}}
+            />
             </div>
             </div>
             <div className={styles.formContainer}>
