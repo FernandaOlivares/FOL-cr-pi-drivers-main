@@ -270,7 +270,7 @@ const Form = () => {
                     {input.teams.map((team, index) => (
                         <li key={index}>
                             {team} 
-                            <button onClick={() => handleDeleteTeam(team)}>X</button>
+                            <button type='button' onClick={() => handleDeleteTeam(team)}>X</button>
                         </li>
                     ))}
                     </ul>   
