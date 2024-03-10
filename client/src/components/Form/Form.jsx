@@ -161,7 +161,7 @@ const Form = () => {
     const handleChange = (event) => {
         const { name, value } = event.target;
         setInput({
-            ...input,
+            ...input,//Mantiene input anteriores
             [name]: value,
         });
         // También validamos el campo que cambió
@@ -205,32 +205,32 @@ const Form = () => {
                     <label>Forename*:
                         <div className={styles.inputContainer}>
                             <input type='text' name='forename' value={input.forename} onChange={handleChange}/>
-                            <span className={styles.errorMessage}>{error.forename}</span>
                         </div>
+                            <span className={styles.errorMessage}>{error.forename}</span>
                     </label>
                 </div>
                 <div className={styles.inputField}>
                     <label>Surname*:
                         <div className={styles.inputContainer}>
                             <input type='text'name='surname' value={input.surname} onChange={handleChange}/>
-                            <span className={styles.errorMessage}>{error.surname}</span>
                         </div>
+                            <span className={styles.errorMessage}>{error.surname}</span>
                     </label>
                 </div>
                 <div className={styles.inputField}>
                     <label>Nationality*:
                         <div className={styles.inputContainer}>
                             <input type='text' name='nationality' value={input.nationality} onChange={handleChange}/>
-                            <span className={styles.errorMessage}>{error.nationality}</span>
                         </div>
+                            <span className={styles.errorMessage}>{error.nationality}</span>
                     </label>
                 </div>
                 <div className={styles.inputField}>
                     <label>Image*:
                         <div className={styles.inputContainer}>
                             <input type='text' name='image' value={input.image} onChange={handleChange}/>
-                            <span className={styles.errorMessage}>{error.image}</span>
                         </div>
+                            <span className={styles.errorMessage}>{error.image}</span>
                     </label>
                 </div>
                 <div className={styles.inputField}>
@@ -244,8 +244,8 @@ const Form = () => {
                         min='1900-01-01' // Establece el límite mínimo del año
                         max='9999-12-31' // Establece el límite máximo del año
                         />
-                            <span className={styles.errorMessage}>{error.dateOfBirth}</span>
                         </div>
+                            <span className={styles.errorMessage}>{error.dateOfBirth}</span>
                     </label>
                 </div>
                 <div className={styles.inputField}>

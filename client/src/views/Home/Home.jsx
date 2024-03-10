@@ -98,9 +98,9 @@ const error = useSelector(state => state.error);
 //********************** GET ALL TEAMS **********************//
   const allTeams = useSelector((state) => state.allTeams);
 
-  useEffect(() => {
+ /* useEffect(() => {
     dispatch(getAllTeams());
-  }, [dispatch]);
+  }, [dispatch]);*/
 
 //********************** FILTER DRIVERS BY TEAM **********************//
   const handleFilterByTeam = (event) => {
