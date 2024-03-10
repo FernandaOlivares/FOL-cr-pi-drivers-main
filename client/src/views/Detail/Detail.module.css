@@ -8,6 +8,30 @@
     --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
     --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
   }
+
+  @font-face {
+    font-family: 'Metropolis Regular';
+    src: url('../../assets/fonts/Metropolis-Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Metropolis SemiBold';
+    src: url('../../assets/fonts/Metropolis-SemiBold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Metropolis Light';
+    src: url('../../assets/fonts/Metropolis-Light.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Metropolis Light Italic';
+    src: url('../../assets/fonts/Metropolis-LightItalic.otf') format('opentype');
+  }
+  
+  body {
+    font-family: 'Metropolis Light', sans-serif;
+  }
   
   .detailContainer {
     display: flex;
@@ -68,6 +92,7 @@
     color: var(--color-white-greatness); 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-left: 0%;
+    font-style: italic;
   }
   
   .card p {
@@ -125,21 +150,23 @@
     overflow: scroll; /* Habilita la barra de desplazamiento */
 }
 
+.metropolisRegularFont {
+  font-family: 'Metropolis Regular', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+}
 
-  
-  .robotoMonoFont {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .robotoMonoFontBolt {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-  }
+.metropolisSemiBoldFont {
+  font-family: 'Metropolis SemiBold', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+}
+
+.metropolisLightItalicFont {
+  font-family: 'Metropolis Light Italic', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+}
 
   .headerContainer{
     display: flex;

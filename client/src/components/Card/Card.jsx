@@ -19,9 +19,9 @@ const Card = ({eachDriver}) => {
           alt={`${forename} ${surname}'s picture not found`}
         />
       </div>
-      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{forename || 'Forename not found'}</h2>
-      <h2 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt }`}>{surname || 'Surname not found'}</h2>
-      <p className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams  || 'Teams not found'}</p>
+      <h2 className={`${styles.overlayTextName} ${styles.metropolisRegularFont}`}>{forename || 'Forename not found'}</h2>
+      <h2 className={`${styles.overlayTextName} ${styles.metropolisSemiBoldFont}`}>{surname || 'Surname not found'}</h2>
+      <p className={`${styles.overlayTextName} `}>{joinTeams  || 'Teams not found'}</p>
       </Link>
     </div>
   );

@@ -9,6 +9,30 @@
   --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
 }
 
+@font-face {
+  font-family: 'Metropolis Regular';
+  src: url('../../assets/fonts/Metropolis-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Metropolis SemiBold';
+  src: url('../../assets/fonts/Metropolis-SemiBold.otf format') format('opentype');
+}
+
+@font-face {
+  font-family: 'Metropolis Light';
+  src: url('../../assets/fonts/Metropolis-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Metropolis Light Italic';
+  src: url('../../assets/fonts/Metropolis-LightItalic.otf') format('opentype');
+}
+
+body {
+  font-family: 'Metropolis Light', sans-serif;
+}
+
 .card {
   background-color: var(--color-black-redbull);
   color: #fff;
@@ -44,10 +68,12 @@
   overflow: hidden; /* Oculta el texto que no cabe */
   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   text-overflow: ellipsis; /* Muestra tres puntos (...) cuando el texto desborda */
+  margin: 0;
 }
 
 
 .card p {
+  font-family: 'Metropolis Light Italic', sans-serif;
   font-size: 1em;
   color: var(--color-white-greatness);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -88,18 +114,19 @@
   border: 1px solid antiquewhite;
 }
 
-.robotoMonoFont {
-  font-family: "Roboto Mono", monospace;
+
+.metropolisRegularFont {
+  font-family: 'Metropolis Regular', sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
-  font-style: normal;
 }
 
-.robotoMonoFontBolt {
-  font-family: "Roboto Mono", monospace;
+
+
+.metropolisSemiBoldFont {
+  font-family: 'Metropolis SemiBold', sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
-  font-style: normal;
 }
 
 .nameContainer {
@@ -110,8 +137,7 @@
 }
 
 .overlayTextName {
-  /* Estilos adicionales para los nombres si es necesario */
-  margin: 0; /* Elimina los márgenes por defecto */
+  margin: 0;
 }
 
 

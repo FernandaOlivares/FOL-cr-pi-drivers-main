@@ -41,10 +41,10 @@ const Detail = () => {
             src={driverDetail.image || defaultImg}
             alt={`${driverDetail.forename} ${driverDetail.surname}'s picture not found`}
             />
-            <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{driverDetail.forename || 'Forename not found'}</h1>
-            <h1 className={`${styles.overlayTextName} ${styles.robotoMonoFontBolt}`}>{driverDetail.surname || 'Surname not found'}</h1>
+            <h1 className={`${styles.overlayTextName} ${styles.metropolisRegularFont}`}>{driverDetail.forename || 'Forename not found'}</h1>
+            <h1 className={`${styles.overlayTextName} ${styles.metropolisSemiBoldFont}`}>{driverDetail.surname || 'Surname not found'}</h1>
             <div className = {styles.teamsContainer}>
-            <h3 className={`${styles.overlayTextName} ${styles.robotoMonoFont}`}>{joinTeams || 'Teams not found'}</h3>
+            <h3 className={`${styles.overlayTextName} ${styles.metropolisLightItalicFont}`}>{joinTeams || 'Teams not found'}</h3>
             </div>
           </div>
           <div className = {styles.biographyContainer}>

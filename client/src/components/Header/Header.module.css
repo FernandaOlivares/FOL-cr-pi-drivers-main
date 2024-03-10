@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Metropolis Thing Italic';
+  src: url('../../assets/fonts/Metropolis-ThinItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Metropolis Thing';
+  src: url('../../assets/fonts/Metropolis-Thin.otf') format('opentype');
+}
+
 
 .headerContainer {
   position: fixed;
@@ -34,6 +44,7 @@
 }
 
 .titleContainer {
+  font-family: 'Metropolis Thing Italic', sans-serif;
   position:absolute;
   width: 80vw;
   background-color: antiquewhite;
