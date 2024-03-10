@@ -198,7 +198,7 @@ const Form = () => {
                 teams: input.teams,
                 id: 0,
             }} 
-            onClick={() => {}}
+
             />
             </div>
             </div>
