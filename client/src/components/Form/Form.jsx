@@ -58,6 +58,7 @@ const Form = () => {
     
         if (duplicateDriver) {
             console.log('Driver already exists:', duplicateDriver);
+            alert(`Driver ${duplicateDriver.forename} ${duplicateDriver.surname} already exists`);
             setError(prevError => ({ ...prevError, forename: `*Driver ${duplicateDriver.forename} ${duplicateDriver.surname} already exists`}));
             return false;
         }
@@ -109,24 +110,18 @@ const Form = () => {
             }
         }        
     
-        // Validar URL de la imagen
         if (!driverInfo.image || !/^(ftp|http|https):\/\/[^ "]+$/.test(driverInfo.image.trim())) {
             errors.image = '*Invalid image link';
         }
     
-        // Validar longitud máxima para la descripción
         if (!driverInfo.description || driverInfo.description.length < 50 || driverInfo.description.length > 3000) {
             errors.description = '*Description is required (50-3000 characters)';
         }
     
-        // Validar que se haya seleccionado al menos un equipo
         if (!driverInfo.teams || driverInfo.teams.length === 0) {
             errors.teams = '*At least one team required';
         }
-        errors.dateOfBirth = '';
-        errors.image = '';
-        errors.description = '';
-        errors.teams = '';
+
     
         setError(errors);
     
