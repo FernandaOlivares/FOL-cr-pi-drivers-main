@@ -174,8 +174,7 @@ const Form = () => {
             ...input,
             teams: [...input.teams, selectedTeam]
         });
-    
-        // Validar el campo de equipos
+        event.target.value = '';
         validateFormInput({ ...input, teams: [...input.teams, selectedTeam] });
     };
     
@@ -261,14 +260,14 @@ const Form = () => {
                 </label>
                 </div>
                 <div className={styles.filterContainer}>
-                    <select onChange={(event) => handleSelect(event)} name='teamSelect' id='teamSelect' className={styles.filterBtn} defaultValue=''>
-                        <option value='' disabled id='teamSelect'>Add Teams*</option>
-                        {allTeams?.map((team) => {
-                        return (
+                <select onChange={(event) => handleSelect(event)} name='teamSelect' id='teamSelect' className={styles.filterBtn} defaultValue='' disabled={input.teams.length >= allTeams.length}>
+                    <option value='' disabled id='teamSelect'>Add Teams*</option>
+                    {allTeams
+                        ?.filter(team => !input.teams.includes(team.name)) // Filtrar equipos que no estén en la lista input.teams
+                        .map((team) => (
                             <option key={team.id} value={team.name}>{team.name}</option>
-                        );
-                        })}2
-                    </select>
+                        ))}
+                </select>
                     <div className={styles.teamListContainer}>
                     <ul className={styles.teamsList}>
                     {input.teams.map((team, index) => (
