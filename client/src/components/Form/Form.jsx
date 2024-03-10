@@ -13,11 +13,11 @@ import { getAllTeams } from '../../redux/actions/index.jsx';
 
 const Form = () => {
     const dispatch = useDispatch();
-    const allTeams = useSelector((state) => state.allTeams);
     const navigate = useNavigate();
+    const allTeams = useSelector((state) => state.allTeams);
     const newDriverId = useSelector((state) => state.newDriverId);
+    const allDrivers = useSelector((state) => state.allDrivers);
 
-  
     useEffect(() => {
       dispatch(getAllTeams());
     }, [dispatch]);
@@ -48,8 +48,29 @@ const Form = () => {
         teams: [],
     });
 
+    const validateDuplicateDriver = (driverInfo) => {
+        const duplicateDriver = allDrivers.find(driver =>
+            driver.forename === driverInfo.forename &&
+            driver.surname === driverInfo.surname &&
+            driver.nationality === driverInfo.nationality &&
+            driver.dateOfBirth === driverInfo.dateOfBirth
+        );
+    
+        if (duplicateDriver) {
+            console.log('Driver already exists:', duplicateDriver);
+            setError(prevError => ({ ...prevError, forename: `*Driver ${duplicateDriver.forename} ${duplicateDriver.surname} already exists`}));
+            return false;
+        }
+    
+        return true;
+    };
+    
+    
+
     const validateFormInput = (driverInfo) => {
         const errors = {};
+        const isValidDuplicate = validateDuplicateDriver(driverInfo);
+        if (!isValidDuplicate) return false;
     
         if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.forename.trim()) || driverInfo.forename.length < 2 || driverInfo.forename.length > 30) {
             errors.forename = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
@@ -106,6 +127,8 @@ const Form = () => {
     
         return Object.keys(errors).length === 0;
     };
+
+
     
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -133,8 +156,8 @@ const Form = () => {
             console.log('El formulario tiene errores, por favor corríjalos.');
         }
     };
-    
 
+   
     const handleChange = (event) => {
         const { name, value } = event.target;
         setInput({
