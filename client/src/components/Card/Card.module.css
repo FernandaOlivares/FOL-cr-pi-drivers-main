@@ -38,10 +38,14 @@
 
 .card h2 {
   font-size: 1.2em;
-  color: var(--color-white-greatness) ;
+  color: var(--color-white-greatness);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
+  overflow: hidden; /* Oculta el texto que no cabe */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  text-overflow: ellipsis; /* Muestra tres puntos (...) cuando el texto desborda */
 }
+
 
 .card p {
   font-size: 1em;

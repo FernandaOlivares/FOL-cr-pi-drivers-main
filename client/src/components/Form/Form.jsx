@@ -73,15 +73,15 @@ const Form = () => {
         if (!isValidDuplicate) return false;
     
         if (!driverInfo.forename || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.forename.trim()) || driverInfo.forename.length < 2 || driverInfo.forename.length > 30) {
-            errors.forename = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
+            errors.forename = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-30 chars.';
         }
         
         if (!driverInfo.surname || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.surname.trim()) || driverInfo.surname.length < 2 || driverInfo.surname.length > 30) {
-            errors.surname = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
+            errors.surname = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-30 chars.';
         }
         
         if (!driverInfo.nationality || !/^[A-Za-zÀ-ÖØ-öø-Ÿ\s'-]+(?<!-[-])$/.test(driverInfo.nationality.trim()) || driverInfo.nationality.length < 2 || driverInfo.nationality.length > 30) {
-            errors.nationality = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-50 chars.';
+            errors.nationality = '*Use only A-Z, spaces, apostrophes, hyphens, diacritics, 2-30 chars.';
         }
     
         if (!driverInfo.dateOfBirth || !/\d{4}-\d{2}-\d{2}/.test(driverInfo.dateOfBirth.trim())) {
@@ -190,6 +190,7 @@ const Form = () => {
 
         <div >
             <div className={styles.cardContainer}>
+            <div className={styles.textWrapper}>
             <Card eachDriver={{
                 forename: input.forename === 'Forename not found' ? '' : input.forename,
                 surname: input.surname,
@@ -197,6 +198,7 @@ const Form = () => {
                 teams: input.teams,
                 id: 0,
             }} />
+            </div>
             </div>
             <div className={styles.formContainer}>
             <p className={styles.formInstructions}>To create a new driver, please add required information*:</p>
