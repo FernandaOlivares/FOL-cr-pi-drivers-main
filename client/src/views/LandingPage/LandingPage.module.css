@@ -9,6 +9,16 @@
   --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
 }
 
+@font-face {
+  font-family: 'Metropolis Thin Italic';
+  src: url('../../assets/fonts/Metropolis-ThinItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Metropolis Thin';
+  src: url('../../assets/fonts/Metropolis-Thin.otf') format('opentype');
+}
+
 body {
   background-color: var(--color-black-redbull)   ;
 }
@@ -21,15 +31,15 @@ body {
 }
 
 .logoContainer {
+  font-family: 'Metropolis Thin', sans-serif;
   width: 17vw;
   height: auto;
-  padding: 10px;
-  margin-top: -1%;
-  margin-left: -90%;
+  padding: 0px;
+  margin-top: -50vh;
+  margin-left: -93.5%;
   color: antiquewhite;
   text-align: left;
-  font-size: 2.5em;
-  font-weight: 50;
+  font-size: 2.3em;
   text-decoration: none;
 }
 .logoContainer:hover {
@@ -37,14 +47,6 @@ body {
   color: antiquewhite;
   }
 
-.headerContainer{
-  display: flex;
-  align-items: flex-start;
-  max-width: 95%;
-  height: auto;
-  margin-left: 5%;
-  margin-top: 0%;
-}
 .overlayButton {
   position: absolute;
   bottom: 77.5%;
@@ -85,6 +87,7 @@ body {
 }
 
 .typewriterContainer {
+  font-family: 'Metropolis Thin ', sans-serif;
   margin-top: 30%;
   right: -50%;
   font-family: sans-serif;

@@ -128,32 +128,46 @@ const Form = () => {
         return Object.keys(errors).length === 0;
     };
 
-
+    const titleCase = (str) => {
+        return str.replace(/(?:^|\s)\S/g, function(match) {
+            return match.toUpperCase(); 
+        }).replace(/\b\w{2,}\b/g, function(match) {
+            return match.toLowerCase();
+        });
+    }
     
     const handleSubmit = async (event) => {
         event.preventDefault();
         const isValid = validateFormInput(input);
         if (isValid) {
-            try {
-                const createdDriver = await dispatch(postNewDriver(input));
-                const newDriverId = createdDriver.id;
-                alert('Driver created successfully!');
+          try {
 
-                setInput({
-                    forename: '',
-                    surname: '',
-                    nationality: '',
-                    image: '',
-                    dateOfBirth: '',
-                    description: '',
-                    teams: [],
-                });
-            } catch (error) {
-                console.error('Error creating new driver:', error);
-                alert('Error creating new driver. Please try again.');
-            }
+            const inputWithTitleCase = {
+              forename: titleCase(input.forename),
+              surname: titleCase(input.surname),
+              nationality: titleCase(input.nationality),
+            };
+      
+            const createdDriver = await dispatch(postNewDriver(inputWithTitleCase));
+            const newDriverId = createdDriver.id;
+            alert('Driver created successfully!');
+      
+            setInput({
+              forename: '',
+              surname: '',
+              nationality: '',
+              image: '',
+              dateOfBirth: '',
+              description: '',
+              teams: [],
+            });
+          } catch (error) {
+            console.error('Error creating new driver:', error);
+            alert('Error creating new driver. Please try again.');
+          }
         } 
-    };
+      };
+      
 
    
     const handleChange = (event) => {
