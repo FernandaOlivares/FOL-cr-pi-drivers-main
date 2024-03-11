@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -32,14 +30,15 @@ const Home = () => {
   }, [dispatch]);
 
 //********************** ERROR HANDLING **********************//
-const error = useSelector(state => state.error);
+  const error = useSelector(state => state.error);
 
 //********************** PAGINATE DRIVERS **********************//
   const [pageFilterType, setPageFilterType] = useState('');
   const [currentPage, setCurrentPage] = useState(1);//currenPage guara la pagina actual en un estado local/ y setDriversPerPage es una constante que set la página actual/ Comienza en 1 porque siempre inicio en la 1ra pagina
-  const [driversPerPage, setDriversPerPage] = useState(9);//Destructuring de los primeros 9 elementos del array driverPerPage.Estas constantes guardan ene el estado local, cuantos drivers quiero por página
-  const indexOfLastDriver = currentPage * driversPerPage;//9
-  const indexOfFirstDriver = indexOfLastDriver - driversPerPage;//0
+  //const [driversPerPage, setDriversPerPage] = useState(9);//Destructuring de los primeros 9 elementos del array driverPerPage.Estas constantes guardan ene el estado local, cuantos drivers quiero por página
+  const DRIVERS_PER_PAGE = 9;
+  const indexOfLastDriver = currentPage * DRIVERS_PER_PAGE;//9
+  const indexOfFirstDriver = indexOfLastDriver - DRIVERS_PER_PAGE;//0
   const currentDrivers = allDrivers.slice(indexOfFirstDriver, indexOfLastDriver);//Que devuelva del i 0 al 8, en total 9 drivers. Va de 0 a 9 pero corta entre i 8 y 9.
 
   const handlePagination = (pageNumber) => {
@@ -133,7 +132,7 @@ const error = useSelector(state => state.error);
       </div>
     <div>
       <Pagination
-      driversPerPage={driversPerPage}
+      driversPerPage={DRIVERS_PER_PAGE}
       allDrivers={allDrivers.length}
       handlePagination={handlePagination}
       currentPage={currentPage}
@@ -147,7 +146,7 @@ const error = useSelector(state => state.error);
             <span role="img" aria-label="Oops!">⚠️</span> Ups! Driver not found...
         </p>
         <p className={styles.errorMessage}>
-            Try again or add a new driver by clicking on "Add Driver" button.
+            Try again or add a new driver by clicking on &quot;Add Driver&quot; button.
         </p>
     </div>
         )}

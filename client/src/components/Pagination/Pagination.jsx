@@ -7,8 +7,6 @@ const Pagination = ({ driversPerPage, allDrivers, handlePagination, currentPage,
         pageNumbers.push(i);
     }
 
-    //const [currentPage, setCurrentPage] = useState(1);los paso como params desde Cards, porque se utilizan en Cards también
-
     const nextPage = () => {
         if (currentPage < pageNumbers.length) {
             setCurrentPage(currentPage + 1); // Incrementa currentPage en 1
