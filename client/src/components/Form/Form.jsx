@@ -128,27 +128,49 @@ const Form = () => {
         return Object.keys(errors).length === 0;
     };
 
+    /*const titleCase = (str) => {
+        return str.replace(/(?:^|[.¡!¡¿?-])\s*([a-z])/g, (match) => match.toUpperCase());
+    };*/
+
+    /*const titleCase = (str) => {
+        return str.replace(/(?:^|[.¡!¡¿?-])\s*([a-zA-ZáéíóúÁÉÍÓÚüÜñÑ])/g, (match) => match.toUpperCase())
+                  .replace(/\b\w/g, (char) => char.toUpperCase());
+    };*/
     const titleCase = (str) => {
-        return str.replace(/(?:^|\s)\S/g, function(match) {
-            return match.toUpperCase(); 
-        }).replace(/\b\w{2,}\b/g, function(match) {
-            return match.toLowerCase();
+        // Dividir la cadena en palabras
+        const words = str.split(' ');
+        
+        // Capitalizar la primera letra de cada palabra y mantener las letras acentuadas
+        const titleCasedWords = words.map(word => {
+            if (word.length === 0) return ''; // Manejar palabras vacías
+            const firstChar = word.charAt(0).toUpperCase();
+            const restOfWord = word.slice(1).toLowerCase();
+            return firstChar + restOfWord;
         });
-    }
+        
+        // Unir las palabras capitalizadas de nuevo en una cadena
+        const titleCasedStr = titleCasedWords.join(' ');
+    
+        // Capitalizar la letra después de un guion medio (-)
+        const titleCasedWithHyphen = titleCasedStr.replace(/-(\w)/g, (_, letter) => {
+            return '-' + letter.toUpperCase();
+        });
+    
+        return titleCasedWithHyphen;
+    };
+    
+    
+    
+   const capitalizeSentences = (str) => {
+        return str.replace(/(^|[.¡!¿?]\s*)([a-z])/g, (match) => match.toUpperCase());
+    };
     
     const handleSubmit = async (event) => {
         event.preventDefault();
         const isValid = validateFormInput(input);
         if (isValid) {
-          try {
-
-            const inputWithTitleCase = {
-              forename: titleCase(input.forename),
-              surname: titleCase(input.surname),
-              nationality: titleCase(input.nationality),
-            };
-      
-            const createdDriver = await dispatch(postNewDriver(inputWithTitleCase));
+          try {    
+            const createdDriver = await dispatch(postNewDriver(input));
             const newDriverId = createdDriver.id;
             alert('Driver created successfully!');
       
@@ -172,12 +194,19 @@ const Form = () => {
    
     const handleChange = (event) => {
         const { name, value } = event.target;
+        let updatedValue = value;
+        if (['forename', 'surname', 'nationality'].includes(name)) {
+            updatedValue = titleCase(value);
+        }
+        if (name === 'description') {
+            updatedValue = capitalizeSentences(value);
+        }
         setInput({
             ...input,//Mantiene input anteriores
-            [name]: value,
+            [name]: updatedValue,
         });
         // También validamos el campo que cambió
-        validateFormInput({ ...input, [name]: value });
+        validateFormInput({ ...input, [name]: updatedValue });
     };
 
     const handleSelect = (event) => {
