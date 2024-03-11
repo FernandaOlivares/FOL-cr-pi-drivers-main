@@ -69,6 +69,11 @@ const Home = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(getDriversByName(searchInput));
+    setCurrentPage(1);
+    setSelectedBySourceValue('');
+    setSelectedByDOBValue('');
+    setSelectedByNameValue('');
+    setSelectedByTeamValue('');
   };
 
 //********************** FILTER DRIVERS BY SOURCE **********************//
