@@ -33,9 +33,7 @@ const Home = () => {
   const error = useSelector(state => state.error);
 
 //********************** PAGINATE DRIVERS **********************//
-  const [pageFilterType, setPageFilterType] = useState('');
   const [currentPage, setCurrentPage] = useState(1);//currenPage guara la pagina actual en un estado local/ y setDriversPerPage es una constante que set la página actual/ Comienza en 1 porque siempre inicio en la 1ra pagina
-  //const [driversPerPage, setDriversPerPage] = useState(9);//Destructuring de los primeros 9 elementos del array driverPerPage.Estas constantes guardan ene el estado local, cuantos drivers quiero por página
   const DRIVERS_PER_PAGE = 9;
   const indexOfLastDriver = currentPage * DRIVERS_PER_PAGE;//9
   const indexOfFirstDriver = indexOfLastDriver - DRIVERS_PER_PAGE;//0
