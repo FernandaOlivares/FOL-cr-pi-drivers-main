@@ -9,6 +9,7 @@ import Card from '../Card/Card.jsx';
 import styles from './Form.module.css';
 import { postNewDriver } from '../../redux/actions/index.jsx'
 import { getAllTeams } from '../../redux/actions/index.jsx';
+import { titleCase, capitalizeSentences} from '../../utils/stringUtils.js'
 
 
 const Form = () => {
@@ -128,43 +129,7 @@ const Form = () => {
         return Object.keys(errors).length === 0;
     };
 
-    /*const titleCase = (str) => {
-        return str.replace(/(?:^|[.¡!¡¿?-])\s*([a-z])/g, (match) => match.toUpperCase());
-    };*/
 
-    /*const titleCase = (str) => {
-        return str.replace(/(?:^|[.¡!¡¿?-])\s*([a-zA-ZáéíóúÁÉÍÓÚüÜñÑ])/g, (match) => match.toUpperCase())
-                  .replace(/\b\w/g, (char) => char.toUpperCase());
-    };*/
-    const titleCase = (str) => {
-        // Dividir la cadena en palabras
-        const words = str.split(' ');
-        
-        // Capitalizar la primera letra de cada palabra y mantener las letras acentuadas
-        const titleCasedWords = words.map(word => {
-            if (word.length === 0) return ''; // Manejar palabras vacías
-            const firstChar = word.charAt(0).toUpperCase();
-            const restOfWord = word.slice(1).toLowerCase();
-            return firstChar + restOfWord;
-        });
-        
-        // Unir las palabras capitalizadas de nuevo en una cadena
-        const titleCasedStr = titleCasedWords.join(' ');
-    
-        // Capitalizar la letra después de un guion medio (-)
-        const titleCasedWithHyphen = titleCasedStr.replace(/-(\w)/g, (_, letter) => {
-            return '-' + letter.toUpperCase();
-        });
-    
-        return titleCasedWithHyphen;
-    };
-    
-    
-    
-   const capitalizeSentences = (str) => {
-        return str.replace(/(^|[.¡!¿?]\s*)([a-z])/g, (match) => match.toUpperCase());
-    };
-    
     const handleSubmit = async (event) => {
         event.preventDefault();
         const isValid = validateFormInput(input);
