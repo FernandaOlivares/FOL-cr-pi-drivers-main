@@ -28,11 +28,14 @@ const Home = () => {
   const allTeams = useSelector((state) => state.allTeams);
 
   useEffect(() => {
-    dispatch(getAllDrivers());
-  }, [dispatch]);
+    if(!allDrivers){
+      dispatch(getAllDrivers());
+    }
+  }, [dispatch, allDrivers]);
 
   useEffect(() => {
     dispatch(getAllTeams());
+    //return ()=>{alert('me fui del home')}
   }, [dispatch]);
 
 //********************** PAGINATE DRIVERS **********************//
@@ -83,6 +86,7 @@ const Home = () => {
   const handleFilterByTeam = (event) => {
     event.preventDefault();
     setSelectedByTeamValue(event.target.value)
+    setCurrentPage(1);
     dispatch(filterDriversByTeam(event.target.value)); 
   };
 
