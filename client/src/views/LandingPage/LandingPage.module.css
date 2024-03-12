@@ -1,12 +1,7 @@
 :root {
-  --color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
-  --color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
-  --color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
-  --color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
-  --color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
-  --color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
-  --color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
-  --color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+  --color-black-redbull: #000000;
+  --color-white-greatness: #FFFFFF;
+  --color-white-glory: antiquewhite;
 }
 
 @font-face {
@@ -20,14 +15,17 @@
 }
 
 body {
-  background-color: var(--color-black-redbull)   ;
+  background-color: black;
 }
 
 .bodyContainer {
   display: flex;
   justify-content: center;
   align-items: center; 
-  min-height: 100vh; 
+  width: 80%;
+  width: auto;
+  z-index: 0;
+  margin-top: 0%;
 }
 
 .logoContainer {
@@ -35,91 +33,34 @@ body {
   width: 17vw;
   height: auto;
   padding: 0px;
-  margin-top: -50vh;
-  margin-left: -93.5%;
+  top: 3vh; /* Ajusta la distancia desde la parte superior de la página */
+  left: 15vh; /* Centra horizontalmente el contenedor */
+  transform: translateX(-50%); /* Ajusta el centrado horizontal */
   color: antiquewhite;
-  text-align: left;
   font-size: 2.3em;
   text-decoration: none;
+  position: absolute; /* Posiciona el contenedor de forma absoluta */
 }
 .logoContainer:hover {
-  border-color: var(--color-black-redbull);
+  border-color: black;
   color: antiquewhite;
   }
 
-.overlayButton {
-  position: absolute;
-  bottom: 77.5%;
-  left: 91%;
+.storyContainer {
+  width: 55%;
+  font-family: 'Metropolis Thin Italic', sans-serif;
+  position: relative;
+  right: -58%;
   transform: translateX(-50%);
-  color: transparent;
-  padding: 10px; /* Ajusta el relleno para que el botón sea circular */
-  font-size: 0.75vw;
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  border-radius: 50%; /* Hace que el botón sea circular */
-  cursor: pointer;
-  z-index: 1;
-  background-color: var(--color-red-redLight);
-  border: 3px solid var(--color-red-redLight);
-  box-shadow: 0px 0px 1.5vw var(--color-red-redLight);
-  animation: blink 0.55s 9 alternate, none-hover 0.1s 5.5s forwards;
-  transition: background-color 0.1s ease, border-color 0s ease, box-shadow 0.1s ease, color 0.1s ease;
-  white-space: pre-wrap; /* Permite que el texto se ajuste en dos líneas */
-  width: 75px; /* Ancho del botón */
-  height: 75px; /* Alto del botón */
-}
-
-
-.overlayButton:hover {
-  color: var(--color-white-greatness);
-  background-color: var(--color-red-ferrari);
-  border-color: var(--color-red-ferrari) ;
-  box-shadow: 0px 0px 1.5vw var(--color-red-ferrari) ;
-  animation: none;
-}
-
-.robotoMonoFont {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.typewriterContainer {
-  font-family: 'Metropolis Thin ', sans-serif;
-  margin-top: 30%;
-  right: -50%;
-  font-family: sans-serif;
-  font-weight: 100;
-  font-style: italic;
-  color: antiquewhite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes none-hover {
-  to {
-    background-color: var(--color-black-redbull);
-    border-color: var(--color-red-ferrari);
-    box-shadow: 0px 0px 1.5vw var(--color-red-ferrari);
-    color: #fff; 
-    animation: none;
-  }
+  margin-top: -5vh;
+  text-align: right;
 }
 
 .buttonContainer {
   float: right;
   text-align: center;
-  margin-top: -15vh;
-  margin-right: 3vw;
+  margin-top: -12vh;
+  margin-right: 7vw;
   width: 15vw;
   height: 5vh;
   border-radius: 5px;
@@ -129,7 +70,7 @@ body {
   font-size: 1vw;
   color: white;
   text-decoration: none;
-  border-color: var(--color-black-redbull);
+  border-color: black;
 }
 
 .homeButton {
@@ -155,9 +96,6 @@ body {
   background-color: antiquewhite;
 }
 
-
-
-/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
   .overlayButton {
     font-size: 2.4vw;
