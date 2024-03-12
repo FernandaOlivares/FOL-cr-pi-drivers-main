@@ -31,24 +31,6 @@ z-index: 5;
   border: 1px solid antiquewhite;
 }
 
-.titleContainer {
-  width: 50vw;
-  background-color: antiquewhite;
-  font-size: 1.8em;
-  color: var(--color-black-redbull);
-  text-align: center;
-  margin-top: -6%;
-  margin-left: 31.5%;
-  font-style: italic;
-  font-weight: lighter;
-}
-
-.robotoMonoFont {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
 
 .errorContainer{
   position: fixed;

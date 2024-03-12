@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -21,23 +22,28 @@ import styles from './Home.module.css'
 
 const Home = () => {
   
-//********************** GET ALL DRIVERS **********************//
+//********************** GET ALL DRIVERS & GET ALL TEAMS **********************//
   const dispatch = useDispatch();
   const allDrivers = useSelector((state) => state.allDrivers);
+  const allTeams = useSelector((state) => state.allTeams);
 
   useEffect(() => {
     dispatch(getAllDrivers());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getAllTeams());
   }, [dispatch]);
 
 //********************** ERROR HANDLING **********************//
   const error = useSelector(state => state.error);
 
 //********************** PAGINATE DRIVERS **********************//
-  const [currentPage, setCurrentPage] = useState(1);//currenPage guara la pagina actual en un estado local/ y setDriversPerPage es una constante que set la página actual/ Comienza en 1 porque siempre inicio en la 1ra pagina
+  const [currentPage, setCurrentPage] = useState(1);
   const DRIVERS_PER_PAGE = 9;
-  const indexOfLastDriver = currentPage * DRIVERS_PER_PAGE;//9
-  const indexOfFirstDriver = indexOfLastDriver - DRIVERS_PER_PAGE;//0
-  const currentDrivers = allDrivers.slice(indexOfFirstDriver, indexOfLastDriver);//Que devuelva del i 0 al 8, en total 9 drivers. Va de 0 a 9 pero corta entre i 8 y 9.
+  const indexOfLastDriver = currentPage * DRIVERS_PER_PAGE;
+  const indexOfFirstDriver = indexOfLastDriver - DRIVERS_PER_PAGE;
+  const currentDrivers = allDrivers.slice(indexOfFirstDriver, indexOfLastDriver);
 
   const handlePagination = (pageNumber) => {
       setCurrentPage(pageNumber);
@@ -76,41 +82,31 @@ const Home = () => {
     setSelectedByTeamValue('');
   };
 
-//********************** FILTER DRIVERS BY SOURCE **********************//
+//********************** FILTERS HANDLERS **********************//
+  const handleFilterByTeam = (event) => {
+    event.preventDefault();
+    setSelectedByTeamValue(event.target.value)
+    dispatch(filterDriversByTeam(event.target.value)); 
+  };
+
   const handleFilterBySource = (event) => {
     event.preventDefault();
     setSelectedBySourceValue(event.target.value)
     dispatch(filterDriversBySource(event.target.value)); 
   };
 
-//********************** SORT DRIVERS BY NAME OR FULL NAME **********************//
   const handleSortByName = (event) =>{
     event.preventDefault();
     setSelectedByNameValue(event.target.value)
     dispatch(sortDriversByName(event.target.value));
   }
 
-//********************** SORT DRIVERS BY DATE OF BIRTH **********************//
   const handleSortByDateOfBirth = (event) =>{
     event.preventDefault();
     setSelectedByDOBValue(event.target.value)
     dispatch(sortDriversByDateOfBirth(event.target.value));
   }
 
-//********************** GET ALL TEAMS **********************//
-  const allTeams = useSelector((state) => state.allTeams);
-
-  useEffect(() => {
-    dispatch(getAllTeams());
-  }, [dispatch]);
-
-//********************** FILTER DRIVERS BY TEAM **********************//
-  const handleFilterByTeam = (event) => {
-    event.preventDefault();
-    setSelectedByTeamValue(event.target.value)
-    dispatch(filterDriversByTeam(event.target.value)); 
-  };
-  
   return (
   <div>
     <div>
@@ -145,11 +141,11 @@ const Home = () => {
       {currentDrivers.length > 0 ? (
       <Cards currentDrivers={currentDrivers} />
       ) : (<div className={styles.errorContainer}>
-        <p className={styles.errorMessage}>
-            <span role="img" aria-label="Oops!">⚠️</span> Ups! Driver not found...
+        <p>
+          <span role="img" aria-label="Oops!">⚠️</span> Ups! Driver not found...
         </p>
-        <p className={styles.errorMessage}>
-            Try again or add a new driver by clicking on &quot;Add Driver&quot; button.
+        <p>
+          Try again or add a new driver by clicking on &quot;Add Driver&quot; button.
         </p>
     </div>
         )}
