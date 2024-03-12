@@ -58,7 +58,7 @@ const Pagination = ({ driversPerPage, allDrivers, handlePagination, currentPage,
                             <button className={currentPage === number ? `${styles.overlayButton} ${styles.currentPage}` : styles.overlayButton}  onClick={() => handlePagination(number)}>{number}</button>
                         </li>
                     ))}
-                   {currentPage !== pageNumbers.length && (
+                   {pageNumbers && currentPage !== pageNumbers.length && allDrivers > 0 && (
                         <li className={styles.number}>
                             <button className={styles.overlayButton} onClick={nextPage}>{'>'}</button>
                         </li>
