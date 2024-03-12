@@ -53,7 +53,6 @@ function rootReducer(state = initialState, action) {
     
             
         case FILTER_DRIVERS_BY_SOURCE: {
-            // Filtra los conductores según la fuente y actualiza la lista
             const filteredDrivers = action.payload === 'Db'
             ? state.allDriversBackup.filter(driver => driver.created)
             : state.allDriversBackup.filter(driver => !driver.created);
@@ -132,12 +131,10 @@ function rootReducer(state = initialState, action) {
         }
 
         case GET_DRIVER_BY_ID_SUCCESS: {
-            // Realiza cualquier manipulación de datos necesaria aquí, como combinar los datos nuevos con los existentes, si es necesario
-            const updatedDriverById = action.payload; // Asigna los datos del conductor obtenidos de la acción
-          
+            const updatedDriverById = action.payload;
             return {
               ...state,
-              driverById: updatedDriverById, // Asigna los datos actualizados al estado driverById
+              driverById: updatedDriverById, 
             };
           }
           

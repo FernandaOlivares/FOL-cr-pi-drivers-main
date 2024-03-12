@@ -29,22 +29,17 @@ export const getAllDrivers = () => {
   };
 };
 
-
 export const getDriversByName = (searchInput) => {
     return async (dispatch) => {
         try {
-            // Realizar la solicitud al backend para obtener los resultados de la búsqueda
             const response = await axios.get(`http://localhost:3001/drivers?forename=${searchInput}`);
 
             if (response.data.length > 0) {
-                // Si se encuentran resultados, disparar la acción de éxito con los resultados
                 dispatch({ type: GET_DRIVERS_BY_NAME, payload: response.data });
             } else {
-                // Si no se encuentran resultados, disparar la acción de error
                 dispatch({ type: GET_DRIVERS_BY_NAME_ERROR });
             }
         } catch (error) {
-            // Manejar el error en caso de que ocurra
             console.error('Error fetching drivers by name:', error);
             dispatch({ type: GET_DRIVERS_BY_NAME_ERROR });
         }
@@ -89,21 +84,14 @@ export const filterDriversByTeam = (payload) => ({
 export const postNewDriver = (payload) => {
     return async function (dispatch) {
         try {
-            // Realizar la solicitud POST para crear un nuevo conductor
             const response = await axios.post('http://localhost:3001/post/drivers', payload);
-
-            // Despachar una acción al store con el tipo POST_NEW_DRIVER y los datos relevantes del conductor creado
             dispatch({ 
                 type: 'POST_NEW_DRIVER',
                 payload: response.data
             });
-
-            // Devolver los datos del conductor creado si es necesario
             return response.data;
         } catch (error) {
-            // Capturar y manejar cualquier error que ocurra durante la solicitud POST
             console.error('Error posting new driver:', error);
-            // Lanzar el error nuevamente para que pueda ser manejado en componentes superiores si es necesario
             throw error;
         }
     }
@@ -120,10 +108,9 @@ export const getDriverById = (id) => {
       });
     } catch (error) {
       console.error('Error fetching driver by Id:', error);
-      // También puedes despachar una acción de error si es necesario
       dispatch({
         type: 'GET_DRIVER_BY_ID_FAILURE',
-        payload: error.message, // Puedes enviar información del error si lo deseas
+        payload: error.message,
       });
     }
   };
