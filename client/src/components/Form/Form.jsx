@@ -1,16 +1,17 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line react-refresh/only-export-components
-
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+
 import Card from '../Card/Card.jsx';
-import styles from './Form.module.css';
+
 import { postNewDriver } from '../../redux/actions/index.jsx'
 import { getAllTeams } from '../../redux/actions/index.jsx';
 import { titleCase, capitalizeSentences} from '../../utils/stringUtils.js'
 
+import styles from './Form.module.css';
 
 const Form = () => {
     const dispatch = useDispatch();
@@ -92,7 +93,6 @@ const Form = () => {
         } else {
             const birthDate = new Date(driverInfo.dateOfBirth);
         
-            // Verificar si la fecha de nacimiento es antes de la fecha mínima
             const MINIMUM_BIRTH_DATE = new Date('1900-01-01');
             if (birthDate <= MINIMUM_BIRTH_DATE) {
                 errors.dateOfBirth = '*Must be after January 1, 1900';
@@ -156,7 +156,6 @@ const Form = () => {
       };
       
 
-   
     const handleChange = (event) => {
         const { name, value } = event.target;
         let updatedValue = value;
@@ -167,7 +166,7 @@ const Form = () => {
             updatedValue = capitalizeSentences(value);
         }
         setInput({
-            ...input,//Mantiene input anteriores
+            ...input,
             [name]: updatedValue,
         });
         // También validamos el campo que cambió
@@ -241,8 +240,8 @@ const Form = () => {
                         name='dateOfBirth' 
                         value={input.dateOfBirth} 
                         onChange={handleChange}
-                        min='1900-01-01' // Establece el límite mínimo del año
-                        max='9999-12-31' // Establece el límite máximo del año
+                        min='1900-01-01'
+                        max='9999-12-31'
                         />
                         </div>
                             <span className={styles.errorMessage}>{error.dateOfBirth}</span>
@@ -268,7 +267,7 @@ const Form = () => {
                 <select onChange={(event) => handleSelect(event)} name='teamSelect' id='teamSelect' className={styles.filterBtn} defaultValue='' disabled={input.teams.length >= allTeams.length}>
                     <option value='' disabled id='teamSelect'>Add Teams*</option>
                     {allTeams
-                        ?.filter(team => !input.teams.includes(team.name)) // Filtrar equipos que no estén en la lista input.teams
+                        ?.filter(team => !input.teams.includes(team.name))
                         .map((team) => (
                             <option key={team.id} value={team.name}>{team.name}</option>
                         ))}
