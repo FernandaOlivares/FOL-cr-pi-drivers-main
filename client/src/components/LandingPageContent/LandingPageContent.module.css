@@ -1,25 +1,24 @@
 .videoContainer {
-  position: relative; /* Establece una posición relativa para el contenedor */
-  width: 70%; /* Ancho del contenedor del video al 100% del ancho de su contenedor padre */
+  position: relative; 
+  width: 70%;
   z-index: 0;
 }
 
 .video {
-  width: 100%; /* Ancho del video al 100% del contenedor */
-  height: auto; /* Altura del video se ajusta automáticamente para mantener la relación de aspecto */
+  width: 100%;
+  height: auto;
   margin-top: 0vh;
   z-index: 0;
 }
 
-/* Media queries para ajustar el tamaño del video en pantallas más pequeñas */
 @media (max-width: 600px) {
   .videoContainer {
-    margin-top: -15px; /* Ajusta el margen superior para mover el video hacia arriba */
+    margin-top: -15px;
   }
 }
 
 @media (max-width: 400px) {
   .videoContainer {
-    margin-top: -10px; /* Ajusta el margen superior para mover el video hacia arriba */
+    margin-top: -10px;
   }
 }
