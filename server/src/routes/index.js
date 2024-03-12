@@ -5,8 +5,6 @@ const getTeamsRouter = require('./getTeamsRouter');
 
 const router = Router();
 
-//TODO: CONFIGURAMOS ROUTER PRINCIPAL, DONDE LLEGARÁN TODOS LOS ENDPOINTS
-
 router.use('/drivers', getDriversRouter);
 
 router.use('/post', createDriverRouter);
