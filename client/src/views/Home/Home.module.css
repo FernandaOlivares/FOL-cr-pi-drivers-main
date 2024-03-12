@@ -1,23 +1,17 @@
 :root {
---color-black-redbull: #000000;      /*   var(--color-black-redbull)    */
---color-red-ferrari: #DC0000;        /*   var(--color-red-ferrari)      */
---color-red-redLight: #FF0000;       /*   var(--color-red-redLight)     */
---color-orange-mclaren: #FF8700;     /*   var(--color-orange-mclaren)   */
---color-yellow-formula1: #FFD700;    /*   var(--color-yellow-formula1)  */
---color-blue-mercedes: #00D2BE;      /*   var(--color-blue-mercedes)    */
---color-silver-alfaromeo: #9B8394;   /*   var(--color-silver-alfaromeo) */
---color-white-greatness: #FFFFFF;    /*   var(--color-white-greatness)  */
+  --color-black-redbull: #000000;
+  --color-white-greatness: #FFFFFF;
+  --color-white-glory: antiquewhite;
 }
 
 html, body {
-  background-color: var(--color-black-redbull); /* Fondo negro */
+  background-color: var(--color-black-redbull);
 }
 
 .homeContainer {
-/*text-align: center;*/
-width: 950px; /* Ancho fijo */
-max-width: 100%; /* Ancho máximo */
-padding: 0; /* Asegurar que no haya relleno */
+width: 950px;
+max-width: 100%;
+padding: 0; 
 margin-left: 22%;
 margin-top: -1%;
 z-index: 5;
@@ -40,8 +34,8 @@ z-index: 5;
 .titleContainer {
   width: 50vw;
   background-color: antiquewhite;
-  font-size: 1.8em; /* Tamaño de fuente para el título de la colección */
-  color: var(--color-black-redbull); /* Color de texto para el título de la colección */
+  font-size: 1.8em;
+  color: var(--color-black-redbull);
   text-align: center;
   margin-top: -6%;
   margin-left: 31.5%;
