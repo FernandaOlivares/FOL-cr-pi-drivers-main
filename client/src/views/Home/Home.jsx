@@ -35,9 +35,6 @@ const Home = () => {
     dispatch(getAllTeams());
   }, [dispatch]);
 
-//********************** ERROR HANDLING **********************//
-  const error = useSelector(state => state.error);
-
 //********************** PAGINATE DRIVERS **********************//
   const [currentPage, setCurrentPage] = useState(1);
   const DRIVERS_PER_PAGE = 9;

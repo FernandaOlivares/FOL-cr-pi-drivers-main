@@ -35,7 +35,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 allDrivers: [],
-                error: 'Driver not found'
+                error: 'Drivers not found'
             };
 
         case GET_DRIVERS_BY_NAME:
