@@ -30,12 +30,12 @@ const NavBar = (props) => {
       <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} searchInput={searchInput} />
       <p>You did not find a driver?</p>
       <Link className={styles.linkButton} to= '/create'>Add Driver</Link>
+      <p>Filter By:</p>
+      <FilterDriversByTeam handleFilterByTeam = {handleFilterByTeam} selectedByTeamValue={selectedByTeamValue} allTeams={allTeams}/>
+      <FilterDriversBySource handleFilterBySource={handleFilterBySource} selectedBySourceValue={selectedBySourceValue}/>
       <p>Sort By:</p>
       <SortDriversByName handleSortByName={handleSortByName} selectedByNameValue={selectedByNameValue}/>
       <SortDriversByDateOfBirth handleSortByDateOfBirth={handleSortByDateOfBirth} selectedByDOBValue={selectedByDOBValue}/>
-      <p>Filter By:</p>
-      <FilterDriversBySource handleFilterBySource={handleFilterBySource} selectedBySourceValue={selectedBySourceValue}/>
-      <FilterDriversByTeam handleFilterByTeam = {handleFilterByTeam} selectedByTeamValue={selectedByTeamValue} allTeams={allTeams}/>
       <button onClick={handleReset} className={styles.overlayButton}>Reset Filters</button>
     </div>
   );

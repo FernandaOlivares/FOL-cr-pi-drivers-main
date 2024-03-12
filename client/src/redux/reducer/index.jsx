@@ -26,13 +26,12 @@ function rootReducer(state = initialState, action) {
     switch (action.type) {
         
         case GET_ALL_DRIVERS:
-            // Actualiza la lista de todos los conductores y la copia de seguridad
             return {
                 ...state,
                 allDrivers: action.payload,
                 allDriversBackup: action.payload,
             };
-        case GET_DRIVERS_BY_NAME_ERROR:
+        case GET_ALL_DRIVERS_ERROR:
             return {
                 ...state,
                 allDrivers: [],
@@ -45,25 +44,26 @@ function rootReducer(state = initialState, action) {
                 allDrivers: action.payload,
                 error: null
             };
-        case GET_ALL_DRIVERS_ERROR:
+        case GET_DRIVERS_BY_NAME_ERROR:
             return {
                 ...state,
                 allDrivers: [],
                 error: 'Driver not found'
             };
     
+            
         case FILTER_DRIVERS_BY_SOURCE: {
             // Filtra los conductores según la fuente y actualiza la lista
             const filteredDrivers = action.payload === 'Db'
-                ? state.allDriversBackup.filter(driver => driver.created)
-                : state.allDriversBackup.filter(driver => !driver.created);
+            ? state.allDriversBackup.filter(driver => driver.created)
+            : state.allDriversBackup.filter(driver => !driver.created);
             return {
                 ...state,
                 allDrivers: action.payload === 'All'
-                    ? state.allDriversBackup 
-                    : filteredDrivers
+            ? state.allDriversBackup 
+            : filteredDrivers
             };
-        }
+         }
         
         case SORT_DRIVERS_BY_NAME: {
             const removeAccents = (name) => {
